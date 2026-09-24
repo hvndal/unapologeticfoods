@@ -3,7 +3,7 @@
 A design demo for Unapologetic Foods’ Adda at 1700 Frankford Ave, Fishtown. **Not an official site**: menu, hours and photography are illustrative.
 
 ## View it
-Open `index.html` in a browser, or run a local server (`python3 -m http.server`) and go to http://localhost:8000.
+Open `index.html` (pitch page) or `site.html` (the website) in a browser, or run a local server (`python3 -m http.server`) and go to http://localhost:8000.
 
 - **Presenter** (bottom-left, or press **P**): jumps between the 12 pitch screens, including the reservation panel, dish detail and a phone-frame mobile demo.
 - Deep links: `?screen=reserve`, `?screen=dish`, `?screen=mobile`, `?screen=menu` …

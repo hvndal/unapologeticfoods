@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Adda — Fishtown, Philadelphia</title>
+  <meta name="description" content="Adda Philadelphia by Unapologetic Foods. Indian cooking without compromise, 1700 Frankford Avenue, Fishtown. Pitch concept.">
+  <meta name="theme-color" content="#15100e">
+  <!-- Concept preview: keep out of search results until launch -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Adda — Fishtown, Philadelphia · Website concept">
+  <meta property="og:description" content="A website concept for Adda Philadelphia by Unapologetic Foods. Designed by Mander Studio.">
+  <meta property="og:image" content="https://hvndal.github.io/unapologeticfoods/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Adda",
+    "description": "Indian cooking without compromise, from Unapologetic Foods.",
+    "servesCuisine": ["Indian", "North Indian"],
+    "address": { "@type": "PostalAddress", "streetAddress": "1700 Frankford Ave", "addressLocality": "Philadelphia", "addressRegion": "PA", "postalCode": "19125", "addressCountry": "US" },
+    "acceptsReservations": true,
+    "hasMenu": "#menu",
+    "parentOrganization": { "@type": "Organization", "name": "Unapologetic Foods" }
+  }
+  </script>
+  <link rel="preload" href="assets/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jost-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="preload" as="image" href="assets/video/fire-poster.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Shared line ornaments -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <path id="arch" d="M0 300 L0 128 A28 28 0 0 1 15 84 A28 28 0 0 1 42 46 A26 26 0 0 1 72 18 A22 22 0 0 1 100 0 A22 22 0 0 1 128 18 A26 26 0 0 1 158 46 A28 28 0 0 1 185 84 A28 28 0 0 1 200 128 L200 300 Z"/>
+      <symbol id="lotus" viewBox="0 0 120 24">
+        <path d="M0 12 H44 M76 12 H120" stroke="currentColor" stroke-width="1" fill="none"/>
+        <path d="M60 3 C55 8 55 15 60 21 C65 15 65 8 60 3Z M60 21 C54 20 49 16 47 10 C53 11 57 15 60 21Z M60 21 C66 20 71 16 73 10 C67 11 63 15 60 21Z" stroke="currentColor" stroke-width="1" fill="none"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="curtain" id="curtain" aria-hidden="true">
+    <span class="curtain__mark">Adda<i></i></span>
+  </div>
+
+  <a class="skip" href="#house">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <nav class="nav__left" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#signature">The Experience</a>
+      <a href="#downstairs">Downstairs</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="nav__mark" href="#top" aria-label="Adda Philly, back to top"><img class="nav__badge" src="assets/brand/adda-philly-badge.png" alt="" width="38" height="38">Adda<i aria-hidden="true"></i></a>
+    <div class="nav__right">
+      <span class="nav__place">Fishtown, Philadelphia</span>
+      <button class="btn btn--gold nav__cta" data-open="reserve">Reserve</button>
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__head">
+      <span class="nav__mark">Adda<i aria-hidden="true"></i></span>
+      <button class="drawer__close" id="drawer-close">Close</button>
+    </div>
+    <nav class="drawer__links" aria-label="Mobile">
+      <a href="#house"><small>I</small>The House</a>
+      <a href="#signature"><small>II</small>The Experience</a>
+      <a href="#menu"><small>III</small>Menu</a>
+      <a href="#hearth"><small>IV</small>The Hearth</a>
+      <a href="#downstairs"><small>V</small>Downstairs</a>
+      <a href="#visit"><small>VII</small>Visit</a>
+    </nav>
+    <div class="drawer__foot">
+      <button class="btn btn--gold btn--wide" data-open="reserve">Reserve a table</button>
+      <p>1700 Frankford Avenue · Fishtown</p>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-label="Adda Philadelphia">
+      <div class="hero__media" aria-hidden="true">
+        <video class="hero__video" id="hero-video" muted loop playsinline preload="metadata" poster="assets/video/fire-poster.jpg">
+          <source src="assets/video/fire.webm" type="video/webm">
+          <source src="assets/video/fire.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <div class="hero__center">
+        <img class="hero__uf hero__badge" src="assets/brand/adda-philly-badge.png" alt="Adda Philly" width="140" height="140">
+        <h1 class="hero__title">
+          <span class="hero__word">Adda<i aria-hidden="true"></i></span>
+          <span class="sr-only">Philadelphia</span>
+        </h1>
+        <p class="hero__place"><span></span>Philadelphia · Fishtown<span></span></p>
+        <p class="hero__line">Indian cooking, <em>without compromise.</em></p>
+        <img class="hero__by" src="assets/brand/unapologetic-white.png" alt="by Unapologetic Foods" width="96" height="18">
+      </div>
+
+      <div class="hero__foot">
+        <span>1700 Frankford Avenue</span>
+        <a class="hero__scroll" href="#house" aria-label="Scroll to content"><i></i></a>
+        <button class="linkbtn" data-open="reserve">Reserve a table <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <!-- ============ I. THE HOUSE ============ -->
+    <section class="house" id="house">
+      <div class="house__grid">
+        <p class="chapter" data-reveal><span>I</span>The House</p>
+        <div class="house__text">
+          <h2 class="statement" data-reveal="lines">
+            <em>Adda</em> is Bengali for the conversation that keeps you at the table long after the plates are cleared.
+          </h2>
+          <div class="house__cols" data-reveal>
+            <p>On Frankford Avenue, across from the Fishtown post office, Chef Chintan Pandya and Roni Mazumdar bring the cooking of India’s homes, highway dhabas and wedding kitchens to Philadelphia.</p>
+            <p>Region by region, spice by spice. An open kitchen and grill on the ground floor, a small bar below, and a dining room built for staying longer than you planned.</p>
+          </div>
+          <p class="house__sign" data-reveal>Chintan Pandya &amp; Roni Mazumdar <span lang="hi">अड्डा</span></p>
+        </div>
+        <figure class="house__fig" data-reveal="mask">
+          <div class="archframe">
+            <img data-img="house" data-sizes="(max-width: 900px) 90vw, 30vw" alt="Baby goat biryani, served from the pot" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Baby goat biryani, opened at the table.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ II. SIGNATURE ============ -->
+    <section class="sig" id="signature">
+      <figure class="sig__media" data-reveal="mask">
+        <img data-img="signature" alt="Butter chicken finished with house-churned butter" loading="lazy">
+      </figure>
+      <div class="sig__body">
+        <p class="chapter chapter--light" data-reveal><span>II</span>The Signature</p>
+        <h2 class="title" data-reveal="lines">The Butter Chicken <em>Experience</em></h2>
+        <p class="sig__lede" data-reveal>The dish everyone thinks they know, taken back to first principles and finished at your table.</p>
+        <ol class="rite" data-reveal>
+          <li><span>i</span><div><h3>Cold smoke</h3><p>The chicken takes smoke long before it meets heat.</p></div></li>
+          <li><span>ii</span><div><h3>Churned butters</h3><p>A flight of butters made in the kitchen that morning.</p></div></li>
+          <li><span>iii</span><div><h3>Your wood</h3><p>You choose the wood chips; the smoke is yours.</p></div></li>
+          <li><span>iv</span><div><h3>Tableside</h3><p>Sauced, buttered and finished in front of you.</p></div></li>
+        </ol>
+        <div class="sig__cta" data-reveal>
+          <button class="btn btn--gold" data-open="reserve" data-experience="1">Preorder with your table</button>
+          <span>By preorder only</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ III. MENU ============ -->
+    <section class="menu" id="menu">
+      <header class="menu__head">
+        <p class="chapter" data-reveal><span>III</span>The Menu</p>
+        <h2 class="title" data-reveal="lines">A menu of <em>places</em></h2>
+        <p class="menu__intro" data-reveal>Every plate comes from somewhere specific: a Mumbai street, a Hyderabad wedding, a Rajput hunting camp. We cook it the way it is cooked there.</p>
+      </header>
+
+      <div class="plates" id="plates"></div>
+
+      <svg class="ornament" aria-hidden="true"><use href="#lotus"/></svg>
+
+      <div class="carte">
+        <div class="tabs" role="tablist" aria-label="Menu sections">
+          <button class="tab is-active" role="tab" aria-selected="true" data-filter="all">All</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="chhote">Chhote</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="tandoor">Tandoor</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="handi">Handi &amp; Dum</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="meetha">Meetha</button>
+        </div>
+        <div class="carte__cols" id="carte"></div>
+        <p class="carte__fine">Illustrative menu for this presentation, drawn from Adda’s best-known dishes. Menus change with the season.</p>
+      </div>
+      <div class="peek" id="peek" aria-hidden="true"><img alt=""></div>
+    </section>
+
+    <!-- ============ IV. HEARTH ============ -->
+    <section class="hearth" id="hearth">
+      <div class="hearth__pattern" aria-hidden="true"></div>
+      <header class="hearth__head">
+        <p class="chapter chapter--light" data-reveal><span>IV</span>The Hearth</p>
+        <h2 class="title" data-reveal="lines">Three fires, <em>one kitchen</em></h2>
+      </header>
+      <div class="fires">
+        <article class="fire" data-reveal>
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <ellipse cx="60" cy="34" rx="22" ry="6"/>
+            <path d="M38 34 C30 60 31 90 44 104 H76 C89 90 90 60 82 34"/>
+            <path d="M34 108 H86"/><path d="M42 72 C52 76 68 76 78 72" opacity=".5"/>
+            <path d="M52 30 L48 6 M60 30 V4 M68 30 L72 6"/>
+            <path d="M56 26 C52 21 57 18 55 12 M64 26 C68 21 63 18 65 13" class="flame"/>
+          </svg>
+          <p class="fire__hi" lang="hi">तंदूर</p>
+          <h3>Tandoor</h3>
+          <p>The clay oven of the north. Marinated meat and fish on iron skewers, bread slapped against the wall, charred at heat a kitchen range can’t reach.</p>
+        </article>
+        <article class="fire" data-reveal>
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <ellipse cx="60" cy="66" rx="44" ry="12"/>
+            <ellipse cx="60" cy="63" rx="36" ry="8"/>
+            <path d="M16 66 H6 M104 66 H114"/>
+            <circle cx="60" cy="60" r="14" stroke-dasharray="2 3"/>
+            <path d="M40 92 C44 86 38 82 42 76 M60 96 C64 90 58 86 62 80 M80 92 C84 86 78 82 82 76" class="flame"/>
+          </svg>
+          <p class="fire__hi" lang="hi">तवा</p>
+          <h3>Tawa</h3>
+          <p>A flat iron over open flame. Liver seared in seconds, breads blistered by hand: the fast, loud cooking of Old Delhi’s lanes.</p>
+        </article>
+        <article class="fire" data-reveal>
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <path d="M28 62 C26 92 42 106 60 106 C78 106 94 92 92 62"/>
+            <ellipse cx="60" cy="62" rx="32" ry="7"/>
+            <path d="M30 58 C34 38 86 38 90 58"/>
+            <path d="M28 64 q4 -4 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0" opacity=".7"/>
+            <circle cx="60" cy="40" r="4"/>
+            <path d="M52 30 C48 24 56 20 52 12 M68 30 C72 24 64 20 68 12" class="flame"/>
+          </svg>
+          <p class="fire__hi" lang="hi">दम</p>
+          <h3>Dum</h3>
+          <p>A heavy pot sealed with dough and left on low coals. Rice and goat steam in each other’s juices until the seal is broken at your table.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ V. DOWNSTAIRS ============ -->
+    <section class="down" id="downstairs">
+      <div class="down__art" data-reveal="mask" aria-hidden="true">
+        <svg class="down__arches" viewBox="-24 -24 248 348" preserveAspectRatio="xMidYMax meet">
+          <use href="#arch" class="a1" transform="translate(-18 -18) scale(1.18 1.12)"/>
+          <use href="#arch" class="a2" transform="translate(-9 -9) scale(1.09 1.06)"/>
+        </svg>
+        <div class="down__window">
+          <svg class="down__lamp" viewBox="0 0 100 200" aria-hidden="true">
+            <path d="M50 0 V62"/>
+            <path d="M42 62 H58 L62 70 H38Z"/>
+            <path d="M38 70 C22 84 20 112 34 128 H66 C80 112 78 84 62 70"/>
+            <path d="M34 128 C38 140 44 146 50 150 C56 146 62 140 66 128"/>
+            <path d="M28 96 H72 M31 112 H69" opacity=".6"/>
+            <path d="M42 76 C36 90 36 110 42 126 M58 76 C64 90 64 110 58 126 M50 72 V128" opacity=".6"/>
+            <path d="M50 150 V166 M46 170 L50 166 L54 170 M50 170 V180" />
+            <path d="M40 150 V160 M60 150 V160 M36 144 V152 M64 144 V152" opacity=".7"/>
+            <ellipse class="glow" cx="50" cy="104" rx="10" ry="16"/>
+          </svg>
+        </div>
+      </div>
+      <div class="down__body">
+        <p class="chapter chapter--light" data-reveal><span>V</span>Downstairs</p>
+        <h2 class="title" data-reveal="lines">A room <em>below the room</em></h2>
+        <p class="down__lede" data-reveal>A small bar and a chef’s counter beneath the dining room, for whatever the kitchen can’t stop thinking about.</p>
+        <p data-reveal>One-night menus, visiting cooks, the regional dishes that don’t fit anywhere else, and the drinks that go with them. It changes often and seats very few.</p>
+        <button class="btn btn--line" data-open="reserve" data-down="1" data-reveal>Ask about downstairs</button>
+      </div>
+    </section>
+
+    <!-- ============ VI. UNAPOLOGETIC ============ -->
+    <section class="uf" id="unapologetic">
+      <div class="uf__top">
+        <p class="chapter" data-reveal><span>VI</span>Unapologetic</p>
+        <p class="uf__statement" data-reveal="lines">Unapologetic Foods was built on one idea: Indian food deserves to be cooked on its own terms. <em>Not softened, not explained, not apologised for.</em></p>
+        <img class="uf__logo" src="assets/brand/unapologetic-black.png" alt="Unapologetic Foods" width="240" height="45" loading="lazy" data-reveal>
+      </div>
+      <ul class="honours" data-reveal>
+        <li><b>★</b><span>Michelin star</span><small>Semma, New York</small></li>
+        <li><b>No. 1</b><span>The New York Times, 100 best restaurants in New York, 2025</span><small>Semma</small></li>
+        <li><b>2</b><span>James Beard awards, Best Chef: New York State</span><small>Chintan Pandya, Vijay Kumar</small></li>
+      </ul>
+      <div class="family" data-reveal>
+        <p class="family__label">The family</p>
+        <ul>
+          <li>Dhamaka <span>Lower East Side</span></li>
+          <li>Semma <span>West Village</span></li>
+          <li>Adda <span>East Village</span></li>
+          <li>Masalawala &amp; Sons <span>Park Slope</span></li>
+          <li>Kebabwala <span>East Village</span></li>
+          <li>Rowdy Rooster <span>East Village</span></li>
+          <li class="is-new">Adda <span>Fishtown, Philadelphia</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ VII. VISIT ============ -->
+    <section class="visit" id="visit">
+      <div class="visit__pattern" aria-hidden="true"></div>
+      <div class="visit__grid">
+        <div class="visit__addr">
+          <p class="chapter chapter--light" data-reveal><span>VII</span>Visit</p>
+          <address data-reveal="lines">1700 Frankford Avenue<br><em>Fishtown, Philadelphia</em></address>
+          <p class="visit__note" data-reveal>Across from the Fishtown post office. Dining room, open kitchen and grill at street level; the bar is downstairs.</p>
+        </div>
+        <dl class="visit__info" data-reveal>
+          <div><dt>Dinner</dt><dd>Nightly, from 5 pm</dd></div>
+          <div><dt>Bar downstairs</dt><dd>Walk-ins welcome</dd></div>
+          <div><dt>Private dining</dt><dd><button class="linkbtn" data-open="reserve">Enquire</button></dd></div>
+          <div><dt>Reservations</dt><dd><button class="linkbtn" data-open="reserve">Book a table →</button></dd></div>
+        </dl>
+      </div>
+      <form class="letters" id="letters" data-reveal>
+        <label for="letters-email">Letters from the kitchen: menus, one-night dinners, first word on downstairs.</label>
+        <div class="letters__row">
+          <input id="letters-email" type="email" placeholder="Your email" required autocomplete="email">
+          <button class="btn btn--gold" type="submit">Subscribe</button>
+        </div>
+        <p class="letters__done" aria-live="polite"></p>
+      </form>
+      <footer class="foot">
+        <div class="foot__marks"><img class="badge" src="assets/brand/adda-philly-badge.png" alt="Adda Philly" width="56" height="56" loading="lazy"><img src="assets/brand/unapologetic-white.png" alt="Unapologetic Foods" width="180" height="34" loading="lazy"></div>
+        <nav aria-label="Footer">
+          <a href="#menu">Menu</a><a href="#signature">Butter Chicken Experience</a><a href="#downstairs">Downstairs</a><a href="#top">Top</a>
+        </nav>
+        <p>Website concept by <b>Mander Studio</b> for Unapologetic Foods. Not an official website: hours, menu and photography are placeholders; the Adda Philly badge is used from its public Instagram.</p>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Mobile sticky reserve -->
+  <div class="dock" id="dock">
+    <span>Adda · Fishtown</span>
+    <button class="btn btn--gold" data-open="reserve">Reserve</button>
+  </div>
+
+  <!-- ============ DISH MODAL ============ -->
+  <div class="modal modal--dish" id="dish-modal" aria-hidden="true">
+    <div class="modal__scrim" data-close></div>
+    <article class="dish" role="dialog" aria-modal="true" aria-labelledby="dish-name">
+      <button class="modal__x" data-close aria-label="Close">×</button>
+      <figure class="dish__media">
+        <img id="dish-img" alt="">
+        <div class="dish__plain" id="dish-plain" aria-hidden="true"><svg><use href="#lotus"/></svg><span id="dish-plain-hi" lang="hi"></span></div>
+      </figure>
+      <div class="dish__body">
+        <p class="dish__meta"><span id="dish-num"></span><span id="dish-section"></span></p>
+        <h2 id="dish-name"></h2>
+        <p class="dish__hi" id="dish-hi" lang="hi"></p>
+        <p class="dish__region" id="dish-region"></p>
+        <p class="dish__line" id="dish-line"></p>
+        <p class="dish__note" id="dish-note"></p>
+        <div class="dish__actions">
+          <button class="btn btn--gold" data-open="reserve">Reserve a table</button>
+          <div class="dish__nav">
+            <button class="iconbtn" id="dish-prev" aria-label="Previous dish">←</button>
+            <button class="iconbtn" id="dish-next" aria-label="Next dish">→</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ RESERVATION PANEL ============ -->
+  <div class="modal modal--reserve" id="reserve-modal" aria-hidden="true">
+    <div class="modal__scrim" data-close></div>
+    <form class="reserve" id="reserve-form" role="dialog" aria-modal="true" aria-labelledby="reserve-title" novalidate>
+      <button type="button" class="modal__x" data-close aria-label="Close">×</button>
+      <div class="reserve__panel">
+        <p class="reserve__kicker">Adda · 1700 Frankford Avenue</p>
+        <h2 id="reserve-title">Reserve a <em>table</em></h2>
+
+        <fieldset class="field">
+          <legend>Guests</legend>
+          <div class="chips" id="res-party"></div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>Date <span id="res-month"></span></legend>
+          <div class="dates" id="res-dates"></div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>Time</legend>
+          <div class="chips chips--time" id="res-times"></div>
+        </fieldset>
+
+        <fieldset class="field field--opts">
+          <legend class="sr-only">Options</legend>
+          <label class="toggle"><input type="checkbox" id="res-bc"><span class="toggle__ui"></span><span><b>Butter Chicken Experience</b><small>Preorder for the table, finished tableside</small></span></label>
+          <label class="toggle"><input type="checkbox" id="res-down"><span class="toggle__ui"></span><span><b>Downstairs</b><small>Tell me about the chef’s counter</small></span></label>
+          <label class="occasion">Occasion
+            <select id="res-occasion"><option value="">None</option><option>Birthday</option><option>Anniversary</option><option>Business</option><option>First visit</option></select>
+          </label>
+        </fieldset>
+
+        <div class="reserve__submit">
+          <p class="reserve__summary" id="res-summary" aria-live="polite"></p>
+          <button type="submit" class="btn btn--gold btn--wide">Request reservation</button>
+          <p class="reserve__fine">Presentation demo. Nothing is booked or sent.</p>
+        </div>
+      </div>
+
+      <div class="reserve__done" aria-live="polite">
+        <svg class="ornament" aria-hidden="true"><use href="#lotus"/></svg>
+        <p class="reserve__kicker">Request received</p>
+        <h3>We’ll hold that <em>for you.</em></h3>
+        <p id="res-confirm"></p>
+        <div class="reserve__done-actions">
+          <button type="button" class="btn btn--gold" id="res-ics">Add to calendar</button>
+          <button type="button" class="btn btn--line" data-close>Back to the site</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- ============ PRESENTER (pitch controls) ============ -->
+  <div class="pitch is-collapsed" id="pitch">
+    <button class="pitch__toggle" id="pitch-toggle" aria-expanded="false" aria-controls="pitch-list"><i></i>Presenter <kbd>P</kbd></button>
+    <button class="pitch__toggle pitch__mobile" id="pitch-mobile">View mobile</button>
+    <div class="pitch__list" id="pitch-list">
+      <button data-screen="hero">01 Hero · fire</button>
+      <button data-screen="nav">02 Scrolled nav</button>
+      <button data-screen="house">03 The House</button>
+      <button data-screen="signature">04 Butter Chicken</button>
+      <button data-screen="menu">05 Menu</button>
+      <button data-screen="dish">06 Dish detail</button>
+      <button data-screen="hearth">07 The Hearth</button>
+      <button data-screen="downstairs">08 Downstairs</button>
+      <button data-screen="unapologetic">09 Unapologetic</button>
+      <button data-screen="visit">10 Visit</button>
+      <button data-screen="reserve">11 Reservation</button>
+      <button data-screen="mobile">12 Mobile demo</button>
+    </div>
+  </div>
+
+  <div class="phone" id="phone" aria-hidden="true">
+    <div class="phone__scrim" data-phone-close></div>
+    <div class="phone__stage">
+      <div class="phone__frame">
+        <span class="phone__notch" aria-hidden="true"></span>
+        <iframe id="phone-frame" title="Mobile preview of the Adda site"></iframe>
+      </div>
+      <div class="phone__side">
+        <p class="reserve__kicker">Mobile demo · 390 × 844</p>
+        <h3>The same house, <em>in your hand.</em></h3>
+        <div class="phone__jumps">
+          <button data-phone-go="">Home</button>
+          <button data-phone-go="#menu">Menu</button>
+          <button data-phone-go="dish">Dish</button>
+          <button data-phone-go="reserve">Reserve</button>
+          <button data-phone-go="#visit">Visit</button>
+        </div>
+        <button class="btn btn--line" data-phone-close>Back to desktop</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
