@@ -27,12 +27,12 @@ A few honest notes:
 
 The PDF covers scope, an eight-week timeline, investment and what we'd need from your team. If you only send three things, make it the current menu, ten favourite photos, and which reservation platform you use.
 
-Would a 20-minute call this week or next work to walk you through it?
+Would a 20-minute Google Meet next week work to walk you and the team through it? Pick any time that suits here: [booking link]. Or reply with a couple of times and I'll send an invite.
 
 Warmly,
-[Your name]
+Herman Hundal
 Mander Studio
-[phone] · [email]
+sales@mander.com · [phone]
 
 ---
 
@@ -41,12 +41,12 @@ Mander Studio
 Hi Saadhya! We made a concept for Adda Philadelphia, a full website you can click plus a short film:
 https://hvndal.github.io/unapologeticfoods/pitch/
 
-It's a demo (placeholder photos and menu), but it shows where we'd take it: the Butter Chicken Experience front and centre, booking in three taps, and an identity of its own for Philly. Happy to send the full proposal or walk you through it in 20 minutes. — [Your name], Mander Studio
+It's a demo (placeholder photos and menu), but it shows where we'd take it: the Butter Chicken Experience front and centre, booking in three taps, and an identity of its own for Philly. Happy to send the full proposal or walk you through it in 20 minutes. — Herman, Mander Studio
 
 ---
 
 ## Before you hit send
 1. Turn on GitHub Pages: repo **Settings → Pages → Build and deployment → Deploy from a branch → `main` / `/ (root)`**, then wait a minute and open the links above yourself, on laptop and phone.
-2. Replace `[Name]`, `[Your name]`, `[phone] · [email]`.
+2. Replace `[booking link]` with your Google Calendar booking page and `[phone]` with your number (kept out of this public repo).
 3. Test the link preview by sending the pitch link to yourself first (it should show the fire-and-"Adda." image).
 4. Optional: send the vertical film (`pitch/adda-walkthrough-vertical.mp4`, if present) directly in the DM so it plays inline.
