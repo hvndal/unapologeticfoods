@@ -679,6 +679,9 @@ figcaption {
   font-size: 11px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase;
 }
 .pitch__toggle i { width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
+.pitch__mobile { margin-left: 6px; }
+.pitch__mobile:hover, .pitch__toggle:hover { border-color: var(--gold-soft); }
+.foot p b { font-weight: 500; color: rgba(242, 233, 221, .8); }
 .pitch__toggle kbd { font: inherit; border: 1px solid currentColor; padding: 0 5px; letter-spacing: 0; }
 .pitch__list {
   position: absolute; left: 0; bottom: 48px; width: 230px;

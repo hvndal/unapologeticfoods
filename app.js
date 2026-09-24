@@ -22,6 +22,18 @@
     butter: 'assets/img/butter-chicken-overhead.webp',
     samosa: 'assets/img/samosa-close.webp'
   };
+  // intrinsic widths; every photo also has an 800px "-800.webp" variant for phones
+  const IMG_W = {
+    'assets/img/biryani-overhead.webp': 1067, 'assets/img/butter-chicken-close.webp': 1000,
+    'assets/img/biryani-close.webp': 1600, 'assets/img/butter-chicken-overhead.webp': 1188,
+    'assets/img/samosa-close.webp': 1600
+  };
+  const srcset = src => `${src.replace('.webp', '-800.webp')} 800w, ${src} ${IMG_W[src] || 1600}w`;
+  function setImg(img, src, sizes) {
+    img.srcset = srcset(src);
+    img.sizes = sizes;
+    img.src = src;
+  }
 
   // ---------- menu ----------
   const COURSES = [
@@ -86,7 +98,7 @@
   // static image slots
   $$('[data-img]').forEach(img => {
     const src = IMG[img.dataset.img];
-    if (src) { img.src = src; return; }
+    if (src) { setImg(img, src, img.dataset.sizes || '(max-width: 900px) 100vw, 50vw'); return; }
     if (img.closest('.archframe')) {
       const fill = document.createElement('div');
       fill.className = 'fill';
@@ -104,7 +116,7 @@
   plates.innerHTML = featured.map(d => {
     const i = MENU.indexOf(d);
     return `<button class="plate" data-dish="${d.id}" data-reveal>
-      <div class="plate__img"><img src="${IMG[d.id]}" alt="${esc(d.name)}" loading="lazy" class="graded"></div>
+      <div class="plate__img"><img src="${IMG[d.id]}" srcset="${srcset(IMG[d.id])}" sizes="(max-width: 760px) 100vw, (max-width: 900px) 50vw, 58vw" alt="${esc(d.name)}" loading="lazy" decoding="async" class="graded"></div>
       <div class="plate__cap">
         <span class="plate__num">No. ${num(i)}</span>
         <span class="plate__name">${esc(d.name)}</span>
@@ -148,7 +160,8 @@
       const item = e.target.closest('.item');
       const src = item && IMG[item.dataset.dish];
       if (src) {
-        if (peekImg.getAttribute('src') !== src) peekImg.src = src;
+        const small = src.replace('.webp', '-800.webp');
+        if (peekImg.getAttribute('src') !== small) peekImg.src = small;
         peek.classList.add('is-on');
       } else {
         peek.classList.remove('is-on');
@@ -205,7 +218,7 @@
     const src = IMG[d.id];
     dishCard.classList.toggle('is-plain', !src);
     const img = $('#dish-img');
-    if (src) { img.src = src; img.alt = d.name; img.classList.add('graded'); } else { img.removeAttribute('src'); img.alt = ''; }
+    if (src) { setImg(img, src, '(max-width: 900px) 100vw, 55vw'); img.alt = d.name; img.classList.add('graded'); } else { img.removeAttribute('src'); img.removeAttribute('srcset'); img.alt = ''; }
     $('#dish-plain-hi').textContent = d.hi;
     $('#dish-num').textContent = 'No. ' + num(i);
     $('#dish-section').textContent = courseOf(d.course).name + ' · ' + courseOf(d.course).note;
@@ -450,6 +463,7 @@
     pitchToggle.setAttribute('aria-expanded', String(!collapsed));
   }
   pitchToggle.addEventListener('click', () => togglePitch());
+  $('#pitch-mobile').addEventListener('click', () => { closeModals(); openPhone(''); });
   document.addEventListener('keydown', e => {
     if ((e.key === 'p' || e.key === 'P') && !e.target.closest('input, select, textarea') && !e.metaKey && !e.ctrlKey) togglePitch();
   });

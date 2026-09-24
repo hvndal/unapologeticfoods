@@ -6,6 +6,30 @@
   <title>Adda — Fishtown, Philadelphia</title>
   <meta name="description" content="Adda Philadelphia by Unapologetic Foods. Indian cooking without compromise, 1700 Frankford Avenue, Fishtown. Pitch concept.">
   <meta name="theme-color" content="#15100e">
+  <!-- Concept preview: keep out of search results until launch -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Adda — Fishtown, Philadelphia · Website concept">
+  <meta property="og:description" content="A website concept for Adda Philadelphia by Unapologetic Foods. Designed by Mander Studio.">
+  <meta property="og:image" content="https://hvndal.github.io/unapologeticfoods/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Adda",
+    "description": "Indian cooking without compromise, from Unapologetic Foods.",
+    "servesCuisine": ["Indian", "North Indian"],
+    "address": { "@type": "PostalAddress", "streetAddress": "1700 Frankford Ave", "addressLocality": "Philadelphia", "addressRegion": "PA", "postalCode": "19125", "addressCountry": "US" },
+    "acceptsReservations": true,
+    "hasMenu": "#menu",
+    "parentOrganization": { "@type": "Organization", "name": "Unapologetic Foods" }
+  }
+  </script>
   <link rel="preload" href="assets/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/jost-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css">
@@ -111,7 +135,7 @@
         </div>
         <figure class="house__fig" data-reveal="mask">
           <div class="archframe">
-            <img data-img="house" alt="Baby goat biryani, served from the pot" loading="lazy">
+            <img data-img="house" data-sizes="(max-width: 900px) 90vw, 30vw" alt="Baby goat biryani, served from the pot" loading="lazy" decoding="async">
           </div>
           <figcaption>Baby goat biryani, opened at the table.</figcaption>
         </figure>
@@ -299,7 +323,7 @@
         <nav aria-label="Footer">
           <a href="#menu">Menu</a><a href="#signature">Butter Chicken Experience</a><a href="#downstairs">Downstairs</a><a href="#top">Top</a>
         </nav>
-        <p>Pitch concept for Unapologetic Foods. Not an official website; hours and menu are illustrative. Photography: open-source demo images.</p>
+        <p>Website concept by <b>Mander Studio</b> for Unapologetic Foods. Not an official website: hours, menu and photography are placeholders.</p>
       </footer>
     </section>
   </main>
@@ -393,6 +417,7 @@
   <!-- ============ PRESENTER (pitch controls) ============ -->
   <div class="pitch is-collapsed" id="pitch">
     <button class="pitch__toggle" id="pitch-toggle" aria-expanded="false" aria-controls="pitch-list"><i></i>Presenter <kbd>P</kbd></button>
+    <button class="pitch__toggle pitch__mobile" id="pitch-mobile">View mobile</button>
     <div class="pitch__list" id="pitch-list">
       <button data-screen="hero">01 Hero · fire</button>
       <button data-screen="nav">02 Scrolled nav</button>
