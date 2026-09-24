@@ -1,7 +1,18 @@
-# Adda Philly — pitch concept
+# Adda Philadelphia — pitch concept
 
-A design demo for Unapologetic Foods’ Adda Philly (1700 Frankford Ave, Fishtown). Not an official site.
+A design demo for Unapologetic Foods’ Adda at 1700 Frankford Ave, Fishtown. **Not an official site**: menu, hours and photography are illustrative.
 
-Open `index.html` in a browser (or run `python3 -m http.server`). The bar along the bottom jumps between the 12 pitch screens; press **P** to hide it. Screens 11–12 show the site in a phone frame.
+## View it
+Open `index.html` in a browser, or run a local server (`python3 -m http.server`) and go to http://localhost:8000.
 
-Design brief: `DESIGN_PROMPT.md`.
+- **Presenter** (bottom-left, or press **P**): jumps between the 12 pitch screens, including the reservation panel, dish detail and a phone-frame mobile demo.
+- Deep links: `?screen=reserve`, `?screen=dish`, `?screen=mobile`, `?screen=menu` …
+- `?static` turns off animations (for screenshots).
+
+## Files
+- `index.html`, `style.css`, `app.js` — the site (no build step, no dependencies).
+- `fonts.css`, `assets/fonts/` — self-hosted Fraunces, Jost, Tiro Devanagari Hindi (SIL OFL).
+- `assets/video/` — hero fire loop (mp4/webm/mobile + poster).
+- `assets/img/` — placeholder food photography from the open-source Foodish project; see `assets/ASSETS.md` for sources and the licence caveat. Replace with a real shoot before any public use.
+- `assets/brand/` — Unapologetic Foods wordmark (transparent PNGs from the supplied logo).
+- `DESIGN_PROMPT.md` — the design brief.
