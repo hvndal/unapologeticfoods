@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Adda, Philadelphia — Website & Identity Proposal · Mander Studio</title>
+<link rel="stylesheet" href="../fonts.css">
+<link rel="stylesheet" href="fonts-routes.css">
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  :root {
+    --ink: #15100e; --bone: #f2e9dd; --bone-2: #e9ddcc; --oxblood: #5a1f1a; --oxblood-deep: #3a1411;
+    --blush: #e6bcb2; --blush-deep: #b8695d; --green: #22362d; --sage: #8ea08c; --gold: #b8925a; --gold-soft: #d6b98a; --red: #c8102e;
+    --serif: "Fraunces", Georgia, serif; --sans: "Jost", system-ui, sans-serif; --deva: "Tiro Devanagari Hindi", serif;
+    --petals: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='36' viewBox='0 0 40 36'%3E%3Cdefs%3E%3Cg id='p' fill='none' stroke-width='.7'%3E%3Cpath d='M0 36 C3 18 14 8 20 0 C26 8 37 18 40 36' stroke='%23e6bcb2'/%3E%3Cpath d='M20 31 C16.5 26 17.5 20 20 15 C22.5 20 23.5 26 20 31Z' stroke='%23d6b98a'/%3E%3C/g%3E%3C/defs%3E%3Cuse href='%23p'/%3E%3Cuse href='%23p' x='-20' y='-18'/%3E%3Cuse href='%23p' x='20' y='-18'/%3E%3Cuse href='%23p' x='-20' y='18'/%3E%3Cuse href='%23p' x='20' y='18'/%3E%3C/svg%3E");
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #555; }
+  body { font-family: var(--sans); font-weight: 300; color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; counter-reset: slide; }
+  .slide { width: 1280px; height: 720px; position: relative; overflow: hidden; padding: 72px 80px 64px; page-break-after: always; break-after: page; counter-increment: slide; background: var(--bone); }
+  @media screen { .slide { margin: 0 auto 24px; } }
+  .slide::after { content: counter(slide, decimal-leading-zero) " / 21"; position: absolute; right: 80px; top: 30px; font-size: 11px; letter-spacing: .24em; color: currentColor; opacity: .55; }
+  .slide::before { content: "Adda, Philadelphia · Proposal"; position: absolute; left: 80px; top: 30px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; opacity: .55; }
+  .slide.no-chrome::before, .slide.no-chrome::after { display: none; }
+  .foot { position: absolute; left: 80px; bottom: 28px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; opacity: .55; }
+  .ink { background: var(--ink); color: var(--bone); }
+  .oxblood { background: var(--oxblood); color: var(--blush); }
+  .blush { background: var(--blush); color: var(--ink); }
+  .green { background: var(--green); color: var(--bone); }
+  .deep { background: var(--oxblood-deep); color: var(--bone); }
+
+  h1, h2, h3, p { margin: 0; }
+  .kicker { font-size: 12px; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 22px; display: flex; align-items: center; gap: 14px; }
+  .kicker i { font-family: var(--serif); font-style: italic; font-size: 16px; letter-spacing: 0; text-transform: none; }
+  .kicker i::after { content: ""; display: inline-block; width: 36px; height: 1px; background: currentColor; opacity: .5; margin-left: 14px; vertical-align: middle; }
+  .ink .kicker, .oxblood .kicker, .green .kicker, .deep .kicker { color: var(--gold-soft); }
+  h2 { font-family: var(--serif); font-weight: 300; font-variation-settings: "opsz" 144, "SOFT" 40; font-size: 54px; line-height: 1.02; letter-spacing: -.02em; }
+  h2 em { color: var(--oxblood); }
+  .ink h2 em, .deep h2 em { color: var(--blush); } .oxblood h2 { color: var(--bone); } .oxblood h2 em { color: var(--blush); } .green h2 em { color: var(--gold-soft); }
+  h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; line-height: 1.2; margin-bottom: 8px; }
+  p, li { font-size: 15.5px; line-height: 1.6; }
+  .lede { font-family: var(--serif); font-size: 21px; line-height: 1.45; font-weight: 300; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  .ticks li { padding: 9px 0 9px 22px; border-bottom: 1px solid rgba(21,16,14,.14); position: relative; }
+  .ticks li::before { content: ""; position: absolute; left: 0; top: 18px; width: 8px; height: 8px; border-radius: 50%; background: var(--oxblood); }
+  .ink .ticks li, .oxblood .ticks li, .green .ticks li, .deep .ticks li { border-color: rgba(230,188,178,.22); }
+  .ink .ticks li::before, .deep .ticks li::before { background: var(--gold-soft); }
+  .dot { display: inline-block; width: .13em; height: .13em; border-radius: 50%; background: var(--red); margin-left: .05em; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .rule { border-top: 1px solid currentColor; opacity: .25; margin: 26px 0; }
+  .num { font-family: var(--serif); font-style: italic; color: var(--oxblood); font-size: 18px; }
+  .ink .num, .green .num, .deep .num { color: var(--gold-soft); }
+  .small { font-size: 13px; line-height: 1.55; opacity: .8; }
+
+  /* device frames */
+  .browser { border-radius: 10px; overflow: hidden; background: #0b0807; box-shadow: 0 24px 50px rgba(21,16,14,.28), 0 0 0 1px rgba(184,146,90,.35); }
+  .browser__bar { height: 26px; display: flex; align-items: center; gap: 6px; padding: 0 12px; background: #1d1512; }
+  .browser__bar i { width: 8px; height: 8px; border-radius: 50%; background: #4a3b35; }
+  .browser__bar span { margin-left: 12px; font-size: 10px; letter-spacing: .08em; color: rgba(242,233,221,.5); }
+  .browser img { display: block; width: 100%; }
+  .phone { width: 184px; flex: none; border-radius: 30px; padding: 7px; background: #0b0807; box-shadow: 0 24px 50px rgba(0,0,0,.35), 0 0 0 1px rgba(184,146,90,.45); }
+  .phone img { display: block; width: 100%; border-radius: 24px; }
+  .cap { margin-top: 12px; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; opacity: .7; }
+
+  /* swatches */
+  .swatches { display: flex; gap: 10px; }
+  .sw { width: 86px; }
+  .sw b { display: block; height: 64px; border: 1px solid rgba(21,16,14,.12); }
+  .sw span { display: block; margin-top: 8px; font-size: 11px; line-height: 1.35; letter-spacing: .06em; }
+
+  /* tables */
+  table { width: 100%; border-collapse: collapse; }
+  td, th { text-align: left; padding: 10px 0; border-bottom: 1px solid rgba(21,16,14,.16); font-size: 15px; vertical-align: top; }
+  th { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; font-weight: 500; opacity: .7; }
+  td.price { text-align: right; font-family: var(--serif); font-size: 19px; white-space: nowrap; }
+  .pack { padding: 26px 26px 22px; border: 1px solid rgba(21,16,14,.2); display: flex; flex-direction: column; }
+  .pack.feature { background: var(--ink); color: var(--bone); border-color: var(--ink); }
+  .pack .price { font-family: var(--serif); font-weight: 300; font-size: 46px; line-height: 1; margin: 12px 0 6px; font-variation-settings: "opsz" 144; }
+  .pack .price small { font-family: var(--sans); font-size: 12px; letter-spacing: .12em; opacity: .7; }
+  .pack h3 { margin: 0; }
+  .pack ul li { font-size: 13.5px; line-height: 1.45; padding: 5px 0; border-bottom: 1px solid rgba(21,16,14,.1); }
+  .pack.feature ul li { border-color: rgba(242,233,221,.15); }
+  .tag { display: inline-block; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; padding: 4px 8px; border: 1px solid currentColor; }
+
+  /* route specimens */
+  .route { display: grid; grid-template-columns: 560px 1fr; gap: 56px; height: 100%; }
+  .spec { position: relative; height: 560px; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .spec__chips { position: absolute; left: 24px; bottom: 22px; display: flex; gap: 8px; }
+  .spec__chips b { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.4); }
+  .spec__label { position: absolute; left: 24px; top: 22px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; opacity: .85; }
+</style>
+</head>
+<body>
+
+<!-- 01 COVER -->
+<section class="slide ink no-chrome" style="padding:0">
+  <img src="../assets/video/fire-poster.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42;filter:saturate(.8)">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%, rgba(21,16,14,.2), rgba(21,16,14,.9) 75%)"></div>
+  <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+    <img src="../assets/brand/unapologetic-white.png" alt="Unapologetic Foods" style="height:26px;margin-bottom:34px">
+    <p style="font-family:var(--serif);font-weight:300;font-variation-settings:'opsz' 144,'SOFT' 50;font-size:150px;line-height:.85;letter-spacing:-.035em">Adda<span class="dot"></span></p>
+    <p style="margin-top:26px;font-size:13px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-soft)">Website &amp; identity proposal · Philadelphia</p>
+  </div>
+  <p style="position:absolute;left:80px;bottom:44px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;opacity:.75">Prepared for Unapologetic Foods</p>
+  <p style="position:absolute;right:80px;bottom:40px;font-family:var(--serif);font-size:22px">Mander Studio <span style="font-family:var(--sans);font-size:12px;letter-spacing:.2em;opacity:.6;margin-left:14px">SEPTEMBER 2026</span></p>
+</section>
+
+<!-- 02 AT A GLANCE -->
+<section class="slide">
+  <p class="kicker"><i>—</i>At a glance</p>
+  <h2 style="max-width:900px">A house this good deserves a website that <em>cooks like the kitchen.</em></h2>
+  <div class="grid3" style="margin-top:56px">
+    <div><p class="num">01</p><h3>The website</h3><p>A working concept you can click today: reservations one tap away, the Butter Chicken Experience sold properly, and a menu set like print. Desktop and phone.</p></div>
+    <div><p class="num">02</p><h3>A brand of its own</h3><p>Adda Philadelphia currently lives under the parent wordmark. We propose three identity routes, including a Punjabi-core direction, endorsed by Unapologetic Foods.</p></div>
+    <div><p class="num">03</p><h3>Launch &amp; growth</h3><p>Production build with your reservation platform, an editable menu, local SEO and a care plan, so the site fills tables long after launch.</p></div>
+  </div>
+  <div class="rule"></div>
+  <p class="small" style="opacity:1"><b style="font-weight:500">See it live:</b> hvndal.github.io/unapologeticfoods &nbsp;·&nbsp; <b style="font-weight:500">Walkthrough film:</b> hvndal.github.io/unapologeticfoods/pitch &nbsp;·&nbsp; Everything in this concept is a demo; placeholders are listed on page 11.</p>
+</section>
+
+<!-- 03 THE BRIEF -->
+<section class="slide">
+  <div class="grid2" style="grid-template-columns:1fr 1.1fr">
+    <div>
+      <p class="kicker"><i>—</i>Our read of the brief</p>
+      <h2>Unapologetic in the kitchen. <em>Unapologetic online.</em></h2>
+      <p class="lede" style="margin-top:28px">Semma, Dhamaka and Adda changed how New York eats Indian food. Philadelphia deserves the same confidence on screen: no curry-house clichés, no stock “exotic” styling, no apology.</p>
+    </div>
+    <ul class="ticks" style="margin-top:8px">
+      <li><b style="font-weight:500">Fill tables.</b> Reservation in one tap from anywhere on the site, on every device.</li>
+      <li><b style="font-weight:500">Sell the signature.</b> The Butter Chicken Experience is a preorder product; the site should sell it like one.</li>
+      <li><b style="font-weight:500">Tell the regions.</b> A menu of places: Mumbai streets, Hyderabad weddings, Rajput kitchens.</li>
+      <li><b style="font-weight:500">Carry the group’s standing.</b> Michelin, the NYT’s No. 1, James Beard, without shouting.</li>
+      <li><b style="font-weight:500">Be found.</b> Own “Indian restaurant Fishtown” and “butter chicken Philadelphia” in search and maps.</li>
+      <li><b style="font-weight:500">Stay easy to run.</b> The team updates menus, hours and one-night dinners without a developer.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 04 CONCEPT -->
+<section class="slide oxblood">
+  <div style="position:absolute;inset:0;background:var(--petals) 0 0/40px 36px;opacity:.08"></div>
+  <div class="grid2" style="position:relative;grid-template-columns:1.05fr 1fr;align-items:center;height:100%">
+    <div>
+      <p class="kicker"><i>—</i>The concept</p>
+      <h2 style="font-size:62px">Pink City at dusk, <em>lit by fire.</em></h2>
+      <p class="lede" style="margin-top:28px;color:var(--bone)">The hearth is the hero: embers in darkness. Jaipur’s palace walls give the ornament, drawn in fine gold line. Oxblood and blush from Kalamkari textiles set the ground. Unapologetic’s red dot is the one hard accent.</p>
+    </div>
+    <div>
+      <div class="swatches">
+        <div class="sw"><b style="background:#15100e"></b><span>Ink<br>#15100E</span></div>
+        <div class="sw"><b style="background:#5a1f1a;border-color:rgba(255,255,255,.3)"></b><span>Oxblood<br>#5A1F1A</span></div>
+        <div class="sw"><b style="background:#e6bcb2"></b><span>Blush<br>#E6BCB2</span></div>
+        <div class="sw"><b style="background:#22362d"></b><span>Palace green<br>#22362D</span></div>
+        <div class="sw"><b style="background:#f2e9dd"></b><span>Bone<br>#F2E9DD</span></div>
+      </div>
+      <div style="margin-top:34px;padding-top:26px;border-top:1px solid rgba(230,188,178,.3)">
+        <p style="font-family:var(--serif);font-weight:300;font-size:64px;line-height:1;color:var(--bone)">Fraunces <em style="color:var(--blush)">Light</em></p>
+        <p style="margin-top:12px;font-size:13px;letter-spacing:.3em;text-transform:uppercase">Jost for labels &amp; reading</p>
+        <p style="margin-top:12px;font-family:var(--deva);font-size:22px;color:var(--gold-soft)">अड्डा · बिरयानी · मक्खन — a quiet second voice</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 DESKTOP: HERO + HOUSE -->
+<section class="slide ink">
+  <p class="kicker"><i>—</i>Desktop · first impression</p>
+  <div class="grid2" style="grid-template-columns:1.25fr 1fr;gap:40px;margin-top:10px">
+    <div><div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>adda-philadelphia.com</span></div><img src="img/d-hero.jpg" alt=""></div><p class="cap">Fire hero: the kitchen’s hearth, dimmed so the name leads</p></div>
+    <div><div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><img src="img/d-house.jpg" alt=""></div><p class="cap">I · The House: the story in one sentence</p>
+      <ul class="ticks" style="margin-top:22px">
+        <li>A curtain intro once per visit, then out of the way</li>
+        <li>Reserve is always one tap away, in the nav and a mobile dock</li>
+        <li>Chapters in Roman numerals, like a menu</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 06 SIGNATURE + PLATES -->
+<section class="slide ink">
+  <p class="kicker"><i>—</i>Selling the signature</p>
+  <div class="grid2" style="gap:40px;margin-top:10px">
+    <div><div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><img src="img/d-signature.jpg" alt=""></div><p class="cap">II · The Butter Chicken Experience as a four-step ritual, with preorder</p></div>
+    <div><div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><img src="img/d-plates.jpg" alt=""></div><p class="cap">III · A menu of places: featured plates, editorial layout</p></div>
+  </div>
+  <p class="lede" style="margin-top:30px;max-width:980px;color:var(--bone)">The preorder button opens the booking panel with the Experience already switched on. In production it becomes a real prepaid add-on on your reservation platform.</p>
+</section>
+
+<!-- 07 MENU + DISH -->
+<section class="slide">
+  <p class="kicker"><i>—</i>The menu, set like print</p>
+  <div class="grid2" style="grid-template-columns:1fr 1.15fr;gap:40px;margin-top:10px">
+    <div><div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><img src="img/d-carte.jpg" alt=""></div><p class="cap">Full menu by course, filterable; photos follow the cursor</p></div>
+    <div><div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><img src="img/d-dish.jpg" alt=""></div><p class="cap">Every dish opens: region, story, next and previous</p></div>
+  </div>
+  <p style="margin-top:28px;max-width:1000px">Each dish carries its English name, a Devanagari second line and its region. In production the menu is edited in a CMS and the same data also produces the printable PDF menu and structured data for search engines.</p>
+</section>
+
+<!-- 08 BOOKING -->
+<section class="slide">
+  <div class="grid2" style="grid-template-columns:1.35fr 1fr;gap:44px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;align-self:start">
+      <div><div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><img src="img/d-reserve-panel.jpg" alt="" style="height:500px;object-fit:cover;object-position:top"></div><p class="cap">Choose party, date, time, extras</p></div>
+      <div><div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><img src="img/d-done-panel.jpg" alt="" style="height:500px;object-fit:cover;object-position:top"></div><p class="cap">Confirmation + calendar file</p></div>
+    </div>
+    <div>
+      <p class="kicker"><i>—</i>Booking, Resy-grade</p>
+      <h2 style="font-size:44px">Three taps to <em>a table.</em></h2>
+      <ul class="ticks" style="margin-top:24px">
+        <li>Party, a 14-day date strip and live-looking time slots</li>
+        <li>Butter Chicken Experience preorder and a Downstairs request</li>
+        <li>Occasion notes for the floor team</li>
+        <li>Confirmation with “Add to calendar” (a real .ics file)</li>
+        <li>Opens from every Reserve button, dish and section</li>
+      </ul>
+      <p class="small" style="margin-top:18px">Demo only: nothing is booked. In production this panel runs on your platform (Resy, Tock, OpenTable or SevenRooms), with real availability, deposits and confirmations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 09 MOBILE -->
+<section class="slide blush">
+  <p class="kicker"><i>—</i>Mobile first, not mobile after</p>
+  <div style="display:flex;gap:24px;align-items:flex-start;margin-top:6px">
+    <div><div class="phone"><img src="img/m-hero.jpg" alt=""></div><p class="cap">Home</p></div>
+    <div style="margin-top:34px"><div class="phone"><img src="img/m-plates.jpg" alt=""></div><p class="cap">Plates</p></div>
+    <div><div class="phone"><img src="img/m-dish.jpg" alt=""></div><p class="cap">Dish</p></div>
+    <div style="margin-top:34px"><div class="phone"><img src="img/m-reserve.jpg" alt=""></div><p class="cap">Booking sheet</p></div>
+    <div style="margin-left:18px;width:260px;flex:none">
+      <h3 style="font-size:28px;font-weight:300">Most guests will meet Adda on a phone.</h3>
+      <p style="margin-top:12px;font-size:14px">Sticky Reserve dock, thumb-sized controls, a bottom-sheet booking flow, lighter images and video for mobile data.</p>
+      <div style="margin-top:20px;display:flex;gap:14px;align-items:center">
+        <img src="img/qr.svg" alt="QR code to the live concept" style="width:96px;height:96px;background:#fff;padding:6px">
+        <p style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;line-height:1.5">Scan to open<br>on your phone</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 MORE OF THE HOUSE -->
+<section class="slide green">
+  <p class="kicker"><i>—</i>The rest of the house</p>
+  <div class="grid3" style="gap:26px;margin-top:10px">
+    <div><div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><img src="img/d-hearth.jpg" alt=""></div><p class="cap">IV · Three fires: tandoor, tawa, dum</p></div>
+    <div><div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><img src="img/d-downstairs.jpg" alt=""></div><p class="cap">V · Downstairs, the chef’s counter</p></div>
+    <div><div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><img src="img/d-uf.jpg" alt=""></div><p class="cap">VI · Unapologetic: honours &amp; the family</p></div>
+  </div>
+  <p class="lede" style="margin-top:34px;max-width:980px">Custom gold-line drawings instead of stock icons. The palace arch frames Downstairs like a jharokha window. The group’s honours are stated once, quietly, with the whole family of restaurants beside them.</p>
+</section>
+
+<!-- 11 DEMO VS PLACEHOLDERS -->
+<section class="slide">
+  <p class="kicker"><i>—</i>Honest about the demo</p>
+  <div class="grid2" style="gap:64px">
+    <div>
+      <h3 style="font-size:26px">Working in this concept</h3>
+      <ul class="ticks" style="margin-top:12px">
+        <li>Fully responsive site: desktop, tablet, phone</li>
+        <li>Booking flow, dish viewer, menu filters, hover previews</li>
+        <li>Calendar export, newsletter form (not connected)</li>
+        <li>SEO groundwork: Restaurant schema, social preview, icons</li>
+        <li>Self-hosted fonts, responsive images, optimised video</li>
+        <li>Keyboard, focus and reduced-motion support</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-size:26px">Placeholders to replace</h3>
+      <ul class="ticks" style="margin-top:12px">
+        <li><b style="font-weight:500">Photography:</b> open-source stand-ins, not Adda’s food</li>
+        <li><b style="font-weight:500">Hero film:</b> stock fire footage; we’d shoot your hearth</li>
+        <li><b style="font-weight:500">Menu:</b> drawn from press on Adda’s signatures; three items and all copy illustrative</li>
+        <li><b style="font-weight:500">Hours, contact, downstairs details:</b> invented</li>
+        <li><b style="font-weight:500">The “Adda.” wordmark:</b> a typographic stand-in, not a logo</li>
+        <li><b style="font-weight:500">Accolades:</b> wording to be approved by you</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 12 BEYOND THE DEMO -->
+<section class="slide ink">
+  <p class="kicker"><i>—</i>Beyond the demo · production features</p>
+  <h2 style="font-size:46px;max-width:950px">What the launched site does, <em>every night.</em></h2>
+  <div class="grid4" style="margin-top:40px;row-gap:30px">
+    <div><p class="num">i</p><h3>Real reservations</h3><p class="small">Resy, Tock, OpenTable or SevenRooms. Live availability, deposits, the Experience as a prepaid add-on.</p></div>
+    <div><p class="num">ii</p><h3>Editable everything</h3><p class="small">A CMS for menus, hours, events and downstairs dinners. Menu PDFs generate themselves.</p></div>
+    <div><p class="num">iii</p><h3>Search &amp; maps</h3><p class="small">Technical, local and content SEO (next page). Google Business, Apple Maps, Yelp kept in sync.</p></div>
+    <div><p class="num">iv</p><h3>Accessible by law</h3><p class="small">WCAG 2.2 AA. US restaurants are frequent ADA-suit targets; we build and test for it.</p></div>
+    <div><p class="num">v</p><h3>Private dining</h3><p class="small">Enquiry flow with capacity, minimums and menus, routed to your events inbox or CRM.</p></div>
+    <div><p class="num">vi</p><h3>Gift cards &amp; shop</h3><p class="small">Gift cards and merch through Toast, Square or Shopify, styled as part of the site.</p></div>
+    <div><p class="num">vii</p><h3>Newsletter &amp; CRM</h3><p class="small">“Letters from the kitchen” wired to Mailchimp, Klaviyo or SevenRooms guest profiles.</p></div>
+    <div><p class="num">viii</p><h3>Built for the group</h3><p class="small">One design system that can roll out to Semma, Dhamaka and the rest, each with its own voice.</p></div>
+  </div>
+  <p class="foot">Plus analytics with booking-conversion tracking · Core Web Vitals and Lighthouse 95+ · press &amp; careers pages</p>
+</section>
+
+<!-- 13 SEO -->
+<section class="slide">
+  <p class="kicker"><i>—</i>Search &amp; local visibility</p>
+  <div class="grid2" style="grid-template-columns:1fr 1.2fr;gap:56px">
+    <div>
+      <h2 style="font-size:44px">Be the answer when Philadelphia <em>searches hungry.</em></h2>
+      <p style="margin-top:22px">The terms we would own:</p>
+      <p style="margin-top:10px;font-family:var(--serif);font-size:19px;line-height:1.55">“Indian restaurant Fishtown” · “best Indian food Philadelphia” · “butter chicken Philadelphia” · “goat biryani Philly” · “Fishtown dinner reservations” · “private dining Fishtown”</p>
+    </div>
+    <table>
+      <tr><th style="width:150px">Layer</th><th>What we do</th></tr>
+      <tr><td><b style="font-weight:500">Technical</b></td><td>Fast static pages, Restaurant, Menu and Event structured data, sitemap, canonical URLs, social previews</td></tr>
+      <tr><td><b style="font-weight:500">Local</b></td><td>Google Business Profile optimisation, Apple Maps, Yelp and TripAdvisor consistency, review response plan</td></tr>
+      <tr><td><b style="font-weight:500">Content</b></td><td>Dish pages (Butter Chicken Experience, biryani), downstairs event pages, a press page that earns links</td></tr>
+      <tr><td><b style="font-weight:500">Authority</b></td><td>Links from the group’s sites and existing press; Michelin and James Beard context done right</td></tr>
+      <tr><td><b style="font-weight:500">Reporting</b></td><td>Monthly: rankings, map views, calls, and reservations that started on the site</td></tr>
+    </table>
+  </div>
+  <p class="foot" style="opacity:.75">Technical SEO and structured data are included in the website package · the three-month local SEO programme is an add-on</p>
+</section>
+
+<!-- 14 BRAND: WHY + ROUTES -->
+<section class="slide deep">
+  <p class="kicker"><i>—</i>A brand of its own</p>
+  <h2 style="max-width:1000px">Today Adda Philadelphia borrows the parent wordmark. <em>It deserves its own.</em></h2>
+  <p class="lede" style="margin-top:22px;max-width:980px">An identity for Adda Philadelphia, endorsed by Unapologetic Foods: a logo suite, colour, type, pattern, menus, signage and social. Three routes, one recommendation.</p>
+  <div class="grid3" style="margin-top:40px;gap:22px">
+    <div style="background:#8e1f1c;padding:22px;color:#f7e6c8;min-height:170px"><p class="tag">Route A · recommended</p><h3 style="margin-top:14px;font-size:26px">Phulkari</h3><p class="small" style="opacity:.9">Punjabi core. Embroidery geometry, madder and saffron silk. Maximal, but couture.</p></div>
+    <div style="background:#121212;padding:22px;color:#f4b400;min-height:170px"><p class="tag">Route B</p><h3 style="margin-top:14px;font-size:26px">Horn OK Please</h3><p class="small" style="opacity:.9;color:#f2e9dd">Truck art meets Philly sign-painting. Gold leaf, enamel colour, joy.</p></div>
+    <div style="background:#5a1f1a;padding:22px;color:#e6bcb2;min-height:170px"><p class="tag">Route C</p><h3 style="margin-top:14px;font-size:26px;color:#f2e9dd">Pink City Nocturne</h3><p class="small" style="opacity:.9">The website’s language made into a brand. Quiet luxury, fastest to roll out.</p></div>
+  </div>
+</section>
+
+<!-- 15 ROUTE A -->
+<section class="slide">
+  <div class="route">
+    <div class="spec" style="background:#8e1f1c;color:#f7e6c8">
+      <svg style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
+        <defs>
+          <clipPath id="dia"><polygon points="20,2 38,20 20,38 2,20"/></clipPath>
+          <pattern id="phul" width="40" height="40" patternUnits="userSpaceOnUse">
+            <g clip-path="url(#dia)"><g stroke="#f0a81c" stroke-width="1.1">
+              <path d="M0 4H40M0 7H40M0 10H40M0 13H40M0 16H40M0 19H40M0 22H40M0 25H40M0 28H40M0 31H40M0 34H40M0 37H40"/></g></g>
+            <polygon points="20,13 27,20 20,27 13,20" fill="#d6246e"/>
+            <polygon points="20,17.5 22.5,20 20,22.5 17.5,20" fill="#1f6b4a"/>
+          </pattern>
+          <linearGradient id="fadeA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8e1f1c" stop-opacity="0"/><stop offset=".55" stop-color="#8e1f1c" stop-opacity=".92"/></linearGradient>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#phul)" opacity=".85"/>
+        <rect x="70" y="120" width="420" height="300" fill="#8e1f1c"/>
+        <rect x="80" y="130" width="400" height="280" fill="none" stroke="#f0a81c" stroke-width="1" stroke-dasharray="3 3"/>
+      </svg>
+      <span class="spec__label">Route A · Phulkari · direction sketch</span>
+      <p style="position:relative;font-family:'Baloo Paaji 2';font-weight:800;font-size:128px;line-height:.9;letter-spacing:-.02em;color:#f0a81c">adda</p>
+      <p style="position:relative;font-family:'Baloo Paaji 2';font-weight:500;font-size:40px;line-height:1.2;color:#f7e6c8;margin-top:6px">ਅੱਡਾ</p>
+      <p style="position:relative;margin-top:14px;font-size:11px;letter-spacing:.34em;text-transform:uppercase">Philadelphia · by Unapologetic Foods</p>
+      <div class="spec__chips"><b style="background:#8e1f1c"></b><b style="background:#f0a81c"></b><b style="background:#d6246e"></b><b style="background:#1f6b4a"></b><b style="background:#efe2cf"></b></div>
+    </div>
+    <div>
+      <p class="kicker"><i>A</i>Recommended</p>
+      <h2 style="font-size:50px">Phulkari: <em>stitched in Punjab.</em></h2>
+      <p class="lede" style="margin-top:20px">Punjab’s flower-work embroidery, dense darning-stitch diamonds in silk on handspun red khaddar, becomes the whole system.</p>
+      <ul class="ticks" style="margin-top:18px">
+        <li><b style="font-weight:500">Mark:</b> a custom “adda” built from stitch geometry, Gurmukhi companion, diamond “bagh” monogram</li>
+        <li><b style="font-weight:500">Touchpoints:</b> menus on khadi paper, embroidered aprons and napkin edges, a stitched wrap for the Butter Chicken Experience</li>
+        <li><b style="font-weight:500">Story:</b> commissioned with a Punjabi artisan collective, a real provenance to tell</li>
+        <li><b style="font-weight:500">Why:</b> the food is Punjab-rooted; maximalism that reads as couture, and ownable</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 16 ROUTE B -->
+<section class="slide">
+  <div class="route">
+    <div class="spec" style="background:#121212;color:#f2e9dd">
+      <svg style="position:absolute;left:0;right:0;top:0;height:46px;width:100%" aria-hidden="true">
+        <defs><pattern id="chev" width="28" height="46" patternUnits="userSpaceOnUse"><rect width="28" height="46" fill="#d7261e"/><path d="M0 8 L14 22 L28 8 V20 L14 34 L0 20Z" fill="#f4b400"/><circle cx="14" cy="40" r="3" fill="#0f7c8c"/></pattern></defs>
+        <rect width="100%" height="46" fill="url(#chev)"/>
+      </svg>
+      <svg style="position:absolute;left:0;right:0;bottom:0;height:46px;width:100%;transform:scaleY(-1)" aria-hidden="true"><rect width="100%" height="46" fill="url(#chev)"/></svg>
+      <span class="spec__label" style="top:62px">Route B · Horn OK Please · direction sketch</span>
+      <svg width="150" height="150" viewBox="0 0 100 100" style="position:absolute;right:34px;top:88px" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="#0f7c8c"/><circle cx="50" cy="50" r="34" fill="#f2e9dd"/><circle cx="50" cy="50" r="22" fill="#1b4f9c"/><circle cx="50" cy="50" r="10" fill="#121212"/><circle cx="46" cy="46" r="3" fill="#fff"/>
+      </svg>
+      <p style="position:relative;font-family:'Rozha One';font-size:150px;line-height:1;color:#f4b400;text-shadow:4px 4px 0 #d7261e, 8px 8px 0 #0f7c8c, 12px 12px 0 #000">ADDA</p>
+      <p style="position:relative;margin-top:18px;font-family:'Rozha One';font-size:26px;color:#f2e9dd;letter-spacing:.06em">Horn OK Please · Stay Till Late</p>
+      <div class="spec__chips" style="bottom:64px"><b style="background:#d7261e"></b><b style="background:#f4b400"></b><b style="background:#0f7c8c"></b><b style="background:#3aa655"></b><b style="background:#121212"></b></div>
+    </div>
+    <div>
+      <p class="kicker"><i>B</i>The loud one</p>
+      <h2 style="font-size:50px">Truck art meets <em>Philly sign-painting.</em></h2>
+      <p class="lede" style="margin-top:20px">North India’s painted trucks and dhaba menu boards, met by the hand-lettering tradition of the City of Murals.</p>
+      <ul class="ticks" style="margin-top:18px">
+        <li><b style="font-weight:500">Mark:</b> shaded, gold-leafed display lettering; evil-eye, parrot and peacock motifs</li>
+        <li><b style="font-weight:500">Touchpoints:</b> a façade mural co-painted by an Indian truck artist and a Fishtown sign painter, window gilding, dhaba menu boards, matchbooks</li>
+        <li><b style="font-weight:500">Why:</b> the most joyful, most photographed route, and the strongest Fishtown tie-in</li>
+        <li><b style="font-weight:500">Watch-out:</b> held in a strict grid and palette so it lands as craft, never kitsch</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 17 ROUTE C -->
+<section class="slide">
+  <div class="route">
+    <div class="spec" style="background:#5a1f1a;color:#e6bcb2">
+      <div style="position:absolute;inset:0;background:var(--petals) 0 0/40px 36px;opacity:.22"></div>
+      <svg viewBox="-8 -8 216 316" style="position:absolute;width:300px;height:440px;left:50%;top:50%;transform:translate(-50%,-50%)" aria-hidden="true">
+        <path fill="#5a1f1a" stroke="#d6b98a" stroke-width="1" d="M0 300 L0 128 A28 28 0 0 1 15 84 A28 28 0 0 1 42 46 A26 26 0 0 1 72 18 A22 22 0 0 1 100 0 A22 22 0 0 1 128 18 A26 26 0 0 1 158 46 A28 28 0 0 1 185 84 A28 28 0 0 1 200 128 L200 300 Z"/>
+      </svg>
+      <span class="spec__label">Route C · Pink City Nocturne · direction sketch</span>
+      <p style="position:relative;font-family:var(--serif);font-weight:300;font-variation-settings:'opsz' 144,'SOFT' 50;font-size:110px;line-height:.9;letter-spacing:-.03em;color:#f2e9dd;margin-top:60px">Adda<span class="dot"></span></p>
+      <p style="position:relative;font-family:var(--deva);font-size:26px;color:#d6b98a;margin-top:10px">अड्डा</p>
+      <div class="spec__chips"><b style="background:#15100e"></b><b style="background:#5a1f1a"></b><b style="background:#e6bcb2"></b><b style="background:#22362d"></b><b style="background:#b8925a"></b></div>
+    </div>
+    <div>
+      <p class="kicker"><i>C</i>The quiet one</p>
+      <h2 style="font-size:50px">Pink City <em>Nocturne.</em></h2>
+      <p class="lede" style="margin-top:20px">The language of this website, made into a full identity: oxblood and blush, gold hairlines, the cusped arch as a frame, Unapologetic’s red dot as punctuation.</p>
+      <ul class="ticks" style="margin-top:18px">
+        <li><b style="font-weight:500">Mark:</b> a refined serif wordmark with the red dot; arch monogram for stamps and napkins</li>
+        <li><b style="font-weight:500">Touchpoints:</b> blind-embossed menus, brass signage, petal-pattern tableware</li>
+        <li><b style="font-weight:500">Why:</b> quiet luxury, ready on day one, consistent with the site</li>
+        <li><b style="font-weight:500">Hybrid:</b> often the winner is A as the core, with B saved for the façade</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 18 PROCESS -->
+<section class="slide green">
+  <p class="kicker"><i>—</i>Process &amp; timeline</p>
+  <h2 style="font-size:48px">Eight weeks, <em>four stages.</em></h2>
+  <div class="grid4" style="margin-top:46px">
+    <div style="border-top:1px solid rgba(214,185,138,.5);padding-top:18px"><p class="num">Weeks 1–2</p><h3 style="margin-top:6px">Discover</h3><p class="small">Kitchen visit, menu and brand workshop, platform audit (reservations, POS, email). Three identity routes presented.</p></div>
+    <div style="border-top:1px solid rgba(214,185,138,.5);padding-top:18px"><p class="num">Weeks 3–4</p><h3 style="margin-top:6px">Design</h3><p class="small">Chosen route refined into a logo suite and system; website designs for every page on desktop and mobile; photography brief.</p></div>
+    <div style="border-top:1px solid rgba(214,185,138,.5);padding-top:18px"><p class="num">Weeks 5–7</p><h3 style="margin-top:6px">Build</h3><p class="small">Production build, CMS, reservation and newsletter integration, SEO and accessibility, menus and brand guidelines.</p></div>
+    <div style="border-top:1px solid rgba(214,185,138,.5);padding-top:18px"><p class="num">Week 8</p><h3 style="margin-top:6px">Launch</h3><p class="small">Content load, QA on real devices, team training, Google Business launch, then 30 days of included support.</p></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-top:44px">
+    <div style="grid-column:span 2;background:#8ea08c;color:#15100e;padding:10px 12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase">Discover · routes</div>
+    <div style="grid-column:span 2;background:#d6b98a;color:#15100e;padding:10px 12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase">Identity + site design</div>
+    <div style="grid-column:span 3;background:#e6bcb2;color:#15100e;padding:10px 12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase">Build · integrations · SEO</div>
+    <div style="grid-column:span 1;background:#c8102e;color:#f2e9dd;padding:10px 12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase">Launch</div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-top:8px;font-size:11px;letter-spacing:.16em;opacity:.7">
+    <span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span><span>W7</span><span>W8</span>
+  </div>
+  <p class="foot">Two rounds of revisions at each design stage · a weekly 30-minute check-in · one point of contact at Mander Studio</p>
+</section>
+
+<!-- 19 INVESTMENT -->
+<section class="slide">
+  <p class="kicker"><i>—</i>Investment</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1.08fr 1.15fr;gap:18px;align-items:stretch">
+    <div class="pack"><h3>Website</h3><p class="price">$14,500</p><p class="small">Design &amp; production build</p>
+      <ul style="margin-top:12px"><li>Every page, desktop &amp; mobile</li><li>CMS for menus, hours, events</li><li>Reservation integration</li><li>SEO &amp; accessibility (AA)</li><li>Analytics, launch, 30 days support</li></ul></div>
+    <div class="pack"><h3>Brand identity</h3><p class="price">$12,500</p><p class="small">Adda Philadelphia</p>
+      <ul style="margin-top:12px"><li>Three routes, one refined</li><li>Logo suite + endorsement lockup</li><li>Colour, type, pattern, photo direction</li><li>Menu system (dinner, bar, Experience)</li><li>Brand guidelines</li></ul></div>
+    <div class="pack feature"><p class="tag" style="align-self:flex-start;color:var(--gold-soft)">Recommended</p><h3 style="margin-top:12px">Full package</h3><p class="price">$24,500</p><p class="small">Website + identity · save $2,500</p>
+      <ul style="margin-top:12px"><li>Everything in both</li><li>Site built on the new identity</li><li>Launch social kit included</li><li>Priority scheduling</li></ul></div>
+    <div>
+      <table>
+        <tr><th>Add-ons</th><th></th></tr>
+        <tr><td>Local SEO &amp; Google launch (3 months)</td><td class="price">$2,400</td></tr>
+        <tr><td>Photography art direction, per day</td><td class="price">$1,800</td></tr>
+        <tr><td>Signage, façade &amp; print</td><td class="price">from $4,500</td></tr>
+        <tr><td>Gift cards &amp; online shop</td><td class="price">$2,500</td></tr>
+        <tr><td>Group rollout, per restaurant</td><td class="price">from $6,500</td></tr>
+        <tr><td>Care &amp; growth plan</td><td class="price">$950/mo</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="small" style="margin-top:22px;opacity:1">Terms: 50% to begin, 30% at design approval, 20% at launch. Third-party costs (photographer, font licences, platform fees, hosting, printing) billed at cost with no mark-up. Quote valid for 30 days.</p>
+</section>
+
+<!-- 20 WHAT WE NEED -->
+<section class="slide blush">
+  <p class="kicker"><i>—</i>What we’d need from you</p>
+  <div class="grid3" style="gap:40px;margin-top:6px">
+    <div><h3>Brand &amp; content</h3><ul class="ticks">
+      <li>Existing logo files and any brand guidelines</li>
+      <li>The current Adda Philadelphia menu, prices, allergens and drinks</li>
+      <li>Butter Chicken Experience details: price, lead time, party size</li>
+      <li>Hours, phone, email, accessibility and transit notes</li>
+      <li>Founder and chef bios, approved press and awards wording</li></ul></div>
+    <div><h3>Photography &amp; film</h3><ul class="ticks">
+      <li>Any existing dish, room and team photos</li>
+      <li>Or a shoot day: we direct, you cook</li>
+      <li>Permission to film the tandoor and grill for the hero</li>
+      <li>Downstairs: concept, capacity and how it’s booked</li></ul></div>
+    <div><h3>Access &amp; decisions</h3><ul class="ticks">
+      <li>Reservation platform (Resy, Tock, OpenTable, SevenRooms)</li>
+      <li>POS / gift cards (Toast, Square), email platform</li>
+      <li>Domain &amp; DNS, Google Business Profile, Instagram</li>
+      <li>One decision-maker and a weekly feedback slot</li></ul></div>
+  </div>
+  <div style="margin-top:44px;padding:24px 28px;background:var(--ink);color:var(--bone);display:flex;align-items:center;gap:32px">
+    <p style="font-family:var(--serif);font-size:24px;font-weight:300;flex:none">If you send only three things:</p>
+    <p style="font-size:15px">① the current menu with prices &nbsp;·&nbsp; ② ten favourite photos of the food and room &nbsp;·&nbsp; ③ which reservation platform you use. We can start with that.</p>
+  </div>
+</section>
+
+<!-- 21 NEXT -->
+<section class="slide ink no-chrome">
+  <div style="position:absolute;inset:0;background:var(--petals) 0 0/40px 36px;opacity:.06"></div>
+  <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:center">
+    <p class="kicker"><i>—</i>Next steps</p>
+    <h2 style="font-size:72px;max-width:1000px">A twenty-minute walkthrough, <em>then we cook.</em></h2>
+    <div class="grid3" style="margin-top:48px;max-width:1080px">
+      <div><p class="num">1</p><p>Click through the live concept and watch the film.</p></div>
+      <div><p class="num">2</p><p>A 20-minute call to walk it through and hear what matters most to you.</p></div>
+      <div><p class="num">3</p><p>We confirm scope, pick a start date, and begin with a kitchen visit.</p></div>
+    </div>
+    <div style="margin-top:56px;display:flex;align-items:center;gap:26px">
+      <img src="img/qr.svg" alt="QR code to the live concept" style="width:92px;height:92px;background:#fff;padding:6px">
+      <div>
+        <p style="font-family:var(--serif);font-size:30px">Mander Studio</p>
+        <p class="small" style="margin-top:4px">hvndal.github.io/unapologeticfoods &nbsp;·&nbsp; reply to this email to book the call</p>
+      </div>
+    </div>
+  </div>
+  <p style="position:absolute;right:80px;bottom:36px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.5">Concept for discussion · Unapologetic Foods trademarks belong to their owners</p>
+</section>
+
+</body>
+</html>

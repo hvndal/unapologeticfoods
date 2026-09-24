@@ -16,3 +16,14 @@ Open `index.html` in a browser, or run a local server (`python3 -m http.server`)
 - `assets/img/` — placeholder food photography from the open-source Foodish project; see `assets/ASSETS.md` for sources and the licence caveat. Replace with a real shoot before any public use.
 - `assets/brand/` — Unapologetic Foods wordmark (transparent PNGs from the supplied logo).
 - `DESIGN_PROMPT.md` — the design brief.
+
+## Pitch kit (`pitch/`)
+- `pitch/index.html` — one-link pitch page: walkthrough film, live-site button, PDF download, QR code.
+- `pitch/Adda-Philadelphia-Proposal-Mander-Studio.pdf` — 21-page proposal (rendered from `pitch/proposal.html`).
+- `pitch/adda-walkthrough.mp4` — silent walkthrough film (desktop + mobile).
+- `pitch/EMAIL.md` — email and DM reply drafts, plus the pre-send checklist.
+
+## Hosting on GitHub Pages
+Settings → Pages → Deploy from a branch → `main` / `(root)`. The site then lives at
+https://hvndal.github.io/unapologeticfoods/ and the pitch page at https://hvndal.github.io/unapologeticfoods/pitch/.
+Pages are marked `noindex` so the concept stays out of search results.
