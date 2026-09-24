@@ -3,7 +3,7 @@
 A design demo for Unapologetic Foods’ Adda at 1700 Frankford Ave, Fishtown. **Not an official site**: menu, hours and photography are illustrative.
 
 ## View it
-Open `index.html` (pitch page) or `site.html` (the website) in a browser, or run a local server (`python3 -m http.server`) and go to http://localhost:8000.
+Open `index.html` in a browser, or run a local server (`python3 -m http.server`) and go to http://localhost:8000.
 
 - **Presenter** (bottom-left, or press **P**): jumps between the 12 pitch screens, including the reservation panel, dish detail and a phone-frame mobile demo.
 - Deep links: `?screen=reserve`, `?screen=dish`, `?screen=mobile`, `?screen=menu` …
@@ -18,12 +18,9 @@ Open `index.html` (pitch page) or `site.html` (the website) in a browser, or run
 - `DESIGN_PROMPT.md` — the design brief.
 
 ## Pitch kit (`pitch/`)
-- `pitch/index.html` — one-link pitch page: walkthrough film, live-site button, PDF download, QR code.
 - `pitch/Adda-Philadelphia-Proposal-Mander-Studio.pdf` — 21-page proposal (rendered from `pitch/proposal.html`).
 - `pitch/adda-walkthrough.mp4` — silent walkthrough film (desktop + mobile).
 - `pitch/EMAIL.md` — email and DM reply drafts, plus the pre-send checklist.
 
-## Hosting on GitHub Pages
-Settings → Pages → Deploy from a branch → `main` / `(root)`. The site then lives at
-https://hvndal.github.io/unapologeticfoods/ and the pitch page at https://hvndal.github.io/unapologeticfoods/pitch/.
-Pages are marked `noindex` so the concept stays out of search results.
+## Hosting
+GitHub Pages from `main` (root) serves the demo at https://hvndal.github.io/unapologeticfoods/. `vercel.json` is ready for Vercel. Pages are `noindex`.
