@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANGAAR | An Unapologetic Indian Monograph — Fishtown, Philadelphia</title>
+  
+  <!-- GOOGLE FONTS: BODONI MODA (HIGH-CONTRAST DIDONE SERIF) + ANTON (COMPRESSED VINTAGE PRINT GOTHIC) + CORMORANT GARAMOND + PLUS JAKARTA SANS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="luxury-components.css">
+</head>
+<body class="theme-print-culture">
+
+  <!-- SVG SHADERS & GRAPHIC DEFINITIONS: HALFTONE DOT MATRIX & PAPER GRAIN -->
+  <svg class="svg-defs" aria-hidden="true">
+    <defs>
+      <!-- HALFTONE PRINT PATTERN -->
+      <pattern id="halftone-dots" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="1.5" fill="#14110F" opacity="0.12"/>
+      </pattern>
+      <!-- SCALLOPED STAMP PATH CLIP -->
+      <filter id="tactile-paper-grain">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
+        <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.05 0" in="noise" result="coloredNoise"/>
+        <feComposite operator="in" in2="SourceGraphic"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- STATE / SCREEN SWITCHER DIRECTOR BAR (FOR PRESENTATION & REVIEW) -->
+  <aside id="state-director-bar" class="director-bar">
+    <div class="director-bar__inner">
+      <div class="director-bar__brand">
+        <span class="director-badge">UNAPOLOGETIC FOODS</span>
+        <span class="director-title">ANGAAR — PRINT CULTURE MONOGRAPH</span>
+      </div>
+      <div class="director-bar__screens-container">
+        <span class="director-label">SCREENS:</span>
+        <div class="director-pills" id="screen-selector-group">
+          <button class="director-btn active" data-target="screen-homepage">01. Hero Film (100vw)</button>
+          <button class="director-btn" data-target="state-homepage-scrolled">02. Scrolled State</button>
+          <button class="director-btn" data-target="screen-poster-spread">03. 70s Poster Spread</button>
+          <button class="director-btn" data-target="screen-philosophy">04. Six Tenets Manifesto</button>
+          <button class="director-btn" data-target="screen-menu">05. Full Menu (Publication)</button>
+          <button class="director-btn" data-target="screen-canon-popart">06. Pop-Art Canon</button>
+          <button class="director-btn" data-target="state-menu-expanded">07. Expanded Item</button>
+          <button class="director-btn" data-target="screen-chef">08. Chef Newsprint Spread</button>
+          <button class="director-btn" data-target="screen-private">09. Foundry Salon</button>
+          <button class="director-btn" data-target="screen-journal">10. Subcontinental Journal</button>
+          <button class="director-btn" data-target="state-reservation">11. Reservation Modal</button>
+          <button class="director-btn mobile-trigger" data-target="screen-mobile-home">12. Mobile Suite</button>
+        </div>
+      </div>
+      <div class="director-bar__meta">
+        <span class="meta-tag">ED. 04 / FISHTOWN FOUNDRY</span>
+        <button id="toggle-device-view" class="device-toggle-btn" title="Toggle Mobile Device Frame">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          <span>Device Frame</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN APPLICATION VIEWPORT -->
+  <div id="app-viewport" class="app-viewport">
+
+    <!-- DESKTOP WORKSPACE CANVAS -->
+    <div id="desktop-canvas" class="viewport-canvas desktop-canvas active">
+
+      <!-- STICKY SCROLLED COMPACT NAVIGATION (02. SCROLLED STATE) -->
+      <div id="sticky-scroll-nav" class="sticky-compact-nav">
+        <div class="sticky-nav-inner">
+          <div class="sticky-left">
+            <span class="sticky-logo">ANGAAR</span>
+            <span class="sticky-sep">•</span>
+            <span class="sticky-chapter" id="current-chapter-title">I. PROLOGUE // FULL-SCREEN BRAND FILM</span>
+          </div>
+          <div class="sticky-center">
+            <span class="coordinate-text">39°58'24"N 75°07'58"W &mdash; FISHTOWN FOUNDRY &bull; PHILADELPHIA</span>
+          </div>
+          <div class="sticky-right">
+            <a href="#menu" class="sticky-link" data-screen-jump="screen-menu">The Monograph Menu</a>
+            <button class="sticky-reserve-btn" id="sticky-reserve-trigger">RESERVE A TABLE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN CONTENT STREAM -->
+      <main id="main-content-stream" class="content-stream">
+
+        <!-- ========================================================
+             SCREEN 01: HERO BRAND FILM — FULL SCREEN (100vw × 100vh)
+             NO CARDS. NO FRAMES. LAYERED CINEMATIC EDITORIAL IDENTITY.
+             ======================================================== -->
+        <section id="screen-homepage" class="screen-view section-hero-fullscreen">
+          
+          <!-- FULL-SCREEN PEXELS BACKGROUND VIDEO -->
+          <div class="hero-video-container">
+            <video class="hero-video-bg" autoplay muted loop playsinline preload="auto" poster="white-repeat-pattern.jpg">
+              <source src="fire1.mp4" type="video/mp4">
+              <source src="hero-flame-video.mp4" type="video/mp4">
+              <source src="hero-hearth-video.mp4" type="video/mp4">
+            </video>
+            <!-- CINEMATIC VIGNETTE & INK FILTER OVERLAY -->
+            <div class="hero-video-scrim"></div>
+            <div class="hero-halftone-grain"></div>
+          </div>
+
+          <!-- TOP EDITORIAL OVERLAY NAVIGATION -->
+          <header class="hero-over-nav">
+            <div class="hero-nav-brand">
+              <span class="hero-brand-symbol">अ</span>
+              <div class="hero-brand-titles">
+                <span class="hero-brand-name">ANGAAR</span>
+                <span class="hero-brand-sub">UNAPOLOGETIC FOODS • FISHTOWN RESIDENCY</span>
+              </div>
+            </div>
+
+            <div class="hero-nav-cta">
+              <button class="btn-stamp-reserve" id="open-reserve-btn">
+                <span class="btn-lux-label">Reserve a Table</span>
+                <span class="btn-lux-meta">Fourteen Courses &middot; $245</span>
+              </button>
+            </div>
+
+            <nav class="hero-nav-links">
+              <a href="#menu" class="hero-link" data-screen-jump="screen-menu">Tasting Menu</a>
+              <a href="#philosophy" class="hero-link" data-screen-jump="screen-philosophy">Manifesto</a>
+              <a href="#chef" class="hero-link" data-screen-jump="screen-chef">Arjun Mehra</a>
+              <a href="#private" class="hero-link" data-screen-jump="screen-private">Foundry Salon</a>
+              <a href="#journal" class="hero-link" data-screen-jump="screen-journal">Journal</a>
+              <span class="edition-badge">ED. 04</span>
+            </nav>
+          </header>
+
+          <!-- VERTICAL EDGE ANNOTATIONS (PRINT MARGINS) -->
+          <div class="hero-edge-strip hero-edge-strip--left">
+            <span class="edge-text">CULINARY CULTURE &bull; LIVING EMBER &bull; ANCESTRAL FIRE &bull; FISHTOWN</span>
+          </div>
+          <div class="hero-edge-strip hero-edge-strip--right">
+            <span class="edge-text">39°58'24"N 75°07'58"W &bull; MICHELIN CALIBER &bull; VOL. IV</span>
+          </div>
+
+          <!-- CENTER/BOTTOM LAYERED HIGH-CONTRAST TYPOGRAPHY -->
+          <div class="hero-content-layer">
+            
+            <div class="hero-campaign-badge">
+              <span class="badge-postage-border">
+                <span class="badge-inner-text">MICHELIN CALIBER &bull; AN UNAPOLOGETIC INAUGURATION</span>
+              </span>
+            </div>
+
+            <div class="hero-title-group">
+              <h1 class="hero-monumental-headline">
+                <span class="headline-part-serif">ANGAAR</span>
+                <span class="headline-part-italic">the living ember</span>
+                <span class="headline-part-bold">39&deg;58'24"N 75&deg;07'58"W &bull; FISHTOWN FOUNDRY &bull; PHILADELPHIA</span>
+              </h1>
+            </div>
+
+            <div class="hero-bottom-grid">
+              <div class="hero-poetic-column">
+                <p class="hero-manifesto-lead">
+                  Twenty-eight regional subcontinental food cultures, kept whole. Raw clay tandoors, hickory embers, and indigenous fermentation forged inside a 19th-century Fishtown iron foundry.
+                </p>
+                <div class="hero-button-cluster">
+                  <button class="btn-poster-action" data-screen-jump="screen-menu">
+                    <span>THE TASTING MONOGRAPH</span>
+                    <span class="btn-arrow">&rarr;</span>
+                  </button>
+                  <button class="btn-poster-outline" data-screen-jump="screen-poster-spread">
+                    <span>THE DESIGN ARCHIVE</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="hero-film-specs">
+                <div class="film-spec-box">
+                  <span class="spec-label">FILM DURATION</span>
+                  <span class="spec-val">01:24 &bull; LIVE HEARTH &amp; TANDOOR</span>
+                </div>
+                <div class="film-spec-box">
+                  <span class="spec-label">CINEMATOGRAPHY</span>
+                  <span class="spec-val">35MM ANAMORPHIC &bull; LEICA S3</span>
+                </div>
+                <div class="film-spec-box">
+                  <span class="spec-label">LOCATION</span>
+                  <span class="spec-val">1242 FRANKFORD AVE, PHILADELPHIA</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- TICKER RIBBON AT BASE OF VIEWPORT -->
+          <div class="hero-viewport-ticker">
+            <div class="ticker-flow">
+              <span>UNAPOLOGETIC FOODS</span>
+              <span class="ticker-dot">&#10038;</span>
+              <span>SAUCES REDUCED, NEVER DILUTED</span>
+              <span class="ticker-dot">&#10038;</span>
+              <span>1960S INDIAN MODERNIST TYPOGRAPHY</span>
+              <span class="ticker-dot">&#10038;</span>
+              <span>ARCHIVAL PROVENANCE, HAND-STAMPED</span>
+              <span class="ticker-dot">&#10038;</span>
+              <span>KASHMIRI MORELS &bull; BARNEGAT SCALLOPS &bull; MALABAR PEPPER</span>
+              <span class="ticker-dot">&#10038;</span>
+              <span>FISHTOWN FOUNDRY &bull; PHILADELPHIA</span>
+              <span class="ticker-dot">&#10038;</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================
+             SCREEN 02 / SPREAD 02: THE DESIGN ARCHIVE
+             ARCHIVAL WAX SEAL + COMPRESSED WOODBLOCK TYPE + PROVENANCE CARD
+             ======================================================== -->
+        <section id="screen-poster-spread" class="screen-view section-poster-spread bg-saffron">
+          
+          <div class="poster-container">
+            
+            <!-- TOP SEAL & MASTHEAD COMPOSITION -->
+            <div class="mumbai-banner-wrapper">
+              
+              <div class="stamp-outer-box">
+                <!-- ARCHIVAL REVENUE SEAL -->
+                <div class="lux-seal">
+                  <span class="lux-seal-ring">ANGAAR &bull; FISHTOWN FOUNDRY &bull; EST. MMXXVI &bull;</span>
+                  <span class="lux-seal-core">अंगार</span>
+                </div>
+
+                <!-- OVERSIZED COMPRESSED WOODBLOCK HEADLINE (LIKE "MUMBAI") -->
+                <h2 class="poster-giant-compressed-title">
+                  ANGAAR
+                </h2>
+              </div>
+
+              <!-- PROVENANCE CARD -->
+              <div class="lux-provenance-card">
+                <span class="lux-provenance-label">Editorial Note</span>
+                <p class="lux-provenance-text">
+                  Indian heritage, given a grave and contemporary edge — cast in iron, tempered by embers, kept honest by the chefs of Unapologetic Foods.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- POSTER BODY EDITORIAL GRID -->
+            <div class="poster-editorial-columns">
+              <div class="poster-left-col">
+                <span class="poster-archival-num">N° 48 / COMMERCIAL PRINT REGISTER</span>
+                <h3 class="poster-subheading-didone">
+                  “We do not decorate. We incinerate sixty years of Western restaurant appeasement.”
+                </h3>
+                <div class="double-line-rule"></div>
+                <p class="poster-body-text">
+                  Look closely at 1970s Indian advertising posters: the raw exuberance of hand-lettered movie hoardings, the bold geometry of Matchbox labels, the uninhibited typography of Campa Cola and Thums Up glass bottles, and the dense lithography of vintage newspaper broadsides. We reclaim this vivid visual abundance to tell the unapologetic story of Indian fire cooking in Fishtown.
+                </p>
+              </div>
+
+              <div class="poster-right-col">
+                <!-- VINTAGE COMMERCIAL BADGE CARD -->
+                <div class="retro-ad-badge-card bg-cream-linen">
+                  <div class="retro-badge-header">
+                    <span class="ad-tagline">“A house built entirely around fire.”</span>
+                    <span class="ad-date">ESTD. 2026</span>
+                  </div>
+                  <div class="ad-illustration-placeholder">
+                    <div class="crop-mark top-left"></div>
+                    <div class="crop-mark bottom-right"></div>
+                    <span class="ad-ill-title">[BOTANICAL WOODCUT &bull; BYADGI CHILLI &amp; WILD PEPPER]</span>
+                    <p class="ad-ill-sub">Hand-etched black ink illustration with vintage halftone screen dots.</p>
+                  </div>
+                  <div class="retro-badge-footer">
+                    <span>UNAPOLOGETIC FOODS GROUP</span>
+                    <span>NEW YORK &bull; PHILADELPHIA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ========================================================
+             SPREAD 03: THE SIX TENETS MANIFESTO (FLAT SATURATED FIELDS)
+             CONTRASTING COLOR BLOCKS: PLUM, HOT PINK, LEAF GREEN, MUSTARD, TERRACOTTA
+             ======================================================== -->
+        <section id="screen-philosophy" class="screen-view section-tenets-mosaic">
+          
+          <div class="mosaic-masthead bg-paper-cream">
+            <span class="manifesto-tag">DISPATCH FROM THE HEARTH // CHAPTER 01</span>
+            <h2 class="manifesto-title-didone">
+              <span>“India is</span>
+              <em>NOT ONE CUISINE.”</em>
+            </h2>
+            <div class="double-line-rule center-rule"></div>
+            <p class="manifesto-deck">
+              Twenty-eight subcontinental civilizations, six seasons (*Ritu*), and ten thousand fermentation cultures. Each tenet below is anchored in a dedicated field of saturated print colour.
+            </p>
+          </div>
+
+          <!-- SATURATED GRAPHIC COLOR BLOCKS MOSAIC -->
+          <div class="saturated-tenets-grid">
+            
+            <!-- TENET 01: PLACE (DEEP INDIGO) -->
+            <article class="color-block-card bg-carbon text-ivory">
+              <div class="card-inner-pad">
+                <div class="block-top-row">
+                  <span class="block-num">01 / PLACE</span>
+                  <span class="block-devanagari">स्थान</span>
+                </div>
+                <h3 class="block-heading-anton">TERROIR &bull; GEOGRAPHY</h3>
+                <div class="block-rule-light"></div>
+                <p class="block-copy">
+                  Terroir is biological memory. Wild mountain garlic from high-altitude Ladakh valleys, black stone flower gathered from Deccan basalt, and Tellicherry pepper harvested from jungle vines.
+                </p>
+                <div class="block-footer-tag">HIMALAYA &bull; DECCAN &bull; COAST</div>
+              </div>
+            </article>
+
+            <!-- TENET 02: MEMORY (BURNT MUSTARD SAFFRON) -->
+            <article class="color-block-card bg-saffron text-charcoal">
+              <div class="card-inner-pad">
+                <div class="block-top-row">
+                  <span class="block-num">02 / MEMORY</span>
+                  <span class="block-devanagari">स्मृति</span>
+                </div>
+                <h3 class="block-heading-anton">RECOLLECTION &bull; EMOTION</h3>
+                <div class="block-rule-dark"></div>
+                <p class="block-copy">
+                  Every preparation begins with an emotional coordinate: the pungent sting of raw mustard oil pressing in rural Bengal, or the scorched crust of an Amritsar morning tandoor.
+                </p>
+                <div class="block-footer-tag">SUBCONTINENTAL RECOLLECTION</div>
+              </div>
+            </article>
+
+            <!-- TENET 03: SEASON (RANI HOT PINK — FROM SAMOSA REFERENCE 3) -->
+            <article class="color-block-card bg-jamun text-ivory">
+              <div class="card-inner-pad">
+                <div class="block-top-row">
+                  <span class="block-num">03 / SEASON</span>
+                  <span class="block-devanagari">ऋतु</span>
+                </div>
+                <h3 class="block-heading-anton">THE SIX-RITU CYCLE</h3>
+                <div class="block-rule-light"></div>
+                <p class="block-copy">
+                  Six subcontinental seasons, not four. We pivot the 14 courses with the monsoon downpour, pre-winter chill (Hemanta), and summer heat waves across Pennsylvania farms.
+                </p>
+                <div class="block-footer-tag">MONSOON &bull; HEMANTA &bull; GRISHMA</div>
+              </div>
+            </article>
+
+            <!-- TENET 04: FIRE (FOUNDRY TERRACOTTA CLOTH) -->
+            <article class="color-block-card bg-terracotta-cloth text-ivory">
+              <div class="card-inner-pad">
+                <div class="block-top-row">
+                  <span class="block-num">04 / FIRE</span>
+                  <span class="block-devanagari">अग्नि</span>
+                </div>
+                <h3 class="block-heading-anton">LIVE CHARCOAL &bull; CINDER</h3>
+                <div class="block-rule-light"></div>
+                <p class="block-copy">
+                  The primitive tandoor and live iron hearth. Charcoal is not heat; it is an active ingredient. Pennsylvania hickory and coconut husk embers season every single course.
+                </p>
+                <div class="block-footer-tag">CLAY TANDOOR &bull; HICKORY ASH</div>
+              </div>
+            </article>
+
+            <!-- TENET 05: FERMENT (DEEP LEAF GREEN) -->
+            <article class="color-block-card bg-leaf-green text-ivory">
+              <div class="card-inner-pad">
+                <div class="block-top-row">
+                  <span class="block-num">05 / FERMENT</span>
+                  <span class="block-devanagari">किण्वन</span>
+                </div>
+                <h3 class="block-heading-anton">NATIVE MICROBIOLOGY</h3>
+                <div class="block-rule-light"></div>
+                <p class="block-copy">
+                  Subterranean souring jars, wild airborne yeasts, sun-aged mango pickles in raw mustard oil, and rice starters aged in unglazed clay that predate Nordic trends by two millennia.
+                </p>
+                <div class="block-footer-tag">SUN-CURED &bull; SUBTERRANEAN</div>
+              </div>
+            </article>
+
+            <!-- TENET 06: CRAFT (DEEP PLUM / AUBERGINE) -->
+            <article class="color-block-card bg-deep-plum text-ivory">
+              <div class="card-inner-pad">
+                <div class="block-top-row">
+                  <span class="block-num">06 / CRAFT</span>
+                  <span class="block-devanagari">शिल्प</span>
+                </div>
+                <h3 class="block-heading-anton">MORADABAD TO FISHTOWN</h3>
+                <div class="block-rule-light"></div>
+                <p class="block-copy">
+                  Hammered brass thalis from Moradabad, Bengal handloom khadi table linens, and stoneware plates thrown using local Delaware River silt blended with crushed Indian mica.
+                </p>
+                <div class="block-footer-tag">HAMMERED BRASS &bull; DELAWARE CLAY</div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ========================================================
+             SPREAD 04: THE BESPOKE PRINTED MENU PUBLICATION
+             OVERSIZED COURSE NUMERALS • BODONI TITLES • ARCHIVAL STAMPS
+             ======================================================== -->
+        <section id="screen-menu" class="screen-view section-menu-publication bg-linen">
+          <div class="menu-publication-container">
+            
+            <!-- PUBLICATION COVER BANNER -->
+            <div class="publication-masthead-cover">
+              
+              <!-- TOP POSTAL CANCELLATION STAMP -->
+              <div class="postal-cancellation-mark">
+                <div class="cancellation-circle">
+                  <span>FISHTOWN</span>
+                  <strong>PHL</strong>
+                  <span>2026</span>
+                </div>
+                <div class="cancellation-wavy-lines">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+
+              <span class="pub-edition-pre">BESPOKE PRINTED MONOGRAPH // EDITION N° 14</span>
+              <h2 class="pub-main-title-didone">THE TASTING MENU</h2>
+              <div class="pub-metadata-strip">
+                <span>SERVED EXCLUSIVELY AT DUSK</span>
+                <span class="dot-sep">&#10038;</span>
+                <span>FOURTEEN MOVEMENTS</span>
+                <span class="dot-sep">&#10038;</span>
+                <span>$245 PER GUEST</span>
+                <span class="dot-sep">&#10038;</span>
+                <span>CURATED CELLAR $165</span>
+              </div>
+
+              <!-- CATEGORY SELECTOR -->
+              <div class="pub-category-pill-group">
+                <button class="pub-tab-btn menu-tab-btn active" data-category="tasting">14-COURSE MONOGRAPH</button>
+                <button class="pub-tab-btn menu-tab-btn" data-category="alacarte">À LA CARTE CANON</button>
+                <button class="pub-tab-btn menu-tab-btn" data-category="vegetarian">SHAKAHARI (HERBIVORE)</button>
+                <button class="pub-tab-btn menu-tab-btn" data-category="beverage">FERMENT &amp; CELLAR</button>
+              </div>
+
+              <div class="double-line-rule"></div>
+            </div>
+
+            <!-- THE PRINTED MENU BROADSIDE SHEET -->
+            <div class="printed-menu-sheet bg-parchment tactile-paper-effect" id="tasting-menu-sheet">
+              
+              <!-- MOVEMENT I -->
+              <div class="menu-chapter-section">
+                <div class="chapter-lead-bar">
+                  <h3 class="chapter-title-anton">Movement I &mdash; Street Inauguration</h3>
+                  <span class="chapter-devanagari">प्रवेश</span>
+                </div>
+
+                <div class="menu-entries-pair">
+                  <!-- DISH 01 -->
+                  <div class="menu-dish-broadside" data-dish-id="01">
+                    <div class="dish-num-block">01</div>
+                    <div class="dish-body-block">
+                      <div class="dish-title-row">
+                        <h4 class="dish-name-didone">PAPAD / BLACK GARLIC / RAW MANGO</h4>
+                        <span class="dish-stamp-tag">Gujarat Coast</span>
+                      </div>
+                      <p class="dish-annotation">Lentil wafer crisp, 40-day fermented black garlic puree, unripe Rajapuri mango pickle dust, cold-pressed mustard oil.</p>
+                      <span class="dish-inspect-action">Inspect Culinary Notes &rarr;</span>
+                    </div>
+                  </div>
+
+                  <!-- DISH 02 -->
+                  <div class="menu-dish-broadside" data-dish-id="02">
+                    <div class="dish-num-block">02</div>
+                    <div class="dish-body-block">
+                      <div class="dish-title-row">
+                        <h4 class="dish-name-didone">MINI KULCHA / CULTURED BUTTER / CHARRED SHALLOT</h4>
+                        <span class="dish-stamp-tag">Punjab Highway</span>
+                      </div>
+                      <p class="dish-annotation">Wild sourdough kulcha blistered against live clay, churned Pennsylvania butter smoked with cow-dung ash, ember-roasted shallots.</p>
+                      <span class="dish-inspect-action">Inspect Culinary Notes &rarr;</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MOVEMENT II -->
+              <div class="menu-chapter-section">
+                <div class="chapter-lead-bar">
+                  <h3 class="chapter-title-anton">Movement II &mdash; Coasts &amp; Mangroves</h3>
+                  <span class="chapter-devanagari">समुद्र</span>
+                </div>
+
+                <div class="menu-entries-pair">
+                  <!-- DISH 03 -->
+                  <div class="menu-dish-broadside" data-dish-id="03">
+                    <div class="dish-num-block">03</div>
+                    <div class="dish-body-block">
+                      <div class="dish-title-row">
+                        <h4 class="dish-name-didone">TANDOORI MOREL / CASHEW CURD / TELLICHERRY</h4>
+                        <span class="dish-stamp-tag">Himalayas</span>
+                      </div>
+                      <p class="dish-annotation">Wild Himalayan morel stuffed with roasted cashew cream, charred on skewered iron over pine charcoal, fermented black pepper.</p>
+                      <span class="dish-inspect-action">Inspect Culinary Notes &rarr;</span>
+                    </div>
+                  </div>
+
+                  <!-- DISH 04 -->
+                  <div class="menu-dish-broadside" data-dish-id="04">
+                    <div class="dish-num-block">04</div>
+                    <div class="dish-body-block">
+                      <div class="dish-title-row">
+                        <h4 class="dish-name-didone">DAY-BOAT SCALLOP / FRESH COCONUT / CURRY LEAF</h4>
+                        <span class="dish-stamp-tag">Malabar</span>
+                      </div>
+                      <p class="dish-annotation">Raw Barnegat Light scallop cured in green chili acid, fresh coconut milk foam, tempered black mustard seed, crispy curry leaf brittle.</p>
+                      <span class="dish-inspect-action">Inspect Culinary Notes &rarr;</span>
+                    </div>
+                  </div>
+
+                  <!-- DISH 05 -->
+                  <div class="menu-dish-broadside" data-dish-id="05">
+                    <div class="dish-num-block">05</div>
+                    <div class="dish-body-block">
+                      <div class="dish-title-row">
+                        <h4 class="dish-name-didone">KASHMIRI HEIRLOOM TURNIP / SAFFRON / ROAST WALNUT</h4>
+                        <span class="dish-stamp-tag">Kashmir</span>
+                      </div>
+                      <p class="dish-annotation">Slow-braised winter shalgam in aged mutton fat, Kishtwar saffron blossom reduction, roasted mountain walnut crumble.</p>
+                      <span class="dish-inspect-action">Inspect Culinary Notes &rarr;</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MOVEMENT III: THE MOTHER HEARTH -->
+              <div class="menu-chapter-section">
+                <div class="chapter-lead-bar">
+                  <h3 class="chapter-title-anton">Movement III &mdash; The Mother Hearth</h3>
+                  <span class="chapter-devanagari">अग्नि</span>
+                </div>
+
+                <div class="menu-entries-pair">
+                  <!-- DISH 06 -->
+                  <div class="menu-dish-broadside dish--highlight" data-dish-id="06">
+                    <div class="dish-num-block">06</div>
+                    <div class="dish-body-block">
+                      <div class="dish-title-row">
+                        <h4 class="dish-name-didone">TANDOOR KOKUM LOBSTER / COASTAL SPICE</h4>
+                        <span class="dish-stamp-tag tag-vermilion">Signature Canon</span>
+                      </div>
+                      <p class="dish-annotation">Maine lobster tail seared over coconut-husk embers with Konkan kokum butter, Byadgi chilli, and flash-fried curry leaves.</p>
+                      <span class="dish-inspect-action">Click to inspect technical catalogue &rarr;</span>
+                    </div>
+                  </div>
+
+                  <!-- DISH 07 -->
+                  <div class="menu-dish-broadside" data-dish-id="07">
+                    <div class="dish-num-block">07</div>
+                    <div class="dish-body-block">
+                      <div class="dish-title-row">
+                        <h4 class="dish-name-didone">LANCASTER LAMB / SMOKED BAINGAN / DRIED PLUM JUS</h4>
+                        <span class="dish-stamp-tag">Awadh &amp; Kashmir</span>
+                      </div>
+                      <p class="dish-annotation">Wood-charred lamb loin, silky bharta of smoked eggplant and raw mustard oil, sour dried aloo bukhara glaze, roasted mace.</p>
+                      <span class="dish-inspect-action">Inspect Culinary Notes &rarr;</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="menu-entries-pair">
+                  <!-- DISH 10 -->
+                  <div class="menu-dish-broadside dish--highlight" data-dish-id="10">
+                    <div class="dish-num-block">10</div>
+                    <div class="dish-body-block">
+                      <div class="dish-title-row">
+                        <h4 class="dish-name-didone">ANGAAR BLACK DAL / 36-HOUR REDUCTION / SMOKED CHILLI</h4>
+                        <span class="dish-stamp-tag tag-vermilion">Foundry Mother</span>
+                      </div>
+                      <p class="dish-annotation">Whole black urad dal simmered 36 hours over dying hickory ash, enriched with farm cream, Mathania dried chili, and ginger julienne.</p>
+                      <span class="dish-inspect-action">Click to inspect technical catalogue &rarr;</span>
+                    </div>
+                  </div>
+
+                  <!-- DISH 11 -->
+                  <div class="menu-dish-broadside" data-dish-id="11">
+                    <div class="dish-num-block">11</div>
+                    <div class="dish-body-block">
+                      <div class="dish-title-row">
+                        <h4 class="dish-name-didone">HOUSE-CURD CHENNA / CHARRED TOMATO / KASOORI METHI</h4>
+                        <span class="dish-stamp-tag">Orissa / Bengal</span>
+                      </div>
+                      <p class="dish-annotation">Freshly split warm milk curd lightly pressed in muslin, blistered heirloom plum tomato extract, dried Nagaur fenugreek leaves.</p>
+                      <span class="dish-inspect-action">Inspect Culinary Notes &rarr;</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MOVEMENT IV: HIGH HIMALAYA -->
+              <div class="menu-chapter-section">
+                <div class="chapter-lead-bar">
+                  <h3 class="chapter-title-anton">Movement IV &mdash; High Himalaya</h3>
+                  <span class="chapter-devanagari">अन्न</span>
+                </div>
+
+                <div class="menu-entries-pair">
+                  <!-- DISH 08 -->
+                  <div class="menu-dish-broadside" data-dish-id="08">
+                    <div class="dish-num-block">08</div>
+                    <div class="dish-body-block">
+                      <div class="dish-title-row">
+                        <h4 class="dish-name-didone">THREE-YEAR AGED BASMATI / YAKNI STOCK</h4>
+                        <span class="dish-stamp-tag">Dehradun</span>
+                      </div>
+                      <p class="dish-annotation">Aged Taraori basmati steamed in clarified lamb bone broth with whole green cardamom pods, topped with crispy fried shallots.</p>
+                      <span class="dish-inspect-action">Inspect Culinary Notes &rarr;</span>
+                    </div>
+                  </div>
+
+                  <!-- DISH 09 -->
+                  <div class="menu-dish-broadside" data-dish-id="09">
+                    <div class="dish-num-block">09</div>
+                    <div class="dish-body-block">
+                      <div class="dish-title-row">
+                        <h4 class="dish-name-didone">SOURDOUGH ROTI / CHURNED BUFFALO MAKHAN</h4>
+                        <span class="dish-stamp-tag">Haryana</span>
+                      </div>
+                      <p class="dish-annotation">Stone-ground heirloom emmer wheat fermented 24 hours, baked on inverted cast-iron tawa, topped with fresh white makhan.</p>
+                      <span class="dish-inspect-action">Inspect Culinary Notes &rarr;</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MOVEMENT V: CONFECTION & PAAN -->
+              <div class="menu-chapter-section">
+                <div class="chapter-lead-bar">
+                  <h3 class="chapter-title-anton">Movement V &mdash; Confection &amp; Paan</h3>
+                  <span class="chapter-devanagari">विदा</span>
+                </div>
+
+                <div class="menu-entries-pair">
+                  <!-- DISH 12 -->
+                  <div class="menu-dish-broadside" data-dish-id="12">
+                    <div class="dish-num-block">12</div>
+                    <div class="dish-body-block">
+                      <div class="dish-title-row">
+                        <h4 class="dish-name-didone">ALPHONSO MANGO / CULTURED YOGHURT / BRONTE PISTACHIO</h4>
+                        <span class="dish-stamp-tag">Ratnagiri</span>
+                      </div>
+                      <p class="dish-annotation">Preserved Ratnagiri mango pulp, cold-hung goat milk curd, saffron blossom reduction, roasted green pistachio praline.</p>
+                      <span class="dish-inspect-action">Inspect Culinary Notes &rarr;</span>
+                    </div>
+                  </div>
+
+                  <!-- DISH 13 -->
+                  <div class="menu-dish-broadside" data-dish-id="13">
+                    <div class="dish-num-block">13</div>
+                    <div class="dish-body-block">
+                      <div class="dish-title-row">
+                        <h4 class="dish-name-didone">72% IDUKKI CACAO / GREEN CARDAMOM / DATE PALM JAGGERY</h4>
+                        <span class="dish-stamp-tag">Kerala Hills</span>
+                      </div>
+                      <p class="dish-annotation">Single-origin Kerala chocolate mousse, roasted green cardamom pod crisp, warm organic date palm jaggery drizzle.</p>
+                      <span class="dish-inspect-action">Inspect Culinary Notes &rarr;</span>
+                    </div>
+                  </div>
+
+                  <!-- DISH 14 -->
+                  <div class="menu-dish-broadside" data-dish-id="14">
+                    <div class="dish-num-block">14</div>
+                    <div class="dish-body-block">
+                      <div class="dish-title-row">
+                        <h4 class="dish-name-didone">CALCUTTA MEETHA PAAN / DAMASK ROSE / DARK CHOCOLATE PEARL</h4>
+                        <span class="dish-stamp-tag">Kolkata</span>
+                      </div>
+                      <p class="dish-annotation">Aromatic Maghai betel leaf infusion, house-made gulkand (sun-cooked rose jam), candied fennel seeds in micro chocolate shell.</p>
+                      <span class="dish-inspect-action">Inspect Culinary Notes &rarr;</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- COLOPHON / PRINT RECORD -->
+              <div class="menu-colophon-spread">
+                <div class="colophon-seal">
+                  <span>UNAPOLOGETIC FOODS // FISHTOWN FOUNDRY</span>
+                </div>
+                <p class="colophon-details">
+                  Menu directed by Executive Chef Arjun Mehra &bull; Sourced with Amish &amp; Pennsylvania partner farms &bull; Hand-printed in Philadelphia.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ========================================================
+             SPREAD 05: THE SIGNATURE CANON
+             FOUR ARCHIVAL PLATES, EACH ANNOTATED WITH COURSE, REGION & PROVENANCE
+             ======================================================== -->
+        <section id="screen-canon-popart" class="screen-view section-popart-canon bg-jamun">
+          <div class="popart-container">
+            
+            <div class="popart-header">
+              <span class="popart-stamp-tag">ARCHIVAL PLATES &bull; VOL. IV</span>
+              <h2 class="popart-title-anton">THE SIGNATURE CANON</h2>
+              <p class="popart-tagline">Four dishes held in the permanent record, each annotated by region, technique, and ember.</p>
+            </div>
+
+            <!-- FOUR ARCHIVAL PLATES -->
+            <div class="popart-cards-grid">
+
+              <!-- PLATE 01: TANDOOR KOKUM LOBSTER -->
+              <div class="popart-dish-card" data-dish-id="06">
+                <div class="lux-plate">
+                  <div class="cutout-photo-placeholder">
+                    <span class="cutout-label">[DISH CUTOUT &bull; TANDOOR LOBSTER]</span>
+                    <p class="cutout-sub">Charred Maine claw &amp; tail basted in crimson kokum butter</p>
+                  </div>
+                </div>
+                <div class="popart-card-footer bg-paper-cream">
+                  <span class="lux-plate-num">N&deg; 06</span>
+                  <h3 class="lux-plate-title">Tandoor Kokum Lobster</h3>
+                  <span class="lux-plate-region">Konkan Coast &amp; Mangalore</span>
+                  <p class="lux-plate-note">Course N&deg; 06 &mdash; Konkan Kokum &amp; Live Clay Tandoor Embers</p>
+                </div>
+              </div>
+
+              <!-- PLATE 02: 36-HOUR BLACK DAL -->
+              <div class="popart-dish-card" data-dish-id="10">
+                <div class="lux-plate">
+                  <div class="cutout-photo-placeholder">
+                    <span class="cutout-label">[DISH CUTOUT &bull; 36-HR BLACK DAL]</span>
+                    <p class="cutout-sub">Velvet black urad dal simmering with farm butter droplets</p>
+                  </div>
+                </div>
+                <div class="popart-card-footer bg-paper-cream">
+                  <span class="lux-plate-num">N&deg; 10</span>
+                  <h3 class="lux-plate-title">36-Hour Black Dal</h3>
+                  <span class="lux-plate-region">The Foundry, Fishtown</span>
+                  <p class="lux-plate-note">Course N&deg; 10 &mdash; Thirty-Six Hours Over Dying Hickory Ash</p>
+                </div>
+              </div>
+
+              <!-- PLATE 03: SMOKED GUCHHI MOREL -->
+              <div class="popart-dish-card" data-dish-id="03">
+                <div class="lux-plate">
+                  <div class="cutout-photo-placeholder">
+                    <span class="cutout-label">[DISH CUTOUT &bull; SMOKED MOREL]</span>
+                    <p class="cutout-sub">Himalayan morel stuffed with roasted cashew cream</p>
+                  </div>
+                </div>
+                <div class="popart-card-footer bg-paper-cream">
+                  <span class="lux-plate-num">N&deg; 03</span>
+                  <h3 class="lux-plate-title">Smoked Guchhi Morel</h3>
+                  <span class="lux-plate-region">Pir Panjal Range, Kashmir</span>
+                  <p class="lux-plate-note">Course N&deg; 03 &mdash; Himalayan Guchhi &amp; Pine Charcoal Smoke</p>
+                </div>
+              </div>
+
+              <!-- PLATE 04: KASHMIRI LAMB SADDLE -->
+              <div class="popart-dish-card" data-dish-id="07">
+                <div class="lux-plate">
+                  <div class="cutout-photo-placeholder">
+                    <span class="cutout-label">[DISH CUTOUT &bull; KASHMIRI LAMB]</span>
+                    <p class="cutout-sub">Lancaster County lamb with sour aloo bukhara glaze</p>
+                  </div>
+                </div>
+                <div class="popart-card-footer bg-paper-cream">
+                  <span class="lux-plate-num">N&deg; 07</span>
+                  <h3 class="lux-plate-title">Kashmiri Lamb Saddle</h3>
+                  <span class="lux-plate-region">Awadh &amp; Kashmir Wazwan</span>
+                  <p class="lux-plate-note">Course N&deg; 07 &mdash; Wazwan Tradition &amp; Sun-Dried Plum</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ========================================================
+             SPREAD 06: CHEF ARJUN MEHRA — EDITORIAL NEWSPRINT SPREAD
+             HALFTONE PORTRAIT • EDITORIAL PULL QUOTE • HIGH CONTRAST LETTERPRESS
+             ======================================================== -->
+        <section id="screen-chef" class="screen-view section-chef-newsprint bg-paper-cream">
+          <div class="newsprint-container">
+            
+            <!-- VINTAGE NEWSPRINT HEADER BAR -->
+            <div class="newsprint-masthead">
+              <span class="np-tag">THE SUBCONTINENTAL CHRONICLE &bull; SPECIAL FEATURE &bull; FISHTOWN EDITION</span>
+              <div class="double-line-rule"></div>
+            </div>
+
+            <div class="newsprint-ad-grid">
+              
+              <!-- LEFT COLUMN: DRAMATIC HALFTONE PORTRAIT + VINTAGE LUX-STYLE HEADLINE -->
+              <div class="newsprint-portrait-col">
+                
+                <!-- ANGLED DISPLAY HEADLINE (LIKE "TELL US LEELA CHITNIS...") -->
+                <div class="vintage-angled-banner">
+                  <span class="banner-script">Tell Us &mdash; Arjun Mehra &mdash;</span>
+                  <h2 class="banner-title-anton">WHAT IS YOUR CULINARY SECRET?</h2>
+                </div>
+
+                <!-- HALFTONE PORTRAIT PLACEHOLDER -->
+                <div class="halftone-portrait-box bg-charcoal">
+                  <div class="halftone-screen-overlay"></div>
+                  <div class="crop-mark top-left"></div>
+                  <div class="crop-mark bottom-right"></div>
+                  <div class="placeholder-content">
+                    <span class="photo-meta">[CHEF PORTRAIT &mdash; EDITORIAL HALFTONE]</span>
+                    <p class="photo-sub">High-contrast chiaroscuro medium format portrait of Executive Chef Arjun Mehra over Frankford foundry hearth.</p>
+                  </div>
+                </div>
+
+                <!-- EDITORIAL PULL QUOTE -->
+                <blockquote class="lux-pullquote">
+                  <p>My secret is a raw one. I refuse to sterilize the subcontinent — intense coal smoke, bitter mustard greens, whole unmeasured spices, wild fermentation. That is what keeps Angaar honest.</p>
+                  <cite>Arjun Mehra, Executive Chef</cite>
+                </blockquote>
+
+              </div>
+
+              <!-- RIGHT COLUMN: EDITORIAL BIOGRAPHY & CHRONOLOGICAL TIMELINE -->
+              <div class="newsprint-editorial-col">
+                <span class="editorial-col-pre">EXECUTIVE CHEF &amp; CO-FOUNDER</span>
+                <h3 class="editorial-chef-name">ARJUN MEHRA</h3>
+                <div class="double-line-rule"></div>
+
+                <p class="editorial-lead-bio">
+                  Trained in the royal Awadhi kitchens of Lucknow and the high-pressure dining rooms of Mayfair London and New York, Mehra partnered with Unapologetic Foods to create an institution that operates with the architectural discipline of a Tokyo counter and the untamed vitality of an Old Delhi gali.
+                </p>
+
+                <!-- VERTICAL TIMELINE OF LOCATIONS -->
+                <div class="newsprint-timeline">
+                  <div class="np-timeline-entry">
+                    <span class="np-year">2011 &mdash; 2014</span>
+                    <div class="np-tl-body">
+                      <strong class="np-city">OLD DELHI &bull; LUCKNOW</strong>
+                      <p class="np-desc">Master apprenticeship in royal Awadhi dum pukht and high-heat charcoal ovens.</p>
+                    </div>
+                  </div>
+
+                  <div class="np-timeline-entry">
+                    <span class="np-year">2015 &mdash; 2018</span>
+                    <div class="np-tl-body">
+                      <strong class="np-city">LONDON (MAYFAIR)</strong>
+                      <p class="np-desc">Senior sous chef at Michelin-starred subcontinental bastions.</p>
+                    </div>
+                  </div>
+
+                  <div class="np-timeline-entry">
+                    <span class="np-year">2019 &mdash; 2024</span>
+                    <div class="np-tl-body">
+                      <strong class="np-city">NEW YORK CITY</strong>
+                      <p class="np-desc">Co-architect of landmark Unapologetic restaurants awarded Michelin stars and James Beard acclaim.</p>
+                    </div>
+                  </div>
+
+                  <div class="np-timeline-entry active-entry">
+                    <span class="np-year">2025 &mdash; PRESENT</span>
+                    <div class="np-tl-body">
+                      <strong class="np-city">PHILADELPHIA &bull; FISHTOWN</strong>
+                      <p class="np-desc">Inauguration of ANGAAR: The permanent foundry monograph.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- SIGN-OFF SEAL -->
+                <div class="newsprint-sign-off">
+                  <span class="sign-tag">UNAPOLOGETIC FOODS GROUP &bull; FISHTOWN CHAPTER</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ========================================================
+             SPREAD 07: THE FOUNDRY SALON & ARCHITECTURAL MONOGRAPH
+             RICH INDIAN INTERIOR COLORS: TERRACOTTA, BRASS, CARVED WOOD
+             ======================================================== -->
+        <section id="screen-private" class="screen-view section-foundry-salon bg-terracotta-cloth text-ivory">
+          <div class="salon-container">
+            
+            <div class="salon-header-row">
+              <div>
+                <span class="salon-overline">PRIVATE DINING &amp; SPECIAL COMMISSIONS</span>
+                <h2 class="salon-title-anton">THE FOUNDRY SALON</h2>
+              </div>
+              <div class="salon-badge-specs">
+                <span class="badge-covers">08 &mdash; 24 GUESTS</span>
+                <span class="badge-sub">Dedicated Wood Hearth &bull; Private Sommelier</span>
+              </div>
+            </div>
+
+            <div class="salon-split-layout">
+              
+              <!-- LEFT: BLUEPRINT / ARCHITECTURAL STUDY PLACEHOLDER -->
+              <div class="salon-media-frame">
+                <div class="blueprint-placeholder bg-carbon">
+                  <div class="crop-mark top-left"></div>
+                  <div class="crop-mark bottom-right"></div>
+                  <div class="placeholder-content">
+                    <span class="bp-tag">[ARCHITECTURAL STUDY &bull; MEZZANINE HEARTH]</span>
+                    <h4 class="bp-title">CHANDIGARH MODERNISM MEETS FISHTOWN BRUTALISM</h4>
+                    <p class="bp-sub">Cantilevered steel platform, 18-foot black walnut table, hand-hammered brass jaali screens, and Dholpur red sandstone benches.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RIGHT: COMMISSION INQUIRY FORM -->
+              <div class="salon-form-panel bg-cream-linen text-charcoal">
+                <div class="form-panel-header">
+                  <span class="fp-title">COMMISSION A PRIVATE EVENING</span>
+                  <span class="fp-phone">DIRECT: +1 (215) 824-3390</span>
+                </div>
+                <div class="double-line-rule"></div>
+
+                <form class="salon-inquiry-grid" onsubmit="event.preventDefault(); alert('Your salon inquiry has been dispatched to the Maître D\'. You will receive a direct call within 4 hours.');">
+                  <div class="form-input-box">
+                    <label>GUEST / HOST NAME</label>
+                    <input type="text" placeholder="Full Name & Title" required>
+                  </div>
+                  <div class="form-input-box">
+                    <label>AFFILIATION / STUDIO</label>
+                    <input type="text" placeholder="Design Studio / Family Office">
+                  </div>
+                  <div class="form-input-box">
+                    <label>TELEPHONE</label>
+                    <input type="tel" placeholder="+1 (555) 000-0000" required>
+                  </div>
+                  <div class="form-input-box">
+                    <label>PREFERRED DATE &amp; GUESTS</label>
+                    <input type="text" placeholder="e.g. November 18 &bull; 14 Guests" required>
+                  </div>
+                  <button type="submit" class="btn-poster-action full-width">
+                    <span>DISPATCH COMMISSION INQUIRY</span>
+                    <span>&rarr;</span>
+                  </button>
+                </form>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ========================================================
+             SPREAD 08: THE SUBCONTINENTAL JOURNAL (BROADSHEET ESSAYS)
+             MAGAZINE-STYLE MONOGRAPHS WITH HALFTone & DROP CAPS
+             ======================================================== -->
+        <section id="screen-journal" class="screen-view section-journal-broadsheet bg-linen">
+          <div class="journal-container">
+            
+            <div class="journal-header-block">
+              <span class="journal-volume">ESSAYS &amp; DISPATCHES &bull; VOL. IV</span>
+              <h2 class="journal-title-didone">THE SUBCONTINENTAL MONOGRAPH</h2>
+              <div class="double-line-rule"></div>
+            </div>
+
+            <div class="journal-spread-grid">
+              
+              <!-- HERO ESSAY -->
+              <article class="journal-hero-article">
+                <div class="journal-hero-media bg-carbon">
+                  <div class="crop-mark top-left"></div>
+                  <div class="crop-mark bottom-right"></div>
+                  <div class="placeholder-content">
+                    <span class="media-tag-red">HISTORICAL ARCHIVE &bull; DISPATCH 01</span>
+                    <h4 class="media-h4">[ESSAY ARCHIVE &bull; MALABAR PEPPER LEDGER]</h4>
+                    <p class="media-p">Ancient terracotta jars, dried Tellicherry pepper garlands, and 17th-century shipping manifests.</p>
+                  </div>
+                </div>
+
+                <div class="journal-hero-copy">
+                  <div class="article-meta-line">
+                    <span>OCTOBER 2025</span> &bull; <span>THEORY</span> &bull; <span>9 MIN READ</span>
+                  </div>
+                  <h3 class="article-headline-didone">
+                    The Spice Route Reconsidered: Why Everything You Know About Pepper Is Colonial Fiction.
+                  </h3>
+                  <p class="article-dropcap-lead">
+                    Long before European armadas weaponized the Malabar coast, Indian black pepper was treated not as an exotic masking agent for spoiled meats, but as an energetic catalyst in ancient Ayurvedic pharmacopeia. We trace the living lineage of the Piper nigrum back to wild jungle vines in Kerala.
+                  </p>
+                  <a href="#" class="btn-journal-link">READ THE FULL MONOGRAPH &rarr;</a>
+                </div>
+              </article>
+
+              <!-- SECONDARY DISPATCHES (3 COLUMNS) -->
+              <div class="journal-sub-grid">
+                
+                <article class="journal-mini-card">
+                  <div class="mini-meta">SEPTEMBER 2025 &bull; TECHNIQUE</div>
+                  <h4 class="mini-title-didone">Why Fire Changes Flavour: The Thermodynamics of the Clay Tandoor.</h4>
+                  <p class="mini-desc">Convection, conduction, and radiant heat simultaneously attacking protein at 900°F.</p>
+                  <span class="mini-link">EXPLORE ESSAY &rarr;</span>
+                </article>
+
+                <article class="journal-mini-card">
+                  <div class="mini-meta">AUGUST 2025 &bull; GRAIN ARCHIVE</div>
+                  <h4 class="mini-title-didone">From Punjab to the Plate: The Disappearance of Heirloom Emmer Wheat.</h4>
+                  <p class="mini-desc">How modern dwarf hybrid grains destroyed the buttery elasticity of the ancient roti.</p>
+                  <span class="mini-link">EXPLORE ESSAY &rarr;</span>
+                </article>
+
+                <article class="journal-mini-card">
+                  <div class="mini-meta">JULY 2025 &bull; FERMENTATION</div>
+                  <h4 class="mini-title-didone">The Microbiology of the Indian Dining Room: Subterranean Fermenters.</h4>
+                  <p class="mini-desc">Unlocking sour complexities that pre-date Nordic fermentation crazes by two millennia.</p>
+                  <span class="mini-link">EXPLORE ESSAY &rarr;</span>
+                </article>
+
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ========================================================
+             SPREAD 09 / FOOTER: MAXIMALIST PRINTED COLOPHON
+             PRINTED ORNAMENTAL SCALLOPED BORDER & DENSE LETTERPRESS
+             ======================================================== -->
+        <footer id="site-footer" class="site-footer bg-terracotta-cloth text-ivory">
+          
+          <!-- AIRMAIL & POSTAGE STAMP PERFORATED BORDER -->
+          <div class="footer-airmail-ribbon">
+            <div class="airmail-stripes"></div>
+          </div>
+
+          <div class="footer-inner-container">
+            
+            <div class="footer-brand-masthead">
+              <h2 class="footer-giant-wordmark">ANGAAR</h2>
+              <span class="footer-brand-subline">UNAPOLOGETIC FOODS &bull; CULINARY MONOGRAPH &bull; FISHTOWN</span>
+            </div>
+
+            <div class="footer-quad-grid">
+              
+              <div class="footer-col">
+                <span class="footer-col-title">SANCTUARY &bull; FISHTOWN</span>
+                <address class="footer-address-block">
+                  1242 Frankford Avenue<br>
+                  Fishtown, Philadelphia, PA 19125<br>
+                  United States
+                </address>
+                <div class="footer-geo">39°58'24"N 75°07'58"W</div>
+                <div class="footer-phone">+1 (215) 824-3390</div>
+              </div>
+
+              <div class="footer-col">
+                <span class="footer-col-title">SEATINGS &bull; DUSK</span>
+                <p class="footer-p-strong">Tuesday &mdash; Sunday</p>
+                <p class="footer-p-sub">
+                  First Seating: 17:30 &bull; 18:00<br>
+                  Second Seating: 20:30 &bull; 21:00<br>
+                  Closed Mondays for foraging &amp; clay firing.
+                </p>
+                <span class="footer-alert-note">Reservations release on the 1st of each month at 10:00 AM EST.</span>
+              </div>
+
+              <div class="footer-col">
+                <span class="footer-col-title">UNAPOLOGETIC PORTFOLIO</span>
+                <ul class="footer-group-list">
+                  <li><a href="https://unapologeticfoods.nyc/" target="_blank" rel="noopener">Unapologetic Foods NYC &rarr;</a></li>
+                  <li><a href="#">Semma &bull; Greenwich Village (★)</a></li>
+                  <li><a href="#">Dhamaka &bull; Essex Market</a></li>
+                  <li><a href="#">Masalawala &amp; Sons &bull; Park Slope</a></li>
+                  <li><a href="#">Adda &bull; Long Island City</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-col">
+                <span class="footer-col-title">ARCHIVAL DISPATCHES</span>
+                <p class="footer-dispatch-p">Receive private menu monographs, season opening notifications, and chef table releases.</p>
+                <form class="footer-subscribe-box" onsubmit="event.preventDefault(); alert('You have been enrolled in the confidential ANGAAR dispatches.');">
+                  <input type="email" placeholder="Your dispatch address" required>
+                  <button type="submit">&rarr;</button>
+                </form>
+                <div class="footer-social-strip">
+                  <a href="#">INSTAGRAM</a> &bull;
+                  <a href="#">PRESS ARCHIVE</a> &bull;
+                  <a href="#">CAREERS</a>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="footer-legal-bar">
+              <span>&copy; 2026 ANGAAR FISHTOWN LLC &bull; AN UNAPOLOGETIC FOODS PARTNERSHIP. ALL RIGHTS RESERVED.</span>
+              <div class="footer-legal-links">
+                <a href="#">TERMS OF HOSPITALITY</a> &bull;
+                <a href="#">PRIVACY ACCORD</a> &bull;
+                <a href="#">ACCESSIBILITY CODE</a>
+              </div>
+            </div>
+
+          </div>
+        </footer>
+
+      </main>
+    </div>
+
+    <!-- ========================================================
+         MODAL 01: EXPANDED DISH CATALOGUE DRAWER (SCREEN 07)
+         ======================================================== -->
+    <div id="expanded-dish-modal" class="modal-overlay">
+      <div class="modal-backdrop-blur" id="close-dish-modal-bg"></div>
+      
+      <div class="expanded-dish-panel bg-parchment tactile-paper-effect">
+        <button class="modal-close-btn" id="close-dish-modal-btn" aria-label="Close Dish Panel">&times;</button>
+
+        <div class="dish-catalog-split">
+          
+          <!-- LEFT: EDITORIAL ARCHIVAL METADATA -->
+          <div class="dish-catalog-info">
+            <div class="cat-course-badge">
+              <span class="cat-badge-num">COURSE N° <span id="dish-modal-num">06</span></span>
+              <span class="cat-badge-devanagari" id="dish-modal-hindi">अग्नि</span>
+            </div>
+
+            <h2 class="cat-title-didone" id="dish-modal-title">TANDOOR KOKUM LOBSTER</h2>
+            <div class="cat-sub-italic" id="dish-modal-sub">coastal kokum acid &bull; charred garlic &bull; fresh curry leaf butter</div>
+            <div class="double-line-rule"></div>
+
+            <div class="cat-metadata-grid">
+              <div class="cat-field">
+                <span class="field-label">REGION OF INSPIRATION</span>
+                <span class="field-val" id="dish-modal-region">KONKAN COAST &bull; MAHARASHTRA &amp; GOA</span>
+              </div>
+              <div class="cat-field">
+                <span class="field-label">CULINARY TECHNIQUE</span>
+                <span class="field-val" id="dish-modal-technique">CLAY TANDOOR &bull; LIVE CHARCOAL SEARING</span>
+              </div>
+              <div class="cat-field">
+                <span class="field-label">SEASONAL HARVEST</span>
+                <span class="field-val" id="dish-modal-season">LATE AUTUMN &bull; DEEP WATER MAINE HARVEST</span>
+              </div>
+              <div class="cat-field">
+                <span class="field-label">VESSEL OF SERVICE</span>
+                <span class="field-val" id="dish-modal-vessel">HAND-HAMMERED MORADABAD BRASS THALI</span>
+              </div>
+            </div>
+
+            <div class="chef-note-card bg-cream-linen">
+              <span class="cn-title">CHEF'S MONOGRAPH NOTE</span>
+              <p class="cn-text" id="dish-modal-note">
+                “In the West, Indian seafood is too often smothered in heavy cream sauce. We take inspiration from the fisherman communities of the Konkan: raw live embers, tart kokum rind that cuts straight through the richness of lobster meat, and hot, unadulterated coconut oil infused with freshly crushed curry leaves.”
+              </p>
+              <span class="cn-sign">&mdash; Arjun Mehra, Executive Chef</span>
+            </div>
+
+            <div class="sommelier-card bg-pine text-charcoal">
+              <span class="somm-tag">SOMMELIER'S CELLAR PAIRING</span>
+              <p class="somm-rec" id="dish-modal-pairing">
+                2022 Domaine Tempier Bandol Rosé &bull; Provence, France. (Mineral salinity and wild dried herb aromatics that harmonize with the kokum sourness).
+              </p>
+            </div>
+          </div>
+
+          <!-- RIGHT: MACRO FOOD PHOTO PLACEHOLDER -->
+          <div class="dish-catalog-media">
+            <div class="macro-photo-frame bg-charcoal">
+              <div class="crop-mark top-left"></div>
+              <div class="crop-mark bottom-right"></div>
+              <div class="placeholder-content">
+                <div class="macro-lens-icon">&#10038;</div>
+                <div class="macro-photo-title">[DISH PHOTOGRAPHY &mdash; MACRO EDITORIAL]</div>
+                <p class="macro-photo-sub" id="dish-modal-photo-desc">Extreme close-up: Glistening red kokum butter glaze, caramelized tandoor blisters on lobster meat, golden ghee droplets, and crystalline sea salt.</p>
+              </div>
+              <div class="macro-meta-bar">
+                <span>RATIO: 4:5 HIGH RESOLUTION</span>
+                <span>LIGHTING: DIRECT OVERHEAD KEY WITH WARM RIM</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         MODAL 02: BESPOKE RESERVATION INTERFACE (SCREEN 11)
+         ======================================================== -->
+    <div id="reservation-modal" class="modal-overlay">
+      <div class="modal-backdrop-blur" id="close-reserve-modal-bg"></div>
+
+      <div class="reservation-card-panel bg-parchment tactile-paper-effect">
+        <button class="modal-close-btn" id="close-reserve-modal-btn" aria-label="Close Reservation">&times;</button>
+
+        <div class="reserve-masthead">
+          <span class="reserve-badge">TABLE COMMISSION</span>
+          <h2 class="reserve-title-didone">RESERVE AT ANGAAR</h2>
+          <p class="reserve-sub">The 14-Course Monograph &bull; Fishtown, Philadelphia</p>
+          <div class="double-line-rule center-rule"></div>
+        </div>
+
+        <form class="reservation-form-flow" id="res-booking-form" onsubmit="event.preventDefault(); window.confirmReservation();">
+          
+          <!-- STEP 1: EXPERIENCE -->
+          <div class="form-flow-section">
+            <label class="flow-sec-label">01. SELECT DINING EXPERIENCE</label>
+            <div class="experience-card-grid">
+              
+              <label class="exp-choice-card active">
+                <input type="radio" name="experience" value="hearth-counter" checked>
+                <span class="exp-badge">PRIME FRONT ROW</span>
+                <h4 class="exp-title">CHEF'S HEARTH COUNTER</h4>
+                <p class="exp-p">Front row seating facing the live clay tandoors &bull; 14 Courses</p>
+                <span class="exp-cost">$245 / GUEST</span>
+              </label>
+
+              <label class="exp-choice-card">
+                <input type="radio" name="experience" value="foundry-room">
+                <span class="exp-badge">SANDSTONE BANQUETTE</span>
+                <h4 class="exp-title">THE FOUNDRY DINING ROOM</h4>
+                <p class="exp-p">Stepped red sandstone banquette seating &bull; 14 Courses</p>
+                <span class="exp-cost">$245 / GUEST</span>
+              </label>
+
+              <label class="exp-choice-card">
+                <input type="radio" name="experience" value="mezzanine-salon">
+                <span class="exp-badge">EXCLUSIVE COMMISSIONS</span>
+                <h4 class="exp-title">THE MEZZANINE SALON</h4>
+                <p class="exp-p">08 to 24 Guests &bull; Dedicated Sommelier &amp; Hearth</p>
+                <span class="exp-cost">$320 / GUEST</span>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- STEP 2: GUESTS & DATE -->
+          <div class="form-flow-section">
+            <label class="flow-sec-label">02. PARTY SIZE &amp; CALENDAR</label>
+            <div class="input-triad-grid">
+              
+              <div class="flow-input-group">
+                <span class="input-tiny-label">PARTY SIZE</span>
+                <select id="res-guest-select" class="print-select">
+                  <option value="1">1 Solo Guest</option>
+                  <option value="2" selected>2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="5">5 Guests</option>
+                  <option value="6">6 Guests (Max Main Room)</option>
+                  <option value="salon">7+ Guests (Direct to Salon)</option>
+                </select>
+              </div>
+
+              <div class="flow-input-group">
+                <span class="input-tiny-label">CALENDAR DATE</span>
+                <input type="date" id="res-date-select" value="2026-10-15" class="print-input">
+              </div>
+
+              <div class="flow-input-group">
+                <span class="input-tiny-label">SEATING TIME</span>
+                <select id="res-time-select" class="print-select">
+                  <option value="17:30">17:30 (First Twilight Service)</option>
+                  <option value="18:00">18:00 (Dusk Service)</option>
+                  <option value="20:30" selected>20:30 (Prime Evening Hearth)</option>
+                  <option value="21:00">21:00 (Late Ember Service)</option>
+                </select>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- STEP 3: CELLAR & DIETARY ACCORDS -->
+          <div class="form-flow-section">
+            <label class="flow-sec-label">03. BEVERAGE &amp; PROVIDENCE</label>
+            <div class="pairing-checkbox-grid">
+              
+              <label class="custom-check-card">
+                <input type="checkbox" id="check-cellar-pairing" checked>
+                <div class="check-txt">
+                  <strong>Curated Biodynamic Cellar Pairing</strong>
+                  <span>+$165 per guest &bull; Rare natural estates, indigenous pairings</span>
+                </div>
+              </label>
+
+              <label class="custom-check-card">
+                <input type="checkbox" id="check-temperance-pairing">
+                <div class="check-txt">
+                  <strong>Botanical Temperance (Non-Alcoholic) Pairing</strong>
+                  <span>+$95 per guest &bull; Wild kanjis, cold-pressed herbs, smoked teas</span>
+                </div>
+              </label>
+
+            </div>
+
+            <div class="flow-input-group full-width-group">
+              <span class="input-tiny-label">DIETARY ALLERGIES &amp; ACCORDS</span>
+              <input type="text" placeholder="e.g. Vegetarian Shakahari, Shellfish allergy, Celiac (Kindly note all tasting courses use complex whole spices)." class="print-input">
+            </div>
+          </div>
+
+          <div class="reserve-footer-action-row">
+            <span class="deposit-clause">* $50 deposit held per guest to secure the tasting preparation. Fully refundable up to 48 hours prior.</span>
+            <button type="submit" class="btn-poster-action">
+              <span>CONFIRM TABLE COMMISSION</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+    <!-- ========================================================
+         SCREEN 12: MOBILE DEVICE SUITE MOCKUP (HOMEPAGE, MENU, DETAIL)
+         ======================================================== -->
+    <div id="mobile-mockup-wrapper" class="mobile-mockup-wrapper">
+      <div class="mobile-phone-chassis">
+        <div class="phone-speaker-notch"></div>
+        
+        <div class="phone-screen-container">
+          
+          <!-- MOBILE PHONE HEADER -->
+          <div class="mobile-phone-top-bar">
+            <span class="mob-top-logo">ANGAAR</span>
+            <div class="mob-top-actions">
+              <button class="mob-top-res-btn" id="mobile-open-reserve">RESERVE</button>
+              <button class="mob-top-burger" id="mobile-burger-toggle">
+                <span></span><span></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- FULL-SCREEN MOBILE OVERLAY NAVIGATION -->
+          <div id="mobile-nav-drawer" class="mobile-nav-drawer bg-jamun text-ivory">
+            <button class="mobile-close-nav" id="mobile-close-nav-btn">&times;</button>
+            <div class="mobile-nav-links-stack">
+              <a href="#" class="mob-nav-item" data-mobile-jump="mob-screen-home">I. BRAND FILM &amp; PROLOGUE</a>
+              <a href="#" class="mob-nav-item" data-mobile-jump="mob-screen-menu">II. TASTING PUBLICATION</a>
+              <a href="#" class="mob-nav-item" data-mobile-jump="mob-screen-dish">III. DISH CANON DETAIL</a>
+            </div>
+            <div class="mobile-drawer-colophon">
+              <span>FISHTOWN FOUNDRY &bull; PHILADELPHIA</span>
+              <span>UNAPOLOGETIC FOODS GROUP</span>
+            </div>
+          </div>
+
+          <!-- MOBILE SCROLL CONTAINER -->
+          <div class="mobile-viewport-scroll" id="mobile-scroll-container">
+            
+            <!-- STATE A: MOBILE HOME -->
+            <div id="mob-screen-home" class="mobile-view active bg-paper-cream">
+              
+              <!-- MOBILE VIDEO HERO -->
+              <div class="mob-hero-video-box">
+                <video class="mob-video-bg" autoplay muted loop playsinline preload="auto">
+                  <source src="fire1.mp4" type="video/mp4">
+                  <source src="hero-flame-video.mp4" type="video/mp4">
+                </video>
+                <div class="mob-video-overlay">
+                  <span class="mob-edition-tag">[VOL. IV &bull; FISHTOWN FOUNDRY]</span>
+                  <h1 class="mob-headline-anton">
+                    ANGAAR<br>
+                    <span class="mob-italic">the living ember</span>
+                  </h1>
+                </div>
+              </div>
+
+              <div class="mob-inner-padding">
+                <p class="mob-manifesto-p">
+                  Twenty-eight subcontinental food cultures, kept whole. Raw clay tandoor embers and indigenous fermentation inside an industrial Fishtown foundry.
+                </p>
+
+                <button class="btn-poster-action full-width" id="mob-to-menu">
+                  <span>EXPLORE 14-COURSE MENU</span>
+                  <span>&rarr;</span>
+                </button>
+
+                <!-- SCALLOPED STAMP CARD ON MOBILE -->
+                <div class="mob-stamp-card bg-saffron">
+                  <span class="mob-stamp-badge">THE VIEW FROM FISHTOWN</span>
+                  <h3 class="mob-stamp-h3">ANGAAR</h3>
+                  <div class="mob-blue-ribbon bg-pine">
+                    <span>THE CHEFS GIVING INDIAN HERITAGE A DANGEROUS EDGE.</span>
+                  </div>
+                </div>
+
+                <div class="mob-dish-teaser-box bg-cream-linen" id="mob-dish-card-trigger">
+                  <span class="mob-dt-num">06 // CANON</span>
+                  <h4 class="mob-dt-title">TANDOOR KOKUM LOBSTER</h4>
+                  <p class="mob-dt-desc">Wild kokum butter, Byadgi chilli, tempered curry leaves.</p>
+                  <span class="mob-dt-cue">Tap to inspect culinary notes &rarr;</span>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- STATE B: MOBILE MENU -->
+            <div id="mob-screen-menu" class="mobile-view bg-linen">
+              <div class="mob-inner-padding">
+                <span class="mob-edition-tag">BESPOKE PUBLICATION // ED. 14</span>
+                <h2 class="mob-menu-title-didone">THE TASTING MENU</h2>
+                <div class="mob-price-banner">$245 / GUEST &bull; 14 MOVEMENTS</div>
+
+                <div class="mob-course-group">
+                  <div class="mob-cg-header">MOVEMENT I &mdash; STREET INAUGURATION</div>
+                  
+                  <div class="mob-course-row">
+                    <span class="mob-c-num">01</span>
+                    <div class="mob-c-info">
+                      <strong class="mob-c-name">PAPAD / BLACK GARLIC / RAW MANGO</strong>
+                      <p class="mob-c-desc">Lentil wafer, 40-day black garlic, raw Rajapuri mango pickle.</p>
+                    </div>
+                  </div>
+
+                  <div class="mob-course-row">
+                    <span class="mob-c-num">02</span>
+                    <div class="mob-c-info">
+                      <strong class="mob-c-name">MINI KULCHA / CULTURED BUTTER</strong>
+                      <p class="mob-c-desc">Wild sourdough, dung ash-smoked butter, charred shallots.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mob-course-group">
+                  <div class="mob-cg-header">MOVEMENT III &mdash; THE MOTHER HEARTH</div>
+
+                  <div class="mob-course-row highlight-mob-row" id="mob-item-6">
+                    <span class="mob-c-num">06</span>
+                    <div class="mob-c-info">
+                      <strong class="mob-c-name">TANDOOR KOKUM LOBSTER</strong>
+                      <p class="mob-c-desc">Maine lobster tail, Byadgi chilli, wild kokum butter glaze.</p>
+                      <span class="mob-tap-highlight">Tap to inspect details &rarr;</span>
+                    </div>
+                  </div>
+
+                  <div class="mob-course-row" id="mob-item-7">
+                    <span class="mob-c-num">07</span>
+                    <div class="mob-c-info">
+                      <strong class="mob-c-name">LANCASTER LAMB / SMOKED BAINGAN</strong>
+                      <p class="mob-c-desc">Wood-charred loin, baingan bharta, dried plum jus.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- STATE C: MOBILE DISH DETAIL -->
+            <div id="mob-screen-dish" class="mobile-view bg-paper-cream">
+              <div class="mob-inner-padding">
+                <button class="mob-return-btn" id="mob-back-to-menu">&larr; Return to Tasting Menu</button>
+                
+                <span class="mob-edition-tag">COURSE N° 06 // CANON</span>
+                <h2 class="mob-dish-detail-title">TANDOOR KOKUM LOBSTER</h2>
+                
+                <div class="mob-tag-pill-row">
+                  <span class="mob-pill">KONKAN COAST</span>
+                  <span class="mob-pill">CLAY TANDOOR</span>
+                  <span class="mob-pill">AUTUMN</span>
+                </div>
+
+                <div class="mob-macro-photo bg-charcoal">
+                  <span class="macro-txt">[DISH MACRO &bull; 4:5 HIGH RESOLUTION]</span>
+                  <p class="macro-sub">Blistered lobster tail glazed in red kokum butter and curry leaf oil.</p>
+                </div>
+
+                <div class="mob-editorial-block">
+                  <h4 class="mob-sec-title">CHEF'S MONOGRAPH NOTE</h4>
+                  <p class="mob-quote-p">
+                    “In the West, Indian seafood is too often smothered in heavy cream sauce. We take inspiration from the fishermen of the Konkan: raw live embers, tart kokum rind, and hot coconut oil with curry leaves.”
+                  </p>
+
+                  <h4 class="mob-sec-title">SOMMELIER CELLAR PAIRING</h4>
+                  <p class="mob-somm-p">
+                    2022 Domaine Tempier Bandol Rosé &bull; Provence, France. (Saline minerality harmonizing with kokum acidity).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
