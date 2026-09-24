@@ -9,9 +9,9 @@ Links to use (after GitHub Pages is on for the `main` branch):
 
 ## Email
 
-**Subject:** Adda Philadelphia — a website & identity concept
+**Subject:** Adda Philly — a website & identity concept for you and the BD team
 
-Hi [Name],
+Hi Saadhya,
 
 Thank you for the conversation. Rather than send a deck of promises, we built something you can click.
 
@@ -22,7 +22,7 @@ It's a working concept for Adda Philadelphia: a fire-lit hero, the Butter Chicke
 
 A few honest notes:
 - **It's a demo.** Photography, the hero footage, hours and some menu copy are placeholders. The booking and newsletter forms aren't connected to anything.
-- **Adda Philly deserves its own identity.** Today it sits under the Unapologetic wordmark. The attached proposal shows three brand routes, including a Punjabi *phulkari* direction we'd love to make with artisans.
+- **Your arch badge is the seed.** The attached proposal shows how we'd grow it into a full identity system, with three routes including a Punjabi *phulkari* direction we'd love to make with artisans.
 - **The launched version** would run on your reservation platform, with an editable menu, local SEO and accessibility built in.
 
 The PDF covers scope, an eight-week timeline, investment and what we'd need from your team. If you only send three things, make it the current menu, ten favourite photos, and which reservation platform you use.
@@ -38,7 +38,7 @@ Mander Studio
 
 ## Short version (Instagram DM / WhatsApp / text)
 
-Hi [Name]! We made a concept for Adda Philadelphia, a full website you can click plus a short film:
+Hi Saadhya! We made a concept for Adda Philadelphia, a full website you can click plus a short film:
 https://hvndal.github.io/unapologeticfoods/pitch/
 
 It's a demo (placeholder photos and menu), but it shows where we'd take it: the Butter Chicken Experience front and centre, booking in three taps, and an identity of its own for Philly. Happy to send the full proposal or walk you through it in 20 minutes. — [Your name], Mander Studio
