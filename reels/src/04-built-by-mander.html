@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>04 · Built by Mander</title>
+<!-- Silent. The real site on a phone: hero fire, sections, and a four-tap reservation. -->
+<link rel="stylesheet" href="lib/reel.css">
+<style>
+  .intro { background: var(--ink); }
+  .intro__pat, .walk__pat { position: absolute; inset: 0; background: var(--petals) 0 0 / 40px 36px; opacity: .07; }
+  .intro .cap { position: absolute; left: 44px; top: 250px; color: var(--gold-soft); font-size: 10px; }
+  .intro__h { position: absolute; left: 44px; right: 40px; top: 284px; font-size: 60px; line-height: 1.02; }
+  .intro__h em { color: var(--blush); }
+  .intro__rule { position: absolute; left: 44px; top: 560px; width: 180px; height: 1px; background: var(--gold); transform-origin: 0 50%; }
+
+  .walk { background: var(--ink); }
+  .walk__glow { position: absolute; left: -30%; right: -30%; top: 26%; height: 80%; background: radial-gradient(closest-side, rgba(192, 122, 92, .22), transparent); }
+  .walk .phone { left: 125px; top: 172px; }
+  .note { position: absolute; left: 30px; right: 30px; top: 74px; text-align: center; }
+  .note .cap { color: var(--gold-soft); font-size: 10px; }
+  .note .display { font-size: 32px; margin-top: 8px; }
+  .note .display em { color: var(--blush); }
+  .note .sub { margin-top: 6px; font-size: 14px; line-height: 1.4; color: rgba(242, 233, 221, .72); }
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="scene intro" id="intro">
+    <div class="intro__pat"></div>
+    <p class="cap"><span class="line"><span>Website concept · Adda Philly</span></span></p>
+    <p class="display intro__h"><span class="line"><span>A website</span></span><span class="line"><span>for a kitchen</span></span><span class="line"><span>that doesn’t</span></span><span class="line"><span><em>apologise.</em></span></span></p>
+    <div class="intro__rule"></div>
+  </div>
+  <div class="scene walk" id="walk">
+    <div class="walk__pat"></div>
+    <div class="walk__glow"></div>
+  </div>
+  <div class="vignette" style="opacity:.7"></div>
+  <div class="grain"></div>
+</div>
+
+<script src="lib/reel.js"></script>
+<script src="lib/phone.js"></script>
+<script>
+(() => {
+  const { $, $$, p, ease, op, rise } = R;
+  const stage = $('#stage');
+  window.DURATION = 23;
+
+  R.opener(stage, { start: 0, dur: 2 });
+
+  {
+    const el = $('#intro');
+    const cap = $('.cap .line > span', el), h = $$('.intro__h .line > span', el), rule = $('.intro__rule', el);
+    R.scene(el, 2, 4.6, lt => {
+      rise(cap, lt, 0.05, 0.8);
+      R.riseAll(h, lt, 0.12, 0.1, 1);
+      rule.style.transform = `scaleX(${ease.site(p(lt, 0.8, 1)).toFixed(4)})`;
+    });
+  }
+
+  {
+    const el = $('#walk');
+    const ph = R.phone(el, { width: 290 });
+    const NOTES = [
+      [4.2, 'Opens on the <em>fire.</em>', 'The hero is the hearth: live flame, the badge, one line.'],
+      [7.2, 'Set like <em>print.</em>', 'One confident serif. Devanagari as a quiet second voice.'],
+      [9.6, 'The signature, <em>up front.</em>', 'The Butter Chicken Experience, told in four steps.'],
+      [11.6, 'A menu of <em>places.</em>', 'Every plate tied to where it comes from.'],
+      [13.8, 'Reserve in <em>four taps.</em>', 'Party, date, time. Done in seconds.']
+    ];
+    const notes = NOTES.map(([s, h, sub], i) => {
+      const n = R.html(`<div class="note"><p class="cap"><span class="line"><span>0${i + 1} / 0${NOTES.length}</span></span></p>
+        <p class="display"><span class="line"><span>${h}</span></span></p><p class="sub"><span class="line"><span>${sub}</span></span></p></div>`);
+      el.appendChild(n);
+      return { el: n, s, e: i < NOTES.length - 1 ? NOTES[i + 1][0] : 20.3, lines: $$('.line > span', n) };
+    });
+    // scroll keyframes [time, site px]; eased between
+    const K = [[4, 0], [6.3, 0], [7.3, 780], [8.7, 780], [9.7, 2126], [11, 2126], [11.9, 3998], [12.7, 3998], [13.4, 5728], [30, 5728]];
+    const scrollAt = t => {
+      for (let i = 0; i < K.length - 1; i++) {
+        const [a, ya] = K[i], [b, yb] = K[i + 1];
+        if (t >= a && t < b) return R.lerp(ya, yb, ease.inOut((t - a) / (b - a)));
+      }
+      return 0;
+    };
+    R.scene(el, 4, 20.5, (lt, t) => {
+      const w = ease.site(p(lt, 0, 0.6));
+      el.style.clipPath = `inset(${((1 - w) * 100).toFixed(3)}% 0 0 0)`;
+      const k = ease.expo(p(lt, 0.05, 0.9));
+      const out = ease.in(p(t, 19.9, 0.6));
+      // lean in for the reservation so the taps read at phone size
+      const zin = ease.inOut(p(t, 14.05, 0.8));
+      ph.el.style.transformOrigin = '50% 0';
+      ph.el.style.transform = `translateY(${((1 - k) * 560 + out * 40 - 22 * zin).toFixed(2)}px) rotate(${(-4 * (1 - k)).toFixed(3)}deg) scale(${(1 + 0.2 * zin).toFixed(4)})`;
+      op(ph.el, 1 - out);
+      notes.forEach(n => {
+        const on = t >= n.s - 0.05 && t < n.e + 0.3;
+        n.el.style.display = on ? 'block' : 'none';
+        if (!on) return;
+        const leave = ease.in(p(t, n.e - 0.25, 0.3));
+        n.lines.forEach((l, j) => {
+          const e = ease.site(p(t, n.s + j * 0.07, 0.8));
+          l.style.transform = `translateY(${((1 - e) * 110 - leave * 110).toFixed(2)}%)`;
+        });
+      });
+      const info = ph.info, r = info.res;
+      // reservation: dock tap, the panel rises, then party, date, time, request
+      const taps = [[13.95, info.dockCta], [15.2, r.party], [15.9, r.date], [16.6, r.time], [17.35, r.submit]];
+      let tap = null;
+      for (const [ts, pos] of taps) if (t >= ts && t < ts + 0.5) tap = { x: pos.x, y: pos.y, p: (t - ts) / 0.5 };
+      let panel = null;
+      if (t >= 14.1) panel = t < 15.3 ? 'a' : t < 16 ? 'b' : t < 16.7 ? 'c' : t < 17.5 ? 'd' : 'e';
+      ph.set({ scroll: scrollAt(t), fireT: 3 + lt, panel, panelP: ease.site(p(t, 14.1, 0.7)), tap });
+    });
+  }
+
+  R.endcard(stage, { start: 20.5, dur: 2.5 });
+})();
+</script>
+</body>
+</html>

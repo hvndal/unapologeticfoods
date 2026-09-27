@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>01 · Jigar maa badi aag hai</title>
+<!-- Silent. Cut for "Beedi" (Omkara), added in the Instagram editor: 120 BPM, one beat = 0.5 s.
+     Hard cuts land on beats; 2.0 s is the first big hit. -->
+<link rel="stylesheet" href="lib/reel.css">
+<style>
+  .fireimg { filter: saturate(1.35) contrast(1.22) brightness(.6) sepia(.18) hue-rotate(-10deg); }
+  .fire-veil { background: radial-gradient(ellipse 80% 45% at 50% 38%, rgba(21, 16, 14, .62), rgba(21, 16, 14, .8) 80%),
+    linear-gradient(180deg, rgba(21, 16, 14, .6), transparent 30%, transparent 62%, rgba(21, 16, 14, .9)); }
+
+  /* B · lyric */
+  .lyric__txt { position: absolute; left: 0; right: 0; top: 262px; text-align: center; font-size: 92px; line-height: .98; }
+  .lyric__row { display: block; }
+  .wd { display: inline-block; overflow: hidden; vertical-align: top; padding: .03em .04em .14em; margin: -.03em -.02em -.14em; }
+  .wd > span { display: inline-block; transform-origin: 50% 80%; }
+  .lyric__txt em { color: var(--blush); }
+  .lyric__hi { position: absolute; left: 0; right: 0; top: 628px; text-align: center; }
+  .lyric__hi .lotus { margin: 0 auto 16px; }
+  .lyric__hi p { font-family: var(--f-deva); font-size: 25px; color: var(--gold-soft); letter-spacing: .02em; }
+
+  /* C · hearth */
+  .hearth { background: var(--ink); }
+  .hearth__glow { position: absolute; left: -20%; right: -20%; bottom: -30%; height: 75%; background: radial-gradient(closest-side, rgba(255, 120, 40, .42), rgba(160, 50, 15, .16) 55%, transparent); }
+  .hearth__pat { position: absolute; inset: 0; background: var(--petals-sage) 0 0 / 40px 36px; opacity: .12;
+    -webkit-mask: radial-gradient(ellipse at 50% 0, #000, transparent 70%); mask: radial-gradient(ellipse at 50% 0, #000, transparent 70%); }
+  .hearth .chapter { position: absolute; left: 0; right: 0; top: 150px; justify-content: center; color: var(--gold-soft); }
+  .hf { position: absolute; inset: 0; visibility: hidden; text-align: center; }
+  .hf svg { position: absolute; left: 50%; top: 236px; width: 230px; height: 230px; margin-left: -115px; overflow: visible; }
+  .hf svg * { fill: none; stroke: var(--gold-soft); stroke-width: .75; stroke-linecap: round; }
+  .hf svg .flame { stroke: #ffa24a; stroke-width: 1.1; }
+  .hf__en { position: absolute; left: 0; right: 0; top: 496px; font-size: 62px; }
+  .hf__hi { position: absolute; left: 0; right: 0; top: 572px; font-family: var(--f-deva); font-size: 28px; color: var(--blush); }
+  .hf__p { position: absolute; left: 64px; right: 64px; top: 628px; font-size: 18px; line-height: 1.55; color: rgba(242, 233, 221, .86); }
+  .hf--all .row { position: absolute; left: 0; right: 0; top: 262px; display: flex; justify-content: center; gap: 26px; }
+  .hf--all .row svg { position: static; width: 104px; height: 104px; margin: 0; }
+  .hf--all .row svg * { stroke-width: 1.1; }
+  .hf--all .t { position: absolute; left: 0; right: 0; top: 420px; font-size: 68px; }
+  .hf--all .t em { color: var(--blush); }
+
+  /* D · cuts */
+  .cut { position: absolute; inset: 0; visibility: hidden; overflow: hidden; }
+  .cut .ph { position: absolute; inset: 0; }
+  .cut .warm { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(40, 14, 6, .3), transparent 30%, transparent 42%, rgba(21, 16, 14, .78) 62%, rgba(21, 16, 14, .95)); }
+  .cut .tint { position: absolute; inset: 0; background: #ff7a2a; mix-blend-mode: soft-light; opacity: .35; }
+  .cap-block { position: absolute; left: 40px; right: 90px; top: 612px; }
+  .cap-block .cap { color: var(--gold-soft); font-size: 10px; }
+  .cap-block .nm { font-size: 46px; margin-top: 10px; }
+  .cap-block .hi { font-family: var(--f-deva); font-size: 22px; color: var(--blush); margin-top: 8px; }
+  .cut--arch { text-align: center; }
+  .cut--arch .pat { position: absolute; inset: 0; background: var(--petals) 0 0 / 40px 36px; opacity: .09; }
+  .cut--arch .frame { position: absolute; left: 50%; top: 130px; width: 330px; height: 470px; margin-left: -165px; -webkit-mask: var(--arch-mask) center / 100% 100% no-repeat; mask: var(--arch-mask) center / 100% 100% no-repeat; overflow: hidden; }
+  .cut--arch .frame img { width: 100%; height: 100%; object-fit: cover; }
+  .cut--arch svg.hl { position: absolute; left: 50%; top: 116px; width: 358px; height: 498px; margin-left: -179px; overflow: visible; }
+  .cut--arch svg.hl path { fill: none; stroke: var(--gold); stroke-width: .6; }
+  .cut--arch .cap-block { left: 0; right: 0; top: 640px; }
+  .cut--arch .cap-block .nm { font-size: 44px; }
+  .bigword { position: absolute; left: 0; right: 0; top: 300px; text-align: center; }
+  .bigword .deva { font-size: 230px; line-height: 1.2; color: var(--bone); }
+  .bigword .display { font-size: 190px; color: var(--bone); }
+  .bigword em { color: var(--blush); }
+
+  /* E · hero */
+  .hero__badge { position: absolute; left: 50%; top: 214px; width: 164px; height: 164px; margin-left: -82px; filter: drop-shadow(0 12px 30px rgba(0, 0, 0, .5)); }
+  .hero__word { position: absolute; left: 0; right: 0; top: 408px; text-align: center; font-size: 96px; letter-spacing: -.035em; }
+  .hero__word em { color: var(--blush); }
+  .hero__place { position: absolute; left: 0; right: 0; top: 530px; display: flex; justify-content: center; align-items: center; gap: 16px; color: var(--gold-soft); font-size: 10px; letter-spacing: .42em; }
+  .hero__place .hair { width: 40px; }
+  .hero__line { position: absolute; left: 0; right: 0; top: 570px; text-align: center; font-family: var(--f-display); font-size: 25px; color: rgba(242, 233, 221, .88); }
+  .hero__line em { color: var(--blush); }
+
+  /* F · phone */
+  .web { background: var(--ink); }
+  .web__pat { position: absolute; inset: 0; background: var(--petals) 0 0 / 40px 36px; opacity: .06; }
+  .web__glow { position: absolute; left: -30%; right: -30%; bottom: -35%; height: 70%; background: radial-gradient(closest-side, rgba(255, 120, 40, .32), transparent); }
+  .web__head { position: absolute; left: 0; right: 0; top: 84px; text-align: center; }
+  .web__head .cap { color: var(--gold-soft); font-size: 10px; }
+  .web__head .display { font-size: 34px; margin-top: 10px; }
+  .web__head em { color: var(--blush); }
+  .web .phone { left: 120px; top: 176px; }
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+
+  <!-- B · 2.0–4.0  the hook, one word per beat -->
+  <div class="scene" id="lyric">
+    <img class="cover fireimg" alt="">
+    <div class="layer fire-veil"></div>
+    <p class="display lyric__txt">
+      <span class="lyric__row"><span class="wd"><span>Jigar</span></span> <span class="wd"><span>maa</span></span></span>
+      <span class="lyric__row"><span class="wd"><span>badi</span></span></span>
+      <span class="lyric__row"><span class="wd"><span><em>aag</em> hai.</span></span></span>
+    </p>
+    <div class="lyric__hi"><svg class="lotus" viewBox="0 0 120 24"><use href="#lotus"/></svg><p lang="hi">जिगर मा बड़ी आग है</p></div>
+  </div>
+
+  <!-- C · 4.0–8.0  three fires -->
+  <div class="scene hearth" id="hearth">
+    <img class="cover fireimg" alt="" style="opacity:.16">
+    <div class="hearth__glow"></div>
+    <div class="hearth__pat"></div>
+    <p class="chapter"><i>IV</i>The Hearth</p>
+    <div class="hf">
+      <svg viewBox="0 0 120 120"><ellipse cx="60" cy="34" rx="22" ry="6"/><path d="M38 34 C30 60 31 90 44 104 H76 C89 90 90 60 82 34"/><path d="M34 108 H86"/><path d="M42 72 C52 76 68 76 78 72" opacity=".5"/><path d="M52 30 L48 6 M60 30 V4 M68 30 L72 6"/><path d="M56 26 C52 21 57 18 55 12 M64 26 C68 21 63 18 65 13" class="flame"/></svg>
+      <p class="display hf__en">Tandoor</p><p class="hf__hi" lang="hi">तंदूर</p>
+      <p class="hf__p">The clay oven of the north, at heat a kitchen range can’t reach.</p>
+    </div>
+    <div class="hf">
+      <svg viewBox="0 0 120 120"><ellipse cx="60" cy="66" rx="44" ry="12"/><ellipse cx="60" cy="63" rx="36" ry="8"/><path d="M16 66 H6 M104 66 H114"/><circle cx="60" cy="60" r="14" stroke-dasharray="2 3"/><path d="M40 92 C44 86 38 82 42 76 M60 96 C64 90 58 86 62 80 M80 92 C84 86 78 82 82 76" class="flame"/></svg>
+      <p class="display hf__en">Tawa</p><p class="hf__hi" lang="hi">तवा</p>
+      <p class="hf__p">A flat iron over open flame: the fast, loud cooking of Old Delhi’s lanes.</p>
+    </div>
+    <div class="hf">
+      <svg viewBox="0 0 120 120"><path d="M28 62 C26 92 42 106 60 106 C78 106 94 92 92 62"/><ellipse cx="60" cy="62" rx="32" ry="7"/><path d="M30 58 C34 38 86 38 90 58"/><path d="M28 64 q4 -4 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0" opacity=".7"/><circle cx="60" cy="40" r="4"/><path d="M52 30 C48 24 56 20 52 12 M68 30 C72 24 64 20 68 12" class="flame"/></svg>
+      <p class="display hf__en">Dum</p><p class="hf__hi" lang="hi">दम</p>
+      <p class="hf__p">A heavy pot sealed with dough, left on low coals until it’s opened at your table.</p>
+    </div>
+    <div class="hf hf--all">
+      <div class="row"></div>
+      <p class="display t"><span class="line"><span>Three fires,</span></span><span class="line"><span><em>one kitchen.</em></span></span></p>
+    </div>
+  </div>
+
+  <!-- D · 8.0–12.0  a cut on every beat (built in script) -->
+  <div class="scene" id="cuts"></div>
+
+  <!-- E · 12.0–14.0  the hero, on fire -->
+  <div class="scene" id="hero">
+    <img class="cover fireimg" alt="">
+    <div class="layer fire-veil"></div>
+    <img class="hero__badge" src="../../assets/brand/adda-philly-badge.png" alt="">
+    <p class="display hero__word"><span class="wd"><span>Adda</span></span> <span class="wd"><span><em>Philly</em></span></span></p>
+    <p class="cap hero__place"><span class="hair"></span>Philadelphia · Fishtown<span class="hair"></span></p>
+    <p class="hero__line"><span class="line"><span>Indian cooking, <em>without compromise.</em></span></span></p>
+  </div>
+
+  <!-- F · 14.0–16.0  the site itself -->
+  <div class="scene web" id="web">
+    <div class="web__pat"></div>
+    <div class="web__glow"></div>
+    <div class="web__head"><p class="cap">The website</p><p class="display"><span class="line"><span>Built for the <em>fire.</em></span></span></p></div>
+  </div>
+
+  <canvas class="embers" id="embers"></canvas>
+  <div class="flash" id="flash"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+</div>
+
+<script src="lib/reel.js"></script>
+<script src="lib/phone.js"></script>
+<script>
+(() => {
+  const { $, $$, p, ease, op, rise, pulse, flicker } = R;
+  const stage = $('#stage');
+  const B = 0.5; // one beat at 120 BPM
+  window.DURATION = 18;
+  const IMG = '../../assets/img/';
+
+  // A · 0–2 "Built by Mander Studio", hard cut into the first hit
+  R.opener(stage, { start: 0, dur: 2, fire: true, cut: true });
+
+  // punch: scale kick on beat hits, decaying
+  const kick = (t, hits, amt = 0.07, d = 0.22) => 1 + amt * pulse(t, hits, d);
+
+  // B · lyric
+  {
+    const el = $('#lyric'), img = $('img', el);
+    const words = $$('.wd > span', el);
+    const hits = [2, 2.5, 3, 3.5];
+    const hi = $('.lyric__hi', el);
+    const aag = $('em', el);
+    R.scene(el, 2, 4, (lt, t) => {
+      R.fire(img, 5.4 + lt);
+      img.style.transform = `scale(${kick(t, hits, 0.06).toFixed(4)})`;
+      words.forEach((w, i) => {
+        const k = ease.expo(p(t, hits[i], 0.28));
+        op(w, t >= hits[i] ? 1 : 0);
+        w.style.transform = `translateY(${((1 - k) * 105).toFixed(2)}%) scale(${(1.18 - 0.18 * k).toFixed(4)})`;
+      });
+      const g = p(t, 3.5, 0.2) * (0.55 + 0.45 * flicker(t, 2));
+      aag.style.textShadow = `0 0 ${(26 * g).toFixed(1)}px rgba(255, 140, 43, ${(0.85 * g).toFixed(3)})`;
+      op(hi, ease.site(p(t, 3.55, 0.4)));
+      hi.style.transform = `translateY(${(10 * (1 - ease.site(p(t, 3.55, 0.4)))).toFixed(2)}px)`;
+    });
+  }
+
+  // C · hearth
+  {
+    const el = $('#hearth'), img = $('img', el), glow = $('.hearth__glow', el);
+    const panels = $$('.hf', el);
+    const all = panels[3];
+    // the closing row reuses the three drawings
+    panels.slice(0, 3).forEach(pn => $('.row', all).appendChild($('svg', pn).cloneNode(true)));
+    const starts = [4, 5, 6, 7];
+    R.scene(el, 4, 8, (lt, t) => {
+      R.fire(img, 5 + lt);
+      op(glow, 0.55 + 0.35 * flicker(t, 4) + 0.3 * pulse(t, [4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5], 0.2));
+      panels.forEach((pn, i) => {
+        const on = t >= starts[i] && t < starts[i] + 1;
+        R.show(pn, on);
+        if (!on) return;
+        const l = t - starts[i];
+        if (i < 3) {
+          const paths = $$('svg > *', pn);
+          paths.forEach((pa, j) => R.draw(pa, ease.out(p(l, 0.02 + j * 0.035, 0.42))));
+          const svg = $('svg', pn);
+          svg.style.transform = `scale(${kick(t, [starts[i] + B], 0.05, 0.2).toFixed(4)})`;
+          $$('.flame', pn).forEach(f => { f.style.filter = `drop-shadow(0 0 ${(3 + 5 * flicker(t, 5 + i)).toFixed(1)}px rgba(255, 140, 43, .9))`; });
+          const en = $('.hf__en', pn), hi = $('.hf__hi', pn), tx = $('.hf__p', pn);
+          [en, hi, tx].forEach((x, k) => {
+            const e = ease.site(p(l, 0.06 + k * 0.08, 0.5));
+            op(x, e);
+            x.style.transform = `translateY(${(16 * (1 - e)).toFixed(2)}px)`;
+          });
+        } else {
+          $$('.row svg', pn).forEach((s, k) => {
+            const e = ease.expo(p(l, k * 0.07, 0.35));
+            op(s, e);
+            s.style.transform = `translateY(${(20 * (1 - e)).toFixed(2)}px)`;
+            $$('*', s).forEach(pa => { pa.style.strokeDasharray = 'none'; pa.style.strokeDashoffset = 0; });
+            $$('.flame', s).forEach(f => { f.style.filter = `drop-shadow(0 0 ${(3 + 4 * flicker(t, 9 + k)).toFixed(1)}px rgba(255, 140, 43, .9))`; });
+          });
+          const [a, b] = $$('.line > span', pn);
+          rise(a, t, 7, 0.45, ease.expo);
+          rise(b, t, 7.5, 0.45, ease.expo);
+        }
+      });
+    });
+  }
+
+  // D · cuts, one per beat
+  {
+    const el = $('#cuts');
+    const CUTS = [
+      { kind: 'full', src: 'biryani-close.webp', pos: '50% 45%', name: 'Baby Goat Biryani', hi: 'बिरयानी', region: 'Awadh' },
+      { kind: 'fire', word: '<span class="deva" lang="hi">आग</span>', st: 3.4 },
+      { kind: 'full', src: 'butter-chicken-close.webp', pos: '50% 40%', name: 'Butter Chicken', hi: 'मक्खन मुर्ग़', region: 'Delhi · by preorder' },
+      { kind: 'arch', src: 'samosa-close.webp', pos: '42% 50%', ground: 'var(--oxblood)', name: 'Samosa', hi: 'समोसा', region: 'Punjab' },
+      { kind: 'fire', word: '<span class="display"><em>aag.</em></span>', st: 7.6 },
+      { kind: 'full', src: 'biryani-overhead.webp', pos: '50% 50%', name: 'Sealed. Opened at the table.', hi: 'दम', region: 'Handi & Dum' },
+      { kind: 'full', src: 'butter-chicken-overhead.webp', pos: '50% 50%', name: 'Churned that morning', hi: 'मक्खन', region: 'The Butter Chicken Experience' },
+      { kind: 'arch', src: 'samosa-plate.webp', pos: '50% 50%', ground: 'var(--green)', name: 'Chhote', hi: 'छोटे', region: 'Small plates' }
+    ];
+    const cap = c => `<div class="cap-block"><p class="cap"><span class="line"><span>${c.region}</span></span></p><p class="display nm"><span class="line"><span>${c.name}</span></span></p><p class="hi" lang="hi">${c.hi}</p></div>`;
+    CUTS.forEach((c, i) => {
+      let h;
+      if (c.kind === 'full') h = `<div class="cut"><div class="ph"><img class="cover graded" src="${IMG + c.src}" style="object-position:${c.pos}" alt=""></div><div class="tint"></div><div class="warm"></div>${cap(c)}</div>`;
+      else if (c.kind === 'arch') h = `<div class="cut cut--arch" style="background:${c.ground}"><div class="pat"></div><svg class="hl" viewBox="-10 -10 220 320" preserveAspectRatio="none"><path d="${R.ARCH}" transform="translate(-6 -6) scale(1.06 1.04)"/></svg><div class="frame"><div class="ph"><img class="graded" src="${IMG + c.src}" style="object-position:${c.pos}" alt=""></div></div>${cap(c)}</div>`;
+      else h = `<div class="cut"><div class="ph"><img class="cover fireimg" alt=""></div><div class="layer fire-veil" style="opacity:.6"></div><div class="bigword"><span class="line"><span>${c.word}</span></span></div></div>`;
+      const cut = R.html(h);
+      el.appendChild(cut);
+      c.el = cut; c.t = 8 + i * B;
+    });
+    R.scene(el, 8, 12, (lt, t) => {
+      CUTS.forEach(c => {
+        const on = t >= c.t && t < c.t + B;
+        R.show(c.el, on);
+        if (!on) return;
+        const l = t - c.t;
+        const ph = $('.ph', c.el);
+        const z = 1.16 - 0.14 * ease.expo(p(l, 0, 0.45));
+        ph.style.transform = `scale(${z.toFixed(4)})`;
+        if (c.kind === 'fire') {
+          R.fire($('img', c.el), c.st + l);
+          const w = $('.line > span', c.el);
+          const k = ease.expo(p(l, 0, 0.3));
+          w.style.transform = `translateY(${((1 - k) * 60).toFixed(2)}%) scale(${(1.25 - 0.25 * k).toFixed(4)})`;
+          w.style.textShadow = `0 0 ${(30 + 20 * flicker(t, 7)).toFixed(1)}px rgba(255, 130, 40, .75)`;
+        } else {
+          const [r, n] = $$('.line > span', c.el);
+          rise(r, l, 0.02, 0.35, ease.expo);
+          rise(n, l, 0.05, 0.38, ease.expo);
+          op($('.hi', c.el), p(l, 0.1, 0.2));
+          const hl = $('svg.hl path', c.el);
+          if (hl) R.drawMid(hl, ease.out(p(l, 0, 0.4)));
+        }
+      });
+    });
+  }
+
+  // E · hero on fire
+  {
+    const el = $('#hero'), img = $('img', el);
+    const badge = $('.hero__badge', el);
+    const [w1, w2] = $$('.wd > span', el);
+    const place = $('.hero__place', el), line = $('.hero__line .line > span', el);
+    R.scene(el, 12, 14, (lt, t) => {
+      R.fire(img, 8.6 + lt);
+      img.style.transform = `scale(${kick(t, [12, 12.5, 13, 13.5], 0.05).toFixed(4)})`;
+      const b = ease.expo(p(t, 12, 0.45));
+      op(badge, b);
+      badge.style.transform = `scale(${(1.35 - 0.35 * b).toFixed(4)})`;
+      [[w1, 12.5], [w2, 13]].forEach(([w, s]) => {
+        const k = ease.expo(p(t, s, 0.3));
+        w.style.transform = `translateY(${((1 - k) * 105).toFixed(2)}%)`;
+      });
+      op(place, ease.site(p(t, 13, 0.5)));
+      rise(line, t, 13.5, 0.5, ease.expo);
+    });
+  }
+
+  // F · the site on a phone, hero fire still burning
+  {
+    const el = $('#web');
+    const ph = R.phone(el, { width: 300 });
+    const head = $('.web__head .line > span', el);
+    const headCap = $('.web__head .cap', el);
+    R.scene(el, 14, 16, (lt, t) => {
+      const k = ease.expo(p(t, 14, 0.7));
+      ph.el.style.transform = `translateY(${((1 - k) * 640).toFixed(2)}px) rotate(${(-5 * (1 - k)).toFixed(3)}deg)`;
+      op(headCap, p(t, 14.1, 0.3));
+      rise(head, t, 14.15, 0.5, ease.expo);
+      const sc = ease.inOut(p(t, 15, 0.85)) * 760;
+      ph.set({ scroll: sc, fireT: 2 + lt });
+      ph.el.style.transform += ` scale(${kick(t, [15], 0.025, 0.25).toFixed(4)})`;
+    });
+  }
+
+  // G · 16–18 end card
+  R.endcard(stage, { start: 16, dur: 2 });
+
+  // stage-wide: embers and beat flashes
+  const embers = R.embers($('#embers'), 80, 21);
+  const flash = $('#flash');
+  const strong = [2, 12];
+  const beats = [2.5, 3, 3.5, 4, 5, 6, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 14, 16];
+  R.every(t => {
+    let amt = 0;
+    if (t >= 2 && t < 4) amt = 0.9; else if (t >= 4 && t < 8) amt = 0.55; else if (t >= 12 && t < 14) amt = 1; else if (t >= 14 && t < 16) amt = 0.35; else if (t >= 16) amt = 0.25;
+    embers(t, amt);
+    flash.style.opacity = Math.max(0.42 * pulse(t, strong, 0.12), 0.22 * pulse(t, beats, 0.08)).toFixed(3);
+  });
+})();
+</script>
+</body>
+</html>

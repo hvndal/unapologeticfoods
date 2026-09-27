@@ -22,5 +22,8 @@ Open `index.html` in a browser, or run a local server (`python3 -m http.server`)
 - `pitch/adda-walkthrough.mp4` — silent walkthrough film (desktop + mobile).
 - `pitch/EMAIL.md` — email and DM reply drafts, plus the pre-send checklist.
 
+## Instagram reels (`reels/`)
+Five silent 1080×1920 reels built from the site's own design, each opening on "Built by Mander Studio". `reels/README.md` has the list, the beat map for syncing reel 01 to "Beedi", and how to re-render.
+
 ## Hosting
 GitHub Pages from `main` (root) serves the demo at https://hvndal.github.io/unapologeticfoods/. `vercel.json` is ready for Vercel. Pages are `noindex`.

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>02 · The Butter Chicken Experience</title>
+<!-- Silent. Scenes change on whole seconds (fits any 60/120 BPM track added in Instagram). -->
+<link rel="stylesheet" href="lib/reel.css">
+<style>
+  .ox { background: var(--oxblood); }
+  .ox__pat { position: absolute; inset: 0; background: var(--petals) 0 0 / 40px 36px; opacity: .08; }
+  .ox__shade { position: absolute; inset: 0; background: radial-gradient(120% 80% at 30% 30%, transparent 40%, rgba(40, 12, 8, .55)); }
+
+  /* title */
+  .ttl .chapter { position: absolute; left: 44px; top: 196px; color: var(--gold-soft); }
+  .ttl__h { position: absolute; left: 44px; right: 30px; top: 246px; font-size: 82px; }
+  .ttl__h em { color: var(--blush); }
+  .ttl__lede { position: absolute; left: 44px; right: 60px; top: 530px; font-family: var(--f-display); font-size: 23px; line-height: 1.38; color: rgba(242, 233, 221, .86); }
+  .ttl__rule { position: absolute; left: 44px; top: 668px; width: 200px; height: 1px; background: var(--gold); transform-origin: 0 50%; }
+  .ttl__pre { position: absolute; left: 44px; top: 686px; color: var(--gold-soft); font-size: 10px; }
+
+  /* photo */
+  .pic__media { position: absolute; inset: 0; }
+  .pic__shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21, 16, 14, .35), transparent 25%, transparent 45%, rgba(21, 16, 14, .8) 66%, rgba(21, 16, 14, .95)); }
+  .pic__cap { position: absolute; left: 44px; right: 80px; top: 612px; }
+  .pic__cap .cap { color: var(--gold-soft); font-size: 10px; }
+  .pic__cap .display { font-size: 50px; margin-top: 12px; }
+  .pic__cap .display em { color: var(--blush); }
+
+  /* rites */
+  .rite__media { position: absolute; inset: 0; }
+  .rite__media img { }
+  .rite__shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21, 16, 14, .55), transparent 20%, transparent 40%, rgba(21, 16, 14, .82) 62%, rgba(21, 16, 14, .96)); }
+  .rite__top { position: absolute; left: 44px; right: 44px; top: 104px; display: flex; justify-content: space-between; color: rgba(242, 233, 221, .78); font-size: 10px; }
+  .rite__num { position: absolute; left: 38px; top: 468px; font-family: var(--f-display); font-style: italic; font-weight: 300; font-size: 150px; line-height: 1; color: var(--blush); letter-spacing: -.02em; }
+  .rite__t { position: absolute; left: 46px; top: 646px; color: var(--gold-soft); font-size: 12px; }
+  .rite__l { position: absolute; left: 44px; right: 70px; top: 674px; font-family: var(--f-display); font-size: 30px; line-height: 1.18; }
+  .rite--draw { background: var(--ink); }
+  .rite--draw .glow { position: absolute; left: -20%; right: -20%; top: 5%; height: 60%; background: radial-gradient(closest-side, rgba(214, 185, 138, .14), transparent); }
+  .rite--draw svg { position: absolute; left: 50%; top: 170px; width: 280px; height: 280px; margin-left: -140px; overflow: visible; }
+  .rite--draw svg * { fill: none; stroke: var(--gold-soft); stroke-width: .7; stroke-linecap: round; }
+  .rite--draw svg .curl { stroke: var(--blush); stroke-width: .6; }
+  .rite--arch { background: var(--bone); color: var(--ink); }
+  .rite--arch .pat { position: absolute; inset: 0; background: var(--jaali) 0 0 / 26px 26px; opacity: .12; }
+  .rite--arch .frame { position: absolute; left: 196px; top: 150px; width: 300px; height: 410px; -webkit-mask: var(--arch-mask) center / 100% 100% no-repeat; mask: var(--arch-mask) center / 100% 100% no-repeat; overflow: hidden; }
+  .rite--arch .frame img { width: 100%; height: 100%; object-fit: cover; }
+  .rite--arch svg.hl { position: absolute; left: 184px; top: 138px; width: 324px; height: 434px; overflow: visible; }
+  .rite--arch svg.hl path { fill: none; stroke: var(--gold); stroke-width: .6; }
+  .rite--arch .rite__shade { display: none; }
+  .rite--arch .rite__top { color: rgba(21, 16, 14, .6); }
+  .rite--arch .rite__num { color: var(--oxblood); }
+  .rite--arch .rite__t { color: var(--oxblood); }
+  .smoke { position: absolute; border-radius: 50%; mix-blend-mode: screen; background: radial-gradient(closest-side, rgba(236, 226, 214, .34), rgba(236, 226, 214, .12) 55%, transparent); }
+
+  /* phone */
+  .pre { background: var(--oxblood-deep); }
+  .pre__head { position: absolute; left: 0; right: 0; top: 80px; text-align: center; }
+  .pre__head .cap { color: var(--gold-soft); font-size: 10px; }
+  .pre__head .display { font-size: 34px; margin-top: 10px; }
+  .pre__head em { color: var(--blush); }
+  .pre .phone { left: 120px; top: 170px; }
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+
+  <!-- 2–5 · title -->
+  <div class="scene ox ttl" id="ttl">
+    <div class="ox__pat"></div><div class="ox__shade"></div>
+    <p class="chapter"><i>II</i>The Signature</p>
+    <h1 class="display ttl__h"><span class="line"><span>The Butter</span></span><span class="line"><span>Chicken</span></span><span class="line"><span><em>Experience</em></span></span></h1>
+    <p class="ttl__lede"><span class="line"><span>The dish everyone thinks they know,</span></span><span class="line"><span>taken back to first principles</span></span><span class="line"><span>and finished at your table.</span></span></p>
+    <div class="ttl__rule"></div>
+    <p class="cap ttl__pre">By preorder only</p>
+  </div>
+
+  <!-- 5–7 · the plate unmasks upward -->
+  <div class="scene" id="pic">
+    <div class="pic__media"><img class="cover graded" src="../../assets/img/butter-chicken-close.webp" style="object-position:50% 38%" alt=""></div>
+    <div class="pic__shade"></div>
+    <div class="pic__cap"><p class="cap"><span class="line"><span>Delhi · मक्खन मुर्ग़</span></span></p><p class="display"><span class="line"><span>Four steps,</span></span><span class="line"><span><em>one plate.</em></span></span></p></div>
+  </div>
+
+  <!-- 7–15 · the four steps (built in script) -->
+  <div id="rites"></div>
+
+  <!-- 15–18 · preorder on the site -->
+  <div class="scene pre" id="pre">
+    <div class="ox__pat"></div>
+    <div class="pre__head"><p class="cap">On the website</p><p class="display"><span class="line"><span>Preorder <em>with your table.</em></span></span></p></div>
+  </div>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+</div>
+
+<script src="lib/reel.js"></script>
+<script src="lib/phone.js"></script>
+<script>
+(() => {
+  const { $, $$, p, ease, op, rise } = R;
+  const stage = $('#stage');
+  window.DURATION = 20.5;
+  const IMG = '../../assets/img/';
+
+  R.opener(stage, { start: 0, dur: 2 });
+
+  // title
+  {
+    const el = $('#ttl');
+    const ch = $('.chapter', el), rule = $('.ttl__rule', el), pre = $('.ttl__pre', el);
+    const h = $$('.ttl__h .line > span', el), lede = $$('.ttl__lede .line > span', el);
+    R.scene(el, 2, 5.6, (lt) => {
+      const c = ease.site(p(lt, 0, 0.7));
+      op(ch, c);
+      ch.style.transform = `translateX(${(-16 * (1 - c)).toFixed(2)}px)`;
+      R.riseAll(h, lt, 0.12, 0.1, 1);
+      R.riseAll(lede, lt, 0.75, 0.08, 0.9);
+      rule.style.transform = `scaleX(${ease.site(p(lt, 1.2, 1)).toFixed(4)})`;
+      op(pre, ease.site(p(lt, 1.45, 0.7)));
+    });
+  }
+
+  // the plate: wipes up over the title, then drifts
+  {
+    const el = $('#pic'), img = $('img', el), cap = $$('.line > span', el);
+    R.scene(el, 5, 7.8, (lt) => {
+      const w = ease.site(p(lt, 0, 0.85));
+      el.style.clipPath = `inset(${((1 - w) * 100).toFixed(3)}% 0 0 0)`;
+      img.style.transform = `scale(${(1.16 - 0.12 * ease.out(p(lt, 0, 2.8))).toFixed(4)})`;
+      R.riseAll(cap, lt, 0.45, 0.1, 0.9);
+    });
+  }
+
+  // four steps
+  {
+    const host = $('#rites');
+    const RITES = [
+      { n: 'i', t: 'Cold smoke', l: 'The chicken takes smoke long before it meets heat.', kind: 'draw' },
+      { n: 'ii', t: 'Churned butters', l: 'A flight of butters, made in the kitchen that morning.', kind: 'photo', src: 'butter-chicken-overhead.webp', pos: '40% 30%' },
+      { n: 'iii', t: 'Your wood', l: 'You choose the wood chips. The smoke is yours.', kind: 'fire' },
+      { n: 'iv', t: 'Tableside', l: 'Sauced, buttered and finished in front of you.', kind: 'arch', src: 'butter-chicken-close.webp', pos: '50% 60%' }
+    ];
+    const CLOCHE = `<svg viewBox="0 0 120 120"><ellipse cx="60" cy="100" rx="50" ry="8"/><ellipse cx="60" cy="98" rx="40" ry="5" opacity=".5"/>
+      <path d="M20 96 C20 62 38 46 60 46 C82 46 100 62 100 96"/><path d="M30 96 C31 72 42 58 56 54" opacity=".45"/><circle cx="60" cy="41" r="4.5"/>
+      <path class="curl" d="M46 36 C40 28 52 22 46 13 C41 6 49 0 45 -8"/><path class="curl" d="M60 34 C55 25 66 19 60 9 C55 1 64 -5 59 -14"/><path class="curl" d="M74 36 C80 28 68 22 74 13 C79 6 71 0 75 -8"/></svg>`;
+    RITES.forEach((r, k) => {
+      let media = '';
+      if (r.kind === 'fire') media = '<img class="cover" alt="" style="filter:saturate(1.2) contrast(1.15) brightness(.66) sepia(.15) hue-rotate(-8deg)">';
+      else if (r.kind === 'photo') media = `<img class="cover graded" src="${IMG + r.src}" style="object-position:${r.pos}" alt="">`;
+      else if (r.kind === 'draw') media = '<div class="glow"></div>' + CLOCHE + Array.from({ length: 7 }, () => '<div class="smoke"></div>').join('');
+      else media = `<div class="pat"></div><svg class="hl" viewBox="-10 -10 220 320" preserveAspectRatio="none"><path d="${R.ARCH}" transform="translate(-6 -6) scale(1.06 1.04)"/></svg><div class="frame"><img class="graded" src="${IMG + r.src}" style="object-position:${r.pos}" alt=""></div>`;
+      const el = R.html(`<div class="scene rite rite--${r.kind}">
+        <div class="rite__media">${media}</div>
+        <div class="rite__shade"></div>
+        <p class="cap rite__top"><span>The Butter Chicken Experience</span><span>0${k + 1} / 04</span></p>
+        <p class="rite__num"><span class="line"><span>${r.n}</span></span></p>
+        <p class="cap rite__t"><span class="line"><span>${r.t}</span></span></p>
+        <p class="rite__l"><span class="line"><span>${r.l}</span></span></p>
+      </div>`);
+      host.appendChild(el);
+      const img = $('img', el);
+      const [num, tt, ll] = $$('.line > span', el);
+      const top = $('.rite__top', el);
+      const puffs = $$('.smoke', el);
+      const rnd = R.rng(40 + k);
+      const pf = puffs.map(() => ({ x: rnd() * 420 - 60, s: 260 + rnd() * 260, sp: 110 + rnd() * 90, ph: rnd() * 8, sw: 20 + rnd() * 40 }));
+      const start = 7 + 2 * k;
+      R.scene(el, start, start + 2.8, (lt, t) => {
+        const w = ease.site(p(lt, 0, 0.75));
+        el.style.clipPath = `inset(${((1 - w) * 100).toFixed(3)}% 0 0 0)`;
+        if (r.kind === 'fire') R.fire(img, 2.5 + lt);
+        if (img) {
+          const base = r.kind === 'arch' ? 1.5 : 1.12;
+          if (r.kind === 'arch') img.style.transformOrigin = '50% 74%';
+          img.style.transform = `scale(${(base - 0.1 * ease.out(p(lt, 0, 2.8))).toFixed(4)})`;
+        }
+        if (r.kind === 'draw') {
+          $$('svg > *:not(.curl)', el).forEach((pa, j) => R.draw(pa, ease.out(p(lt, 0.15 + j * 0.06, 0.8))));
+          $$('.curl', el).forEach((pa, j) => {
+            R.draw(pa, ease.out(p(lt, 0.7 + j * 0.12, 0.9)));
+            pa.style.transform = `translate(${(Math.sin(t * 1.6 + j * 2) * 2).toFixed(2)}px, ${(-4 * p(lt, 0.7, 2)).toFixed(2)}px)`;
+          });
+        }
+        if (r.kind === 'arch') R.drawMid($('svg.hl path', el), ease.inOut(p(lt, 0.2, 1.1)));
+        rise(num, lt, 0.3, 1);
+        rise(tt, lt, 0.42, 0.9);
+        rise(ll, lt, 0.5, 0.9);
+        op(top, ease.site(p(lt, 0.3, 0.6)));
+        puffs.forEach((d, i) => {
+          const q = pf[i];
+          const y = 980 - ((t * q.sp + q.ph * 140) % 1400);
+          d.style.width = d.style.height = q.s + 'px';
+          d.style.left = (q.x + Math.sin(t * 0.8 + q.ph) * q.sw).toFixed(1) + 'px';
+          d.style.top = y.toFixed(1) + 'px';
+          op(d, 0.9 * Math.sin(R.clamp((980 - y) / 1400) * Math.PI));
+        });
+      });
+    });
+  }
+
+  // preorder on the phone
+  {
+    const el = $('#pre');
+    const ph = R.phone(el, { width: 300 });
+    const head = $('.pre__head .line > span', el), cap = $('.pre__head .cap', el);
+    R.scene(el, 15, 18, (lt, t) => {
+      const w = ease.site(p(lt, 0, 0.75));
+      el.style.clipPath = `inset(${((1 - w) * 100).toFixed(3)}% 0 0 0)`;
+      const k = ease.expo(p(lt, 0.1, 0.8));
+      ph.el.style.transform = `translateY(${((1 - k) * 520).toFixed(2)}px)`;
+      op(cap, p(lt, 0.3, 0.4));
+      rise(head, lt, 0.35, 0.8);
+      const info = ph.info;
+      const target = info.sigCta.y - 560;
+      const scroll = R.lerp(target - 560, target, ease.inOut(p(lt, 0.2, 0.95)));
+      const tapP = p(lt, 1.15, 0.45);
+      ph.set({ scroll, panel: lt > 1.3 ? 'x' : null, panelP: ease.site(p(lt, 1.3, 0.7)), tap: { x: info.sigCta.x, y: 560, p: tapP } });
+    });
+  }
+
+  R.endcard(stage, { start: 18, dur: 2.5, line: 'By preorder, <em>finished at your table.</em>' });
+})();
+</script>
+</body>
+</html>
