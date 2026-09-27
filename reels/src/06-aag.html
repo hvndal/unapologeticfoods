@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>06 · Aag</title>
+<!-- Motion-design showcase. Silent, 120 BPM grid (beat = 0.5 s). -->
+<link rel="stylesheet" href="lib/reel.css">
+<style>
+  .slam { position: absolute; left: 0; right: 0; text-align: center; font-family: var(--f-display); font-weight: 300; font-variation-settings: "opsz" 144, "SOFT" 40; letter-spacing: -.04em; line-height: .85; }
+  .fillfire { color: transparent; -webkit-background-clip: text; background-clip: text; background-size: cover; background-position: center; }
+  .half { position: absolute; left: 0; right: 0; overflow: hidden; }
+  .iris { position: absolute; left: 50%; top: 50%; width: 540px; height: 810px; margin: -405px 0 0 -270px; -webkit-mask: var(--arch-mask) center / 100% 100% no-repeat; mask: var(--arch-mask) center / 100% 100% no-repeat; overflow: hidden; }
+  .iris img { width: 100%; height: 100%; object-fit: cover; }
+  .ring { position: absolute; left: 50%; top: 50%; width: 200px; height: 300px; margin: -150px 0 0 -100px; overflow: visible; }
+  .ring path { fill: none; stroke: var(--gold); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .kw { position: absolute; left: -40px; right: -40px; white-space: nowrap; font-size: 150px; }
+</style></head>
+<body>
+<div class="stage" id="stage">
+  <div class="scene" id="s1">
+    <p class="cap" id="by" style="position:absolute;left:0;right:0;top:360px;text-align:center;color:var(--gold-soft);font-size:13px;letter-spacing:.8em">Built by</p>
+    <div class="half" style="top:390px;height:90px"><p class="slam" id="m1" style="top:0;font-size:118px;line-height:180px;margin-top:-45px">MANDER</p></div>
+    <div class="half" style="top:480px;height:90px"><p class="slam" id="m2" style="top:-90px;font-size:118px;line-height:180px;margin-top:-45px">MANDER</p></div>
+    <p class="slam" id="st" style="top:600px;font-size:44px;font-style:italic;color:var(--blush)">Studio</p>
+  </div>
+  <div class="scene" id="s2">
+    <img class="cover" id="bgf" alt="" style="opacity:.25;filter:blur(6px) brightness(.7)">
+    <p class="slam fillfire" id="aag" style="top:280px;font-size:330px;font-style:italic">aag</p>
+    <p class="deva" id="aaghi" style="position:absolute;left:0;right:0;top:640px;text-align:center;font-size:40px;color:var(--gold-soft)">आग</p>
+  </div>
+  <div class="scene" id="s3"></div>
+  <div class="scene" id="s4"></div>
+  <div class="scene" id="s5"></div>
+  <div class="scene" id="s6">
+    <img class="cover" id="endf" alt="" style="filter:saturate(1.3) contrast(1.2) brightness(.5) hue-rotate(-10deg)">
+    <img id="endb" src="../../assets/brand/adda-philly-badge.png" alt="" style="position:absolute;left:50%;top:230px;width:170px;margin-left:-85px">
+    <p class="slam" id="endw" style="top:430px;font-size:110px">Adda <em style="color:var(--blush)">Philly</em></p>
+    <p class="cap" id="endc" style="position:absolute;left:0;right:0;top:600px;text-align:center;color:var(--gold-soft);font-size:11px">Built by Mander Studio</p>
+  </div>
+  <img id="firesrc" alt="" style="display:none">
+  <canvas class="embers" id="emb"></canvas>
+  <div class="flash" id="flash"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+</div>
+<script src="lib/reel.js"></script>
+<script>
+(() => {
+  const { $, $$, p, ease, op, pulse } = R;
+  window.DURATION = 15;
+  const IMG = '../../assets/img/';
+  const beats = []; for (let b = 0; b < 30; b++) beats.push(b * 0.5);
+  const src = $('#firesrc');
+  const fireURL = st => { R.fire(src, st); return src.dataset.cur; };
+
+  // 1 · MANDER splits apart on the beat
+  R.scene($('#s1'), 0, 2, lt => {
+    const k = ease.expo(p(lt, 0, 0.5));
+    $('#m1').style.transform = `translateX(${(-600 * (1 - k)).toFixed(1)}px)`;
+    $('#m2').style.transform = `translateX(${(600 * (1 - k)).toFixed(1)}px)`;
+    op($('#by'), p(lt, 0.5, 0.2)); $('#by').style.letterSpacing = `${(1.4 - 0.6 * ease.expo(p(lt, 0.5, 0.8))).toFixed(3)}em`;
+    const s = ease.expo(p(lt, 1, 0.4)); op($('#st'), s); $('#st').style.transform = `scale(${(2 - s).toFixed(3)})`;
+  });
+
+  // 2 · AAG, the word filled with live fire, punching on every beat
+  R.scene($('#s2'), 2, 4, (lt, t) => {
+    const u = fireURL(5.4 + lt);
+    $('#aag').style.backgroundImage = `url(${u})`;
+    R.fire($('#bgf'), 5.4 + lt);
+    const z = 1 + 0.12 * pulse(t, beats, 0.15);
+    const k = ease.expo(p(lt, 0, 0.5));
+    $('#aag').style.transform = `scale(${((0.4 + 0.6 * k) * z).toFixed(4)}) rotate(${(-8 * (1 - k)).toFixed(2)}deg)`;
+    op($('#aaghi'), p(lt, 1, 0.1));
+    $('#aaghi').style.letterSpacing = `${(0.6 * (1 - ease.expo(p(lt, 1, 0.6)))).toFixed(3)}em`;
+  });
+
+  // 3 · arch iris: each beat a dish bursts out of a growing arch
+  const DISH = ['biryani-close', 'butter-chicken-close', 'samosa-close', 'biryani-overhead', 'butter-chicken-overhead', 'samosa-plate', 'biryani-close', 'butter-chicken-close'];
+  const HI = ['बिरयानी', 'मक्खन', 'समोसा', 'दम', 'तंदूर', 'छोटे', 'तवा', 'आग'];
+  const s3 = $('#s3');
+  const irises = DISH.map((d, i) => {
+    const el = R.html(`<div class="iris"><img class="graded" src="${IMG + d}.webp" alt=""></div>`);
+    const w = R.html(`<p class="deva" style="position:absolute;left:0;right:0;top:380px;text-align:center;font-size:150px;color:var(--bone);mix-blend-mode:overlay">${HI[i]}</p>`);
+    s3.append(el, w); return { el, w, t: 4 + i * 0.5 };
+  });
+  R.scene(s3, 4, 8, (lt, t) => irises.forEach((q, i) => {
+    const on = t >= q.t && t < q.t + 1; q.el.style.display = q.w.style.display = on ? 'block' : 'none';
+    if (!on) return;
+    const k = ease.expo(p(t, q.t, 0.5));
+    q.el.style.transform = `scale(${(0.15 + 2.2 * k).toFixed(4)}) rotate(${((i % 2 ? 1 : -1) * 6 * (1 - k)).toFixed(2)}deg)`;
+    $('img', q.el).style.transform = `scale(${(1.6 - 0.5 * k).toFixed(3)})`;
+    op(q.w, t < q.t + 0.5 ? 1 - p(t, q.t + 0.3, 0.2) : 0);
+  }));
+
+  // 4 · kinetic manifesto, alternating slams
+  const WORDS = [['INDIAN', 0], ['COOKING', 1], ['<em>without</em>', 0], ['COMPROMISE', 1]];
+  const s4 = $('#s4'); s4.style.background = 'var(--oxblood)';
+  const kws = WORDS.map(([w, d], i) => { const el = R.html(`<p class="slam kw" style="top:${210 + i * 135}px">${w}</p>`); s4.appendChild(el); return { el, d, t: 8 + i * 0.5 }; });
+  R.scene(s4, 8, 10.5, (lt, t) => kws.forEach(q => {
+    const k = ease.expo(p(t, q.t, 0.4));
+    const drift = (t - q.t) * 18 * (q.d ? -1 : 1);
+    q.el.style.transform = `translateX(${((q.d ? 1 : -1) * 700 * (1 - k) + drift).toFixed(1)}px)`;
+    q.el.style.color = t - q.t < 0.1 && t >= q.t ? 'var(--gold-soft)' : 'var(--bone)';
+  }));
+
+  // 5 · tunnel of arches, badge at its heart
+  const s5 = $('#s5');
+  const rings = Array.from({ length: 12 }, () => { const r = R.html(`<svg class="ring" viewBox="0 0 200 300"><path d="${R.ARCH}"/></svg>`); s5.appendChild(r); return r; });
+  const badge = R.html(`<img src="${R.BADGE}" alt="" style="position:absolute;left:50%;top:50%;width:120px;margin:-60px 0 0 -60px">`); s5.appendChild(badge);
+  R.scene(s5, 10.5, 12.5, (lt, t) => {
+    rings.forEach((r, i) => {
+      const z = Math.pow(1.45, ((i + lt * 2.2) % 12) - 2);
+      r.style.transform = `scale(${z.toFixed(4)}) rotate(${(lt * 20 * (i % 2 ? 1 : -1)).toFixed(2)}deg)`;
+      op(r, R.clamp(z / 2) * R.clamp(4 - z / 3));
+    });
+    badge.style.transform = `scale(${(1 + 0.18 * pulse(t, beats, 0.15)).toFixed(3)}) rotate(${(lt * -30).toFixed(1)}deg)`;
+  });
+
+  // 6 · end slam
+  R.scene($('#s6'), 12.5, 15, (lt, t) => {
+    R.fire($('#endf'), 8.6 + lt);
+    const b = ease.expo(p(lt, 0, 0.5)); op($('#endb'), b); $('#endb').style.transform = `scale(${(2.2 - 1.2 * b).toFixed(3)})`;
+    const w = ease.expo(p(lt, 0.5, 0.5)); op($('#endw'), w); $('#endw').style.letterSpacing = `${(0.2 - 0.24 * w).toFixed(3)}em`;
+    op($('#endc'), p(lt, 1, 0.4));
+  });
+
+  const emb = R.embers($('#emb'), 90, 5);
+  R.every(t => {
+    emb(t, t >= 2 && t < 4 ? 1 : t >= 12.5 ? 1 : t >= 10.5 ? 0.6 : 0);
+    $('#flash').style.opacity = (0.35 * pulse(t, [0, 2, 4, 8, 10.5, 12.5], 0.12) + 0.15 * pulse(t, beats, 0.08)).toFixed(3);
+  });
+})();
+</script>
+</body></html>
